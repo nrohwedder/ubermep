@@ -1,0 +1,7 @@
+package evaluation;
+
+option optimize_for = SPEED;
+
+message UberlayEvaluationMsg {
+    required uint32 hops = 1;
+}

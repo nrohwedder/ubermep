@@ -1,0 +1,37 @@
+package de.uniluebeck.itm.ubermep.mep.protocol;
+
+option java_outer_classname = "MEP";
+option optimize_for = SPEED;
+
+message MEPPacket {
+    required bool reliable = 1;
+    required MessageType messageType = 2;
+    required bytes payload = 3;
+    optional uint32 requestID = 4;
+    optional bool exceptionOccurred = 5;
+    optional uint32 currentMessageNumber = 6;
+    optional uint32 totalMessageNumber = 7;
+    optional RPCMessage rpcMessage = 8;
+}
+
+enum MessageType {
+    UNICAST = 1;
+    MULTICAST = 2;
+    SINGLE_RESPONSE_REQUEST = 3;
+    MULTI_RESPONSE_REQUEST = 4;
+    SINGLE_RESPONSE = 5;
+    MULTI_RESPONSE = 6;
+    RPC_REQUEST = 7;
+    RPC_RESPONSE = 8;
+}
+
+message RPCMessage {
+    required string serviceName = 1;
+    required string methodName = 2;
+    required ServiceType serviceType = 3;
+}
+
+enum ServiceType {
+    SERVICE = 1;
+    BLOCKING_SERVICE = 2;
+}

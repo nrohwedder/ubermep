@@ -1,0 +1,24 @@
+package de.uniluebeck.itm.example.rpc.mittagsservice.protocol;
+
+option java_generic_services = true;
+
+service MittagsService {
+  rpc bestelle(BestellRequest) returns(BestellResponse);
+}
+
+message BestellRequest{
+  required Gericht gericht = 1;
+  required uint32 anzahl = 2;
+}
+
+message BestellResponse{
+  required Mahlzeit mahlzeit = 1;
+}
+
+message Gericht{
+    required string name = 1;
+}
+
+message Mahlzeit{
+    required string name = 1;
+}

@@ -1,0 +1,15 @@
+package de.uniluebeck.itm.example.rpc.flashnodeservice.protocol;
+
+option java_generic_services = true;
+
+service FlashNodeService {
+  rpc flashNode(FlashNodeRequest) returns (FlashNodeResponse);
+}
+
+message FlashNodeRequest{
+  required uint32 delay = 1;
+}
+
+message FlashNodeResponse{
+  required bool success = 1;
+}

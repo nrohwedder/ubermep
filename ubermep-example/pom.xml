@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.uniluebeck.itm.ubermep</groupId>
+        <artifactId>ubermep-parent</artifactId>
+        <version>0.1</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <groupId>de.uniluebeck.itm.ubermep</groupId>
+    <artifactId>ubermep-example</artifactId>
+    <name>Ubermep :: Example</name>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.uniluebeck.itm.uberlay</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>de.uniluebeck.itm.ubermep</groupId>
+            <artifactId>ubermep-core</artifactId>
+            <version>0.1</version>
+        </dependency>
+    </dependencies>
+</project>

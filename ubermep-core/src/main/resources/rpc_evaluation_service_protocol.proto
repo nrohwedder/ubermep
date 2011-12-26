@@ -1,0 +1,12 @@
+package evaluation;
+
+option java_generic_services = true;
+option optimize_for = SPEED;
+
+service EvaluationService {
+  rpc run(EvaluationServiceMsg) returns (EvaluationServiceMsg);
+}
+
+message EvaluationServiceMsg {
+    required uint64 start_time_in_millis = 1;
+}
