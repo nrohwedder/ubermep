@@ -56,12 +56,12 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces Single-Hop-Topologie\relax }}{61}{figure.caption.133}
 \contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Multi-Hop-Topologie\relax }}{61}{figure.caption.134}
-\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces Boxplot-Beispiel\relax }}{63}{figure.caption.138}
-\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Ergebnisse: "Ubertragungsdauer in Abh"angigkeit der Payload-Gr"o"se\relax }}{64}{figure.caption.143}
-\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces Ergebnisse: "Ubertragungsdauer in Abh"angigkeit der Hop-Anzahl f"ur den Nachrichtenversand mittels Uberlay sowie den Versand von Unicast-Nachrichten\relax }}{65}{figure.caption.145}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Versand mittels Uberlay}}}{65}{figure.caption.145}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Versand von Unicast}}}{65}{figure.caption.145}
-\contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces Ergebnisse: "Ubertragungsdauer in Abh"angigkeit der Hop-Anzahl f"ur den Versand von Single Request Single Response Nachrichten sowie den Aufruf mittels RPC\relax }}{66}{figure.caption.146}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Versand von Single Request Single Response Nachrichten}}}{66}{figure.caption.146}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Aufruf mittels RPC}}}{66}{figure.caption.146}
+\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces Boxplot-Beispiel\relax }}{63}{figure.caption.135}
+\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Ergebnisse: "Ubertragungsdauer in Abh"angigkeit der Payload-Gr"o"se\relax }}{65}{figure.caption.139}
+\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces Ergebnisse: "Ubertragungsdauer in Abh"angigkeit der Hop-Anzahl f"ur den Nachrichtenversand mittels Uberlay sowie den Versand von Unicast-Nachrichten\relax }}{66}{figure.caption.140}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Versand mittels Uberlay}}}{66}{figure.caption.140}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Versand von Unicast}}}{66}{figure.caption.140}
+\contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces Ergebnisse: "Ubertragungsdauer in Abh"angigkeit der Hop-Anzahl f"ur den Versand von Single Request Single Response Nachrichten sowie den Aufruf mittels RPC\relax }}{67}{figure.caption.141}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Versand von Single Request Single Response Nachrichten}}}{67}{figure.caption.141}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Aufruf mittels RPC}}}{67}{figure.caption.141}
 \addvspace {10\p@ }

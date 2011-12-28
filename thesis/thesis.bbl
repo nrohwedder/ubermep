@@ -10,6 +10,12 @@
 \newblock {L}ooking up data in p2p systems.
 \newblock {\em Communications of the ACM - Web science\/} (2003).
 
+\bibitem{wisebed}
+{\sc Bimschas, D.}
+\newblock {I}nfrastruktursoftware zur {F}{\"o}deration von
+  {S}ensornetzwerk-{T}estbeds.
+\newblock Master's thesis, Universit{\"a}t zu L{\"u}beck, 2009.
+
 \bibitem{peer_to_peer_system_architekturen}
 {\sc Dunkel, J., Eberhart, A., Fischer, S., Kleiner, C., and Koschel, A.}
 \newblock {\em System-Architekturen f{\"u}r verteilte Anwendungen}.
@@ -20,11 +26,6 @@
 \newblock {G}oogle {P}rotocol {B}uffers.
 \newblock \url{http://code.google.com/p/protobuf/}.
 
-\bibitem{protobuf_varint}
-{\sc Google}.
-\newblock {G}oogle {P}rotocol {B}uffers.
-\newblock \url{http://code.google.com/apis/protocolbuffers/docs/encoding.html}.
-
 \bibitem{protobuf_encoding}
 {\sc Google}.
 \newblock {G}oogle {P}rotocol {B}uffers.
@@ -34,8 +35,7 @@
 {\sc Google}.
 \newblock {G}oogle {P}rotocol {B}uffers.
 \newblock
-  \url{http://code.google.com/intl/de-DE/apis/protocolbuffers/docs/proto.html#%
-options}.
+  \url{http://code.google.com/intl/de-DE/apis/protocolbuffers/docs/proto.html#options}.
 
 \bibitem{uberlay}
 {\sc {I}nstitut der {T}elematik an der {U}niversit"at~zu {L}"ubeck}.

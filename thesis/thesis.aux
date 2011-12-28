@@ -1,17 +1,20 @@
 \relax 
 \catcode`"\active
-\ifx\hyper@anchor\@undefined
-\global \let \oldcontentsline\contentsline
-\gdef \contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
-\global \let \oldnewlabel\newlabel
-\gdef \newlabel#1#2{\newlabelxx{#1}#2}
-\gdef \newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
-\AtEndDocument{\let \contentsline\oldcontentsline
-\let \newlabel\oldnewlabel}
-\else
-\global \let \hyper@last\relax 
-\fi
-
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
 \select@language{ngerman}
 \@writefile{toc}{\select@language{ngerman}}
 \@writefile{lof}{\select@language{ngerman}}
@@ -20,6 +23,7 @@
 \@writefile{toc}{\select@language{ngerman}}
 \@writefile{lof}{\select@language{ngerman}}
 \@writefile{lot}{\select@language{ngerman}}
+\citation{wisebed}
 \@input{1-einleitung.aux}
 \@input{2-grundlagen.aux}
 \@input{3-entwurf.aux}
@@ -27,15 +31,15 @@
 \@input{5-evaluation.aux}
 \@input{6-zusammenfassung.aux}
 \@writefile{toc}{\contentsline {chapter}{Verzeichnisse}{71}{chapter.6}}
-\@writefile{toc}{\contentsline {section}{Abbildungsverzeichnis}{71}{section*.148}}
-\@writefile{toc}{\contentsline {section}{Abk\"urzungsverzeichnis}{73}{appendix*.149}}
+\@writefile{toc}{\contentsline {section}{Abbildungsverzeichnis}{71}{section*.142}}
+\@writefile{toc}{\contentsline {section}{Abk\"urzungsverzeichnis}{73}{appendix*.143}}
 \bibstyle{acm}
 \bibdata{bibliography}
 \bibcite{maven}{1}
 \bibcite{dht_can}{2}
-\bibcite{peer_to_peer_system_architekturen}{3}
-\bibcite{protobuf}{4}
-\bibcite{protobuf_varint}{5}
+\bibcite{wisebed}{3}
+\bibcite{peer_to_peer_system_architekturen}{4}
+\bibcite{protobuf}{5}
 \bibcite{protobuf_encoding}{6}
 \bibcite{protobuf_options}{7}
 \bibcite{uberlay}{8}
@@ -45,4 +49,4 @@
 \bibcite{mockito}{12}
 \bibcite{mockito_doc}{13}
 \bibcite{web_services}{14}
-\@writefile{toc}{\contentsline {section}{Bibliographie}{75}{appendix*.150}}
+\@writefile{toc}{\contentsline {section}{Bibliographie}{75}{appendix*.144}}

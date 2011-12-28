@@ -1,14 +1,12 @@
 \chapter{Evaluation}
 \label{cha:evaluation}
 
-\section{Szenarien}
-
-\subsection{Netzwerk-Topologien}
+\section{Netzwerk-Topologien}
 In den Abbildungen \ref{fig:Evaluations_Szenario_SingleHop} und \ref{fig:Evaluations_Szenario_MultiHop} ist der Aufbau des Evaluationsszenarios zu sehen. Dabei handelt es sich zum Einem um Single-Hop- und zum Anderen um Multi-Hop- Netzwerke. Die Nachrichten zur Evaluation werden dabei immer von einem Peer A zu einem Peer B und ggf. zur"uckgesendet. Jeder Peer wird dabei als Loopback-Interface an einem Rechner gestartet. Damit die Evaluationsergebnisse mit Szenarien der realen Umwelt vergleichbar sind, wurde f"ur die Evaluation ein Emulator erzeugt, welcher eine "Ubertragungsrate von 16 MBit/s emuliert.
 \myfig[7 cm]{Evaluations_Szenario_SingleHop}{Single-Hop-Topologie}
 \myfig{Evaluations_Szenario_MultiHop}{Multi-Hop-Topologie}
 
-\subsection{Evaluationskriterien}
+\section{Evaluationskriterien}
 Zur Evaluation der Implementierung wurden zwei Kriterien verwendet:
 \begin{itemize}
 \item "Ubertragungsdauer in Abh"angigkeit der Payload-Gr"o"se
@@ -16,18 +14,18 @@ Zur Evaluation der Implementierung wurden zwei Kriterien verwendet:
 \end{itemize}
 Im Folgenden werden nun diese beiden Kriterien n"aher erl"autert.
 
-\subsubsection{"Ubertragungsdauer in Abh"angigkeit der Payload-Gr"o"se}
+\subsection{"Ubertragungsdauer in Abh"angigkeit der Payload-Gr"o"se}
 Das Kriterium \emph{"Ubertragungsdauer in Abh"angigkeit der Payload-Gr"o"se} zeigt das Verh"altnis der "Ubertragungsdauer zu der Gr"o"se des "ubertragenen Payloads. Dabei wurden Single Request Single Response-Nachrichten in einem Single-Hop-Netzwerk versendet. Die gemessene "Ubertragungsdauer entspricht dabei der Zeit vom Versand einer Nachricht bis zum Empfang der Antwort. Dabei variiert die Gr"o"se des Request-Payloads, der Response-Payload aber ist immer jeweils 1 Byte gro"s. Mittels diesem Kriterium l"asst sich feststellen wie sich die "Ubertragungsdauer, in Abh"angigkeit der Gr"o"se einer Nachricht, verh"alt.
 
-\subsubsection{"Ubertragungsdauer in Abh"angigkeit der Hop-Anzahl}
+\subsection{"Ubertragungsdauer in Abh"angigkeit der Hop-Anzahl}
 
-Das Kriterium \emph{"Ubertragungsdauer in Abh"angigkeit der Hop-Anzahl} berechnet das Verh"altnis der "Ubertragungsdauer zu der Anzahl an Hops in einem Netzwerk. Dabei wurde die "Ubertragungsdauer f"ur ein SingleHop-Netzwerk, sowie MultiHop-Netzwerke der Gr"o"se 2, 3, 4 und 5 Hops gemessen. Desweiteren wurde die "Ubertragungszeit f"ur den Nachrichtenversand mittels Uberlay, sowie f"ur den Nachrichtenversand mittels Unicast, SingleRequestSingleResponse und RPC gemessen. Daf"ur wurden Nachrichten mit einer Gr"o"se $<$ 1 Byte "uber das entsprechende Netzwerk gesendet. Die gemessene "Ubertragungsdauer f"ur Uberlay und Unicast entspricht dabei der Zeit vom Versand bis zum Empfang der Nachricht. F"ur SingleRequestSingleResponse und RPC entspricht die gemessene "Ubetragungsdauer der Zeit vom Versand bis zum Empfang der Antwort, wobei f"ur RPC ein BlockingService verwendet wurde. Mittels diesem Kriterium l"asst sich feststellen inwieweit sich gegebenfalls die "Ubertragungsdauer eines Nachrichtentyps zu der Anzahl an Hops verh"alt.  
+Das Kriterium \emph{"Ubertragungsdauer in Abh"angigkeit der Hop-Anzahl} berechnet das Verh"altnis der "Ubertragungsdauer zu der Anzahl an Hops in einem Netzwerk. Dabei wurde die "Ubertragungsdauer f"ur ein SingleHop-Netzwerk, sowie MultiHop-Netzwerke der Gr"o"se 2, 3, 4 und 5 Hops gemessen. Desweiteren wurde die "Ubertragungszeit f"ur den Nachrichtenversand mittels Uberlay, sowie f"ur den Nachrichtenversand mittels Unicast, SingleRequestSingleResponse und RPC gemessen. Daf"ur wurden Nachrichten mit einer Gr"o"se $<$ 1 Byte "uber das entsprechende Netzwerk gesendet. Die gemessene "Ubertragungsdauer f"ur Uberlay und Unicast entspricht dabei der Zeit vom Versand bis zum Empfang der Nachricht. F"ur SingleRequestSingleResponse und RPC entspricht die gemessene "Ubertragungsdauer der Zeit vom Versand bis zum Empfang der Antwort, wobei f"ur RPC ein BlockingService verwendet wurde. Mittels diesem Kriterium l"asst sich feststellen inwieweit sich gegebenfalls die "Ubertragungsdauer eines Nachrichtentyps zu der Anzahl an Hops verh"alt.  
 
 Bei beiden Kriterien wurde die "Ubertragungszeit in bereits verbundenen Netzwerken gemessen, d.h. die ben"otigte Zeit zum Aufbau eines Netzwerks ist hier nicht inkludiert. 
-\subsection{Testergebnisse}
+\section{Testergebnisse}
 F"ur das Generieren der Testl"aufe wurden Testprogramme mit Java geschrieben, welche die oben beschriebene Netzwerk-Topologien erzeugen und "uber diese die Nachrichten versenden, sowie die "Ubertragungsdauer misst. Diese Ergebnisse werden in sogenannten \emph{Boxplots} dargestellt. Im Folgenden werden nun Boxplots erl"autert.
 
-\subsubsection{Boxplot}
+\subsection{Boxplot}
 Ein Boxplot ist ein Diagramm, das zur grafischen Darstellung der Verteilung von Daten verwendet werden kann. Der Boxplot vermittelt dabei schnell einen "Uberblick, in welchem Bereich die Daten liegen und wie sie sich in diesem verteilen. Ein Beispiel-Boxplot ist dabei in Abbildung \ref{fig:evaluation_example} zu erkennen. Die Verteilung wird dabei mittels eines Medians, zwei Quartilen und den beiden Whiskern dargestellt. Im Folgenden werden nun Quartile, Whisker und der Median erkl"art.
 \myfig{evaluation_example}{Boxplot-Beispiel}
 
@@ -42,7 +40,7 @@ Ein Median ist der \emph{Zentralwert}, welcher die Mitte eines Wertebereichs zei
 
 Die nun im Folgenden dargestellten Ergebnisse entsprechen einer Messung von 100 versendeten Nachrichten. Zu Testzwecken wurden auch bis zu 1000 Nachrichten versendet und deren "Ubertragungszeit gemessen. Dabei sind die entscheidenden Ergebnisse, wie Quartile, Whisker und Medians nahezu identisch, einige Ausrei"ser allerdings sorgten f"ur eine un"ubersichtliche Darstellung, weshalb die Messung auf 100 Nachrichten beschr"ankt wurde.
 
-\subsubsection{"Ubertragungsdauer in Abh"angigkeit der Payload-Gr"o"se}
+\subsection{"Ubertragungsdauer in Abh"angigkeit der Payload-Gr"o"se}
 
 \myfig[12 cm]{evaluation_PayloadToOverheadSingleHopBoxPlot}{Ergebnisse: "Ubertragungsdauer in Abh"angigkeit der Payload-Gr"o"se}
 
@@ -52,7 +50,7 @@ Die x-Achse zeigt die Gr"o"se der versendeten Nachricht, wobei die Gr"o"se logar
 
 Bei der Auswertung der Ergebnisse schien zun"achst verwunderlich, das sich die "Ubertragungszeiten f"ur Payloads $<=$ 1 KB scheinbar linear bei 2 Millisekunden bewegen. Da sich aber die "Ubertragungszeiten f"ur Nachrichten der Payload-Gr"o"se $<$ 1 KB, bei einer "Ubertragungsrate von 16 MBit/s im Nanosekundenbereich ver"andern, l"asst sich dies auf Messungenauigkeiten und Rundungsfehler zur"uckf"uhren. F"ur Payload-Gr"o"sen $>$ 1KB, bei der sich die "Ubertragungszeit  im Millisekundenbereich ver"andert, ist zu erkennen: erh"oht sich die Gr"o"se des Payloads logarithmisch, so steigt mit ihr auch logarithmisch die "Ubertragungsdauer.
 
-\subsubsection{"Ubertragungsdauer in Abh"angigkeit der Hop-Anzahl}
+\subsection{"Ubertragungsdauer in Abh"angigkeit der Hop-Anzahl}
 
 \myfigtwo[evaluation_SingleHopVsMultiHop_UberlayVsUnicast]{Versand mittels Uberlay}{Versand von Unicast}{Ergebnisse: "Ubertragungsdauer in Abh"angigkeit der Hop-Anzahl f"ur den Nachrichtenversand mittels Uberlay sowie den Versand von Unicast-Nachrichten}
 
@@ -64,7 +62,7 @@ Aus den Ergebnissen der Abbildung \ref{fig:evaluation_SingleHopVsMultiHop_Uberla
 
 Aus den Ergebnissen der Abbildung \ref{fig:evaluation_SingleHopVsMultiHop_SRSRVsRPC} l"asst sich feststellen das sich der vergleichbare Versand des Nachrichtentyps Single Request Single Response, der Aufruf mittels RPC nahezu identisch verh"alt. Beide Typen ben"otigen eine "ahnliche "Ubertragungsdauer und steigen linear zu der Anzahl der passierten Hops. Der zus"atzliche Overhead zu Nachrichtentypen des One-way Pattern resultiert aus der Wartezeit auf die Response, welche vor allem durch die Eigenschaft herbeigef"uhrt wird, das diese Nachrichten die doppelte Anzahl an Hops passieren.
 
-\subsubsection{Schlussfolgerung}
+\subsection{Schlussfolgerung}
 
 Aus den ermittelten Ergebnissen der beiden Evaluationskriterien \emph{"Ubertragungsdauer in Abh"angigkeit der Payload-Gr"o"se} und \emph{"Ubertragungsdauer in Abh"angigkeit der Hop-Anzahl} lassen sich nun abschlie"send, f"ur den Nachrichtenversand mittels Ubermep, folgende Schlussfolgerungen ziehen:
 
