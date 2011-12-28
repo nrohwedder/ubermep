@@ -1,0 +1,33 @@
+message BookOrderRequest{
+	required Customer customer = 1;
+	required Book book = 2;
+	required bool deliverToCustomer = 3;
+}
+
+message BookOrderResponse{
+	required uint64 orderNumber = 1;
+}
+
+message Customer{
+	required uint32 customerNumber = 1;
+	enum Gender{
+		UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+    	}
+	required Gender gender = 2 [default = UNKNOWN];
+	required string name = 3;
+	required string address = 4;
+	optional uint32 phone = 5;
+}
+
+message Book{
+	required string title = 1;
+	repeated string authors = 2;
+}
+
+option java_generic_services = true;
+
+service BookOrderService {
+	rpc order(BookOrderRequest) returns(BookOrderResponse);
+}

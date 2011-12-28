@@ -1,0 +1,60 @@
+\BOOKMARK [0][]{chapter.1}{1 Einleitung}{}
+\BOOKMARK [1][]{section.1.1}{1.1 Herangehensweise}{chapter.1}
+\BOOKMARK [1][]{section.1.2}{1.2 Gliederung der Arbeit}{chapter.1}
+\BOOKMARK [0][]{chapter.2}{2 Grundlagen}{}
+\BOOKMARK [1][]{section.2.1}{2.1 Peer-to-Peer Architektur}{chapter.2}
+\BOOKMARK [2][]{subsection.2.1.1}{2.1.1 Was ist Peer-to-Peer?}{section.2.1}
+\BOOKMARK [2][]{subsection.2.1.2}{2.1.2 Routing}{section.2.1}
+\BOOKMARK [2][]{subsection.2.1.3}{2.1.3 Peer-to-Peer Overlay-Netzwerk}{section.2.1}
+\BOOKMARK [2][]{subsection.2.1.4}{2.1.4 Topologien}{section.2.1}
+\BOOKMARK [1][]{section.2.2}{2.2 Remote Procedure Call \(RPC\)}{chapter.2}
+\BOOKMARK [2][]{subsection.2.2.1}{2.2.1 Verfahren}{section.2.2}
+\BOOKMARK [2][]{subsection.2.2.2}{2.2.2 Ablauf}{section.2.2}
+\BOOKMARK [2][]{subsection.2.2.3}{2.2.3 Realisierungen}{section.2.2}
+\BOOKMARK [1][]{section.2.3}{2.3 Netty}{chapter.2}
+\BOOKMARK [2][]{subsection.2.3.1}{2.3.1 Architektur}{section.2.3}
+\BOOKMARK [1][]{section.2.4}{2.4 Google Protocol Buffers}{chapter.2}
+\BOOKMARK [2][]{subsection.2.4.1}{2.4.1 Nachrichten-Generierung}{section.2.4}
+\BOOKMARK [2][]{subsection.2.4.2}{2.4.2 Protobuf und RPC}{section.2.4}
+\BOOKMARK [1][]{section.2.5}{2.5 Uberlay}{chapter.2}
+\BOOKMARK [2][]{subsection.2.5.1}{2.5.1 Architektur}{section.2.5}
+\BOOKMARK [2][]{subsection.2.5.2}{2.5.2 Pfadvektor Protokoll}{section.2.5}
+\BOOKMARK [2][]{subsection.2.5.3}{2.5.3 Round Trip Time Protokoll}{section.2.5}
+\BOOKMARK [1][]{section.2.6}{2.6 Maven}{chapter.2}
+\BOOKMARK [2][]{subsection.2.6.1}{2.6.1 Funktionsweise}{section.2.6}
+\BOOKMARK [2][]{subsection.2.6.2}{2.6.2 Maven in dieser Arbeit}{section.2.6}
+\BOOKMARK [1][]{section.2.7}{2.7 Mockito}{chapter.2}
+\BOOKMARK [2][]{subsection.2.7.1}{2.7.1 Mockito in dieser Arbeit}{section.2.7}
+\BOOKMARK [2][]{subsection.2.7.2}{2.7.2 Weitere Funktionen}{section.2.7}
+\BOOKMARK [0][]{chapter.3}{3 Entwurf}{}
+\BOOKMARK [1][]{section.3.1}{3.1 Message Exchange Pattern}{chapter.3}
+\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Definition}{section.3.1}
+\BOOKMARK [1][]{section.3.2}{3.2 Architektur}{chapter.3}
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Aufbau}{section.3.2}
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Erl\344uterung}{section.3.2}
+\BOOKMARK [1][]{section.3.3}{3.3 Protokoll}{chapter.3}
+\BOOKMARK [2][]{subsection.3.3.1}{3.3.1 Struktur}{section.3.3}
+\BOOKMARK [2][]{subsection.3.3.2}{3.3.2 Nachrichten}{section.3.3}
+\BOOKMARK [0][]{chapter.4}{4 Implementierung}{}
+\BOOKMARK [1][]{section.4.1}{4.1 Einleitung und \334berblick}{chapter.4}
+\BOOKMARK [1][]{section.4.2}{4.2 Protokoll}{chapter.4}
+\BOOKMARK [1][]{section.4.3}{4.3 Ubermep-core}{chapter.4}
+\BOOKMARK [2][]{subsection.4.3.1}{4.3.1 Einleitung}{section.4.3}
+\BOOKMARK [2][]{subsection.4.3.2}{4.3.2 Schnittstellen}{section.4.3}
+\BOOKMARK [2][]{subsection.4.3.3}{4.3.3 Implementierung und Abh\344ngigkeiten}{section.4.3}
+\BOOKMARK [2][]{subsection.4.3.4}{4.3.4 Messaging}{section.4.3}
+\BOOKMARK [2][]{subsection.4.3.5}{4.3.5 Konfiguration}{section.4.3}
+\BOOKMARK [1][]{section.4.4}{4.4 Beispiele}{chapter.4}
+\BOOKMARK [2][]{subsection.4.4.1}{4.4.1 Aufbau eines Peer-to-Peer Netzwerk}{section.4.4}
+\BOOKMARK [2][]{subsection.4.4.2}{4.4.2 Kommunikation}{section.4.4}
+\BOOKMARK [1][]{section.4.5}{4.5 Zuk\374nftige Erweiterungen}{chapter.4}
+\BOOKMARK [0][]{chapter.5}{5 Evaluation}{}
+\BOOKMARK [1][]{section.5.1}{5.1 Szenarien}{chapter.5}
+\BOOKMARK [2][]{subsection.5.1.1}{5.1.1 Netzwerk-Topologien}{section.5.1}
+\BOOKMARK [2][]{subsection.5.1.2}{5.1.2 Evaluationskriterien}{section.5.1}
+\BOOKMARK [2][]{subsection.5.1.3}{5.1.3 Testergebnisse}{section.5.1}
+\BOOKMARK [0][]{chapter.6}{6 Zusammenfassung und Ausblick}{}
+\BOOKMARK [0][]{chapter.6}{Verzeichnisse}{}
+\BOOKMARK [1][]{section*.148}{Abbildungsverzeichnis}{chapter.6}
+\BOOKMARK [1][]{appendix*.149}{Abk\374rzungsverzeichnis}{chapter.6}
+\BOOKMARK [1][]{appendix*.150}{Bibliographie}{chapter.6}

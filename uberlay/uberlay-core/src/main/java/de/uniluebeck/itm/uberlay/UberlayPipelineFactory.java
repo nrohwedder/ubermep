@@ -48,6 +48,9 @@ class UberlayPipelineFactory implements ChannelPipelineFactory {
 
 		final ChannelPipeline pipeline = Channels.pipeline();
 
+		//for evaluation only
+		pipeline.addLast("TransmissionRateEmulator", new TransmissionRateEmulationHandler());
+
 		// upstream handlers
 		pipeline.addLast("frameDecoder", new ProtobufVarint32FrameDecoder());
 		pipeline.addLast("protobufDecoders",

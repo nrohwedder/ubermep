@@ -1,0 +1,30 @@
+singleHopVsMultiHopUberlay <- read.table("/Users/nrohwedder/IdeaProjects/itm/ubermep-parent/evaluation/SingleHopVsMultiHopUberlay100Runs.txt", header=TRUE, sep="\t", check.names=FALSE)
+
+pdf(file="/Users/nrohwedder/bachelorarbeit/thesis/img/evaluation_SingleHopVsMultiHop_UberlayVsUnicast-a.pdf", width = 5)
+
+boxplot(singleHopVsMultiHopUberlay,ylab = "Zeit in ms", xlab="Anzahl Hops", ylim = c(0,20))
+dev.off()
+
+
+singleHopVsMultiHopUnicast <- read.table("/Users/nrohwedder/IdeaProjects/itm/ubermep-parent/evaluation/SingleHopVsMultiHopUnreliableUnicast100Runs.txt", header=TRUE, sep="\t", check.names=FALSE)
+
+pdf(file="/Users/nrohwedder/bachelorarbeit/thesis/img/evaluation_SingleHopVsMultiHop_UberlayVsUnicast-b.pdf", width = 5)
+
+boxplot(singleHopVsMultiHopUnicast,ylab = "Zeit in ms", xlab="Anzahl Hops", ylim = c(0,20))
+dev.off()
+
+singleHopVsMultiHopSingleRequestSingleResponse <- read.table("/Users/nrohwedder/IdeaProjects/itm/ubermep-parent/evaluation/SingleHopVsMultiHopSingleRequestSingleResponse100Runs.txt", header=TRUE, sep="\t", check.names=FALSE)
+
+pdf(file="/Users/nrohwedder/bachelorarbeit/thesis/img/evaluation_SingleHopVsMultiHop_SRSRVsRPC-a.pdf", width = 5)
+
+boxplot(singleHopVsMultiHopSingleRequestSingleResponse,ylab = "Zeit in ms", xlab="Anzahl Hops", ylim = c(0,25))
+dev.off()
+
+
+singleHopVsMultiHopRPC <- read.table("/Users/nrohwedder/IdeaProjects/itm/ubermep-parent/evaluation/SingleHopVsMultiHopRPC100Runs.txt", header=TRUE, sep="\t", check.names=FALSE)
+
+pdf(file="/Users/nrohwedder/bachelorarbeit/thesis/img/evaluation_SingleHopVsMultiHop_SRSRVsRPC-b.pdf", width = 5)
+
+par(xpd=TRUE)
+boxplot(singleHopVsMultiHopRPC,ylab = "Zeit in ms", xlab="Anzahl Hops", ylim = c(0,25))
+dev.off()

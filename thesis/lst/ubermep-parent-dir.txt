@@ -1,0 +1,7 @@
+ubermep-parent
+|-- uberlay
+|   `-- uberlay-core
+|-- ubermep-cmdline
+|-- ubermep-core
+|-- ubermep-example
+`-- ubermep-gui

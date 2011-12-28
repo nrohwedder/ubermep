@@ -1,0 +1,64 @@
+%---------------------------------------------------------------------------
+% Frontpage
+%---------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\title{Latex-Template einer schriftliche Ausarbeitung}
+\author{Max Mustermann}
+
+\let\footnotesize\small
+	\let\footnoterule\relax
+	\null
+	\vfil
+	\vskip 60pt
+	\begin{center}
+		{\LARGE
+			{\Large Universit"at zu L"ubeck}\\
+			Institut f"ur Telematik\\[2cm]
+			{\Large Bachelorarbeit}\\ [2cm]
+			Design und Implementierung eines Peer-to-Peer-basierten Overlaynetzwerks
+			\par}%
+		\vskip 6em
+		{\large \lineskip .75em
+		\begin{tabular}[t]{c}
+			{\Large von}\\[.5em]
+			{\Large Nils Rohwedder}\\[7em]
+			{\bf Aufgabenstellung und Betreuung:}\\[.5em]
+			Dr. - Ing. Dennis Pfisterer \\
+			Daniel Bimschas, M.Sc.
+		\end{tabular}
+		\par}%
+		\vfill 
+		{\large
+			Lübeck, den \today
+			\par}%
+	\end{center}
+	\par
+	% thanks
+	\vfil
+	\null
+\end{titlepage}
+
+\cleardoublepage
+
+% Erklaerung
+\newpage
+\vspace*{7cm}
+\centerline{\bf Erkl"arung}
+
+\vspace*{1cm}
+Ich versichere, die vorliegende Arbeit selbstst"andig und nur unter Benutzung
+der angegebenen Hilfsmittel angefertigt zu haben.
+
+\vspace*{3cm}
+Lübeck, den \today 
+
+\pagestyle{headings}
+
+\cleardoublepage
+
+\section*{Aufgabenstellung}
+
+Im Rahmen der T"atigkeit am Institut f"ur Telematik der Universit"at zu L"ubeck tauchte die Fragestellung nach einem Peer-to-Peer basierten Overlay-Netzwerk auf, welches die 
+M"oglichkeit des Nachrichtenaustauschs bietet. Das Hauptaugenmerk hierbei liegt auf einem Konzept f"ur den Nachrichtenaustausch, welches die verschiedenen Nachrichtentypen eines \emph{Message Exchange Pattern} abdeckt. Des weiteren soll ein effizientes \emph{Reliable Messaging-} System integriert werden, welches dem Nutzer einen schnellen und zuverl"assigen Nachrichtenaustausch erm"oglicht. Dabei soll dem Nutzer die freie Wahl des zu "ubertragenen Inhalts "uberlassen werden, sowie gegebenfalls Erweiterungspotenzial f"ur zus"atzliche Nachrichtentypen bieten. Aufbauend auf einer Anforderungsanalyse soll hierbei zun"achst ein Konzept entworfen und anschlie"send implementiert werden. Es soll darauf geachtet werden ausgereifte, bereits existierende Technologien zu verwenden. Die Funktionalit"at sowie ausreichende Performanz der Implementierung soll schlie"slich durch eine Evaluation gezeigt werden.

@@ -1,0 +1,78 @@
+\begin{thebibliography}{10}
+
+\bibitem{maven}
+{\sc Apache, S.~F.}
+\newblock Maven.
+\newblock \url{http://maven.apache.org/}.
+
+\bibitem{dht_can}
+{\sc Balakrishnan, H., Kaashoek, M.~F., Karger, D., Morris, R., and Stoica, I.}
+\newblock {L}ooking up data in p2p systems.
+\newblock {\em Communications of the ACM - Web science\/} (2003).
+
+\bibitem{peer_to_peer_system_architekturen}
+{\sc Dunkel, J., Eberhart, A., Fischer, S., Kleiner, C., and Koschel, A.}
+\newblock {\em System-Architekturen f{\"u}r verteilte Anwendungen}.
+\newblock Hanser, 2008.
+
+\bibitem{protobuf}
+{\sc Google}.
+\newblock {G}oogle {P}rotocol {B}uffers.
+\newblock \url{http://code.google.com/p/protobuf/}.
+
+\bibitem{protobuf_varint}
+{\sc Google}.
+\newblock {G}oogle {P}rotocol {B}uffers.
+\newblock \url{http://code.google.com/apis/protocolbuffers/docs/encoding.html}.
+
+\bibitem{protobuf_encoding}
+{\sc Google}.
+\newblock {G}oogle {P}rotocol {B}uffers.
+\newblock \url{http://code.google.com/apis/protocolbuffers/docs/encoding.html}.
+
+\bibitem{protobuf_options}
+{\sc Google}.
+\newblock {G}oogle {P}rotocol {B}uffers.
+\newblock
+  \url{http://code.google.com/intl/de-DE/apis/protocolbuffers/docs/proto.html#%
+options}.
+
+\bibitem{uberlay}
+{\sc {I}nstitut der {T}elematik an der {U}niversit"at~zu {L}"ubeck}.
+\newblock {U}berlay.
+\newblock \url{https://github.com/itm/uberlay}.
+
+\bibitem{netty}
+{\sc JBoss}.
+\newblock {JB}oss-{N}etty.
+\newblock \url{http://www.jboss.org/netty}.
+
+\bibitem{trickle}
+{\sc Levis, P., Brewer, E., Culler, D., Gay, D., Madden, S., Patel, N.,
+  Polastre, J., Shenker, S., Szewczyk, R., and Woo, A.}
+\newblock The emergence of a networking primitive in wireless sensor networks.
+\newblock {\em Communications of the ACM - Web science\/} (2008).
+
+\bibitem{corba}
+{\sc OMG}.
+\newblock {C}ommon {O}bject {R}equest {B}roker {A}rchitecture
+  ({CORBA})-{S}pecifications.
+\newblock \url{http://www.omg.org/spec/CORBA/}.
+
+\bibitem{mockito}
+{\sc {S}zczepan {F}aber}.
+\newblock {M}ockito.
+\newblock \url{http://code.google.com/p/mockito/}.
+
+\bibitem{mockito_doc}
+{\sc {S}zczepan {F}aber}.
+\newblock {M}ockito.
+\newblock
+  \url{http://docs.mockito.googlecode.com/hg/latest/org/mockito/Mockito.html}.
+
+\bibitem{web_services}
+{\sc {W}orld {W}ide~{W}eb {C}onsortium}.
+\newblock Web services.
+\newblock \url{http://www.w3.org/TR/ws-arch/#relwwwrest}.
+
+\end{thebibliography}

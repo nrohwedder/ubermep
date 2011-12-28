@@ -1,0 +1,8 @@
+ubermepToUberlay <- read.table("/Users/nrohwedder/IdeaProjects/itm/ubermep-parent/evaluation/UbermepToUberlay50Runs.txt", header=TRUE, sep="\t", check.names=FALSE)
+
+pdf(file="/Users/nrohwedder/bachelorarbeit/thesis/img/evaluation_UberlayToUbermepSingleHopBoxPlot.pdf")
+
+par(xpd=TRUE)
+boxplot(ubermepToUberlay,ylab = "Zeit in ms", xlab="Nachrichtentypen")
+legend(3,-2, "* SingleRequestSingleResponse", bty="n", cex = 0.8)
+dev.off()

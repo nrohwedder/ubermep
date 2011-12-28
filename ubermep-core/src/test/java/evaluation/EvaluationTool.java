@@ -150,17 +150,17 @@ public class EvaluationTool {
 	}
 
 	public static int[] createKeyArrayForPayloadToOverhead() {
-		int[] keyArray = new int[1];
+		int[] keyArray = new int[7];
 
-		/*keyArray[0] = 1;
+		keyArray[0] = 1;
 		keyArray[1] = 10;
 		keyArray[2] = 100;
 		keyArray[3] = 1000;
 		keyArray[4] = 10000;
 		keyArray[5] = 100000;
-		keyArray[6] = 1000000;*/
+		keyArray[6] = 1000000;
 		//keyArray[0] = 10000000;
-		keyArray[0] = 100000000;
+		//keyArray[0] = 100000000;
 
 		return keyArray;
 	}

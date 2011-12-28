@@ -1,0 +1,20 @@
+examples <- read.table("/Users/nrohwedder/bachelorarbeit/thesis/docs/Evaluation_Example.txt", header=TRUE, sep="\t", check.names=FALSE)
+
+pdf(file="/Users/nrohwedder/bachelorarbeit/thesis/img/evaluation_example.pdf")
+
+boxplot(examples$Example, ylab="Gesamter Wertebereich", xlab="Boxplot fŸr einen Wertebereich")
+par(xpd=TRUE)
+arrows(1.1,20,1.02,20, 0.07)
+arrows(1.23,15.9,1.23,10.1, 0.05, code = 3)
+arrows(1.23,9.9,1.23,7.1, 0.05, code = 3)
+arrows(1.23,6.9,1.23,6.1, 0.05, code = 3)
+arrows(1.23,5.9,1.23,4.1, 0.05, code = 3)
+arrows(0.7,7,0.79,7, 0.07)
+legend(1.06,20.6, "Ausrei§er", bty="n")
+legend(1.2,13.9, "Oberer Whisker", bty="n")
+legend(1.2,9.1, "Oberes Quartil", bty="n")
+legend(1.2,7.1, "Unteres Quartil", bty="n")
+legend(1.2,5.6, "Unterer Whisker", bty="n")
+legend(0.53,7.7, "Median", bty="n")
+
+dev.off()

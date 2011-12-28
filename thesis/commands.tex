@@ -1,0 +1,428 @@
+%------------------------------------------------------------------------------
+%- PAKETE
+%------------------------------------------------------------------------------
+	%DIN A4
+		\usepackage{a4}   
+
+	%Fancy headers
+		\usepackage{fancyhdr}
+	
+	%Sprache einstellen (Inhaltsverzeichnis, ...)
+		\usepackage[english, ngerman]{babel} %american,italian,german
+	
+	%Euro Zeichen
+		\usepackage{eurosym}	
+		
+		\usepackage[bookmarks=true,
+					bookmarksopen=true,
+   					% Lesezeichen ausgeklappt
+					bookmarksnumbered=true,
+					colorlinks=true,
+				   	%Einfärbung von Links
+					linkcolor=black
+					% Linkfarbe: schwarz					
+					]
+				    % Anzeige der Kapitelzahlen am Anfang der Namen der Lesezeichen
+				   {hyperref}
+		
+	% Vereinfachtes Eingeben von Leerschlägen hinter Shortcut-Commands
+	% Beispiel: \newcommand{\DNA}{desoxyribose nucleid acid\xspace}
+		\usepackage{xspace}
+	
+	%Sortierte Literaturverweise
+		\usepackage{cite}
+			
+	%Grafiken
+		\usepackage{float} %Float-Handling mit Schalter H (gleiche Position wie im Skript)
+		%\usepackage{flafter} %Verhindert Figuren vor ihrer ersten Referenz
+		\usepackage{placeins} %Barriere für Float-Umgebungen erzeugen mit \FloatBarrier
+	
+	%Verbessertes Beschriften mir div. Optionen
+		\usepackage{caption}
+	
+	%Zusaetzliche Symbole und Schriften (ams: american mathematical soc)
+		\usepackage{amssymb}
+		%\usepackage{amstext}
+		%\usepackage{amsfonts}
+		%\usepackage{amsbsy}
+		%\usepackage{amscd}
+		%\usepackage{latexsym}
+
+	%Text Companion fonts which provide many text symbols (such as baht, bullet, copyright, musicalnote, onequarter, section, and yen) in the TS1 encoding.
+		\usepackage{textcomp}
+	
+	%Drehen von Text, Tabellen, Seiten
+		%\usepackage{rotating}
+	
+	%including graphics files, rotating parts of a page, and scaling parts of a page
+		\usepackage{graphicx}
+	
+	%Nice drawing package
+		%\usepackage{tikz}               
+	
+	%besserer eps import: \eps import ERSETZEN durch \epsfig
+		\usepackage{epsf}
+	
+	%Farbunterstützung (ausserhalb der Bilder)
+		\usepackage{color}
+	
+	%Postcript einbinden, wobei Text ersetzt werden kann
+		%\usepackage{psfrag}
+	
+	%Für den Index
+		\usepackage{makeidx}
+		\makeindex %Muss vor begin{document}, sonst passiert nix
+	
+	%Erleichterungen fürs Deutsche inkl Silbentrennung
+		%\usepackage[german]
+	
+	%Ensure minimal spacing of table cells (http://www.ctan.org/tex-archive/help/Catalogue/entries/cellspace.html)
+		\usepackage{cellspace}
+	
+	%Direkte Eingabe von Umlauten mit Angabe von Schriftsatz
+	%in Kombination mit 'german' sind jetzt ä direkt erlaubt!
+		\usepackage[latin1]{inputenc}
+		%\usepackage{ngerman}
+	
+	%Source code Listings 
+		\usepackage{listings}
+	
+	%Darstellung von Algorithmen
+		\usepackage{algorithm}
+		\usepackage{algorithmic}
+	
+	%Subfigures
+		\usepackage{subfigure}
+
+%-- Fieser Hack für Subfigures (braucht man, um lstlistings im Subfigures zu nutzen)
+\newbox\subfigbox
+\makeatletter
+\newenvironment{subfloat}
+{\def\caption##1{\gdef\subcapsave{\relax##1}}%
+\let\subcapsave\@empty
+\setbox\subfigbox\hbox
+\bgroup}
+{\egroup
+\subfigure[\subcapsave]{\box\subfigbox}}
+\makeatother
+	
+	%Automatically adds the bibliography and/or the index and/or the contents, etc., to the Table of Contents listing.
+		%\usepackage[nottoc]{tocbibind} %,notlot,notlof
+	
+	%St Mary Road symbols for theoretical computer science.
+		%\usepackage{stmaryrd}
+	
+	%URL Darstellung
+		\usepackage{url}
+
+	%PDF und Standard Latex Unterscheidung
+		\usepackage{ifpdf} 
+
+	%Fancy verbose environments
+		\usepackage{fancyvrb}	
+
+	%Abkürzungsverzeichnis
+		\usepackage{nomencl}
+		  \let\abbrev\nomenclature
+		  \renewcommand{\nomname}{Abkürzungsverzeichnis}
+		  \setlength{\nomlabelwidth}{.25\hsize}
+		  \renewcommand{\nomlabel}[1]{#1 \dotfill}
+		  \setlength{\nomitemsep}{-\parsep}
+		  \makenomenclature
+
+	  \newcommand{\abk}[2]{#1\abbrev{#1}{#2}}
+				
+	%With \usepackage{ulem}, you have the following new commands:
+		%    * \uline{important} underlined text
+		%    * \uuline{urgent} double-underlined text
+		%    * \uwave{boat} wavy underline
+		%    * \sout{wrong} line drawn through word
+		%    * \xout{removed} marked over with //////.
+		%    * {\em phasized\/} and \emph{asized} In LaTeX, by default, these are underlined; use \normalem or [normalem] to restore italics
+		%    * \useunder{\uwave}{\bfseries}{\textbf} use wavy underline in place of bold face 
+		%Note that this package changes \em and \emph to be underline. To change this behavior back to normal, use the \normalem command, for example
+		%\usepackage{ulem}
+		%\normalem
+		%\usepackage[normalem]{ulem}
+
+	  %\newcommand{\markup}[1]{\uline{#1}}	
+
+	% package to customize the three basic lists (enumerate, itemize and description) 
+	% by means of a set of parameters, and to clone them to define new "logical" lists.
+		\usepackage{enumitem}
+		\setitemize{enumsep=-3pt}
+		\setitemize{itemsep=-3pt}
+
+	%Definitionen
+		\usepackage{theorem}
+		\newcounter{theorem}
+		\newtheorem{definition}[theorem]{Definition}
+
+	%Zitate
+		\newcounter{quotectr}
+		\newtheorem{myquote}[quotectr]{Zitat}
+
+%------------------------------------------------------------------------------
+%- Layout
+%------------------------------------------------------------------------------
+
+	%Tiefe des Inhaltsverzeichnisses und der Nummerierung der Kapitel
+		\setcounter{secnumdepth}{2}
+		\setcounter{tocdepth}{2}
+
+	%Call this after each chapter to avoid headlines on empty pages
+		\newcommand{\chapterfin}{\clearpage{\pagestyle{empty}\cleardoublepage}}
+		\newcommand{\sectionfin}{\clearpage{\pagestyle{empty}\cleardoublepage}}
+
+	% Listings schoen machen 
+		\renewcommand*\ttdefault{txtt}
+	
+		\lstset{%
+		  breaklines=true,
+		  basicstyle=\ttfamily\footnotesize,%
+		  moredelim=[is][\fontseries{lt}\bfseries]{|}{|},%
+		  captionpos=b,%
+		  numbers=left,%
+		  tabsize=1,%
+		  numberstyle=\tiny,%
+		  numbersep=6pt,%
+		  frame=lr,%
+		  framesep=0pt,%
+		  framexleftmargin=5pt,%
+		  framextopmargin=0pt,%
+		  framexbottommargin=0pt,%
+		  xleftmargin=15pt,%
+		  xrightmargin=15pt,%
+			abovecaptionskip=0pt,%
+			belowcaptionskip=-0pt,%
+		}	
+		
+		\lstdefinelanguage{XMLSchema}
+			{morekeywords={schema,element,annotation,appinfo,complexType,simpleType,choice,all,sequence},		
+			sensitive=true,
+%			morecomment=[l]{//},
+%			morecomment=[s]{/*}{*/},
+			morestring=[b]",
+		}
+		
+		\lstdefinelanguage{ASN1}
+			{morekeywords={},		
+			sensitive=true,
+%			morecomment=[l]{//},
+%			morecomment=[s]{/*}{*/},
+			morestring=[b]",
+		}
+		
+	
+	% Font
+	%
+	%	Danach muss man die Standardschriftart setzen mit dem Befehl \fontfamily{abr}\selectfont, 
+	% der für das gesamte restliche Dokument gilt, oder mit {\fontfamily{abr}\selectfont Some Text} 
+	% um nur den eingeklammerten Bereich zu betreffen. abr ist die Abkürzung für die Schriftart. Die 
+	% häufigsten sind ptm (Times), phv (Helvetica), pcr (Courier), pbk (Bookman), pag (Avant Garde), 
+	% ppl (Palatino), bch (Charter), pnc (New Century Schoolbook), pzc (Zapf Chancery), put (Utopia ).
+
+	% Schönerer tt font:
+		%\renewcommand{\ttdefault}{pcr}
+		%\selectfont
+	
+	% Times
+		%\usepackage{times}
+		
+	%	Helvetica
+			%\usepackage{helvet}
+			%\renewcommand{\familydefault}{\sfdefault}
+			%\renewcommand{\familydefault}{phv}
+			%\fontfamily{abr}\selectfont
+			
+	%	Courier
+			%\usepackage{courier} \raggedright
+			%\renewcommand{\familydefault}{\ttdefault}
+	
+	% Absatzformatierungen:
+	% Keeps the distance between paragraphs constant
+		\setlength{\parskip}{1.5ex plus 0.0ex minus 0.0ex}
+		\setlength{\parindent}{0pt}
+	
+	% Modify the placement of figures: from faq source: You can adjust the cut-off value if you like, 
+	% but it makes no sense to go higher than .95 (LaTeX's default value is only .5). Also, the first 
+	% 3 values should be equal, and the last should be 1 - \floatpagefraction.  Otherwise, you are 
+	% likely to get floats flushed to the end. 
+		\renewcommand{\floatpagefraction}{0.9}
+		\renewcommand{\topfraction}{0.9}
+		\renewcommand{\bottomfraction}{0.9}
+		\renewcommand{\textfraction}{0.1}
+		\renewcommand{\textfloatsep}{5mm}
+	
+	% Zeilenabstand
+		\renewcommand{\baselinestretch}{1.0}
+
+	% Fancyheaders 	
+		\fancyhf{} % Delete all fields
+		%\fancyhead[EL,OR]{\thepage}
+		\fancyhead[EL]{\nouppercase{\leftmark}}
+		\fancyhead[OR]{\nouppercase{\rightmark}}
+		\fancyfoot[EL,OR]{\thepage}	
+		
+	% Itemize look and feel
+		\renewcommand{\labelitemi}{\rule[+0.9mm]{2.7pt}{2.7pt}}
+		\renewcommand{\labelitemii}{--}
+		%\renewcommand{\labelitemiii}{}
+		%\renewcommand{\labelitemiv}{\#}	
+
+	% Floats richtig benennen:
+		%\floatname{algorithm}{Algorithm}
+		%\renewcommand{\listalgorithmname}{Algorithmen}
+		
+%------------------------------------------------------------------------------
+%- Textbausteine
+%------------------------------------------------------------------------------
+
+	%Helpers
+		\newcommand{\todo}[1]				{{\em [#1]}\marginpar{{\bf [!!!]}} }
+		
+		\newcommand{\eigenname}[1]	{{\em #1}}
+		
+	%Deutsch
+		\newcommand{\figref}[1]{Abbildung~\ref{fig:#1}}
+		\newcommand{\tabref}[1]{Tabelle~\ref{tab:#1}}
+		\newcommand{\equref}[1]{Gleichung~\ref{equ:#1}}
+		\newcommand{\chapref}[1]{Kapitel~\ref{cha:#1}}
+		\newcommand{\appref}[1]{Anhang~\ref{cha:#1}}
+		\newcommand{\secref}[1]{Abschnitt~\ref{sec:#1}}
+		\newcommand{\lstref}[1]{Listing~\ref{lst:#1}}
+		\newcommand{\algref}[1]{Algorithmus~\ref{alg:#1}}
+		\newcommand{\ssecref}[1]{Unterabschnitt~\ref{ssec:#1}}
+		\newcommand{\quoteref}[1]{Zitat~\ref{quote:#1}}
+
+	%Englisch	
+		%\newcommand{\figref}[1]		{Figure~\ref{fig:#1}}
+		%\newcommand{\tabref}[1]		{Table~\ref{tab:#1}}
+		%\newcommand{\equref}[1]		{Equation~\ref{equ:#1}}
+		%\newcommand{\algref}[1]		{Algorithm~\ref{alg:#1}}
+		%\newcommand{\defref}[1]		{Definition~\ref{def:#1}}
+		%\newcommand{\quoteref}[1]	{Quote~\ref{quote:#1}}
+		
+		%\newcommand{\chapref}[1]	{Chapter~\ref{cha:#1}}
+		%\newcommand{\appref}[1]		{Appendix~\ref{cha:#1}}
+		%\newcommand{\secref}[1]		{Section~\ref{sec:#1}}
+		%\newcommand{\ssecref}[1]	{Section~\ref{ssec:#1}}
+		%\newcommand{\sssecref}[1]	{Section~\ref{sssec:#1}}
+		
+	% REDEFINE UGLY STUFF
+		\renewcommand{\leq}		{\leqslant}
+		\renewcommand{\geq}		{\geqslant}
+		\renewcommand{\epsilon}	{\varepsilon}
+		\newcommand{\musec}		{$\mu sec$\xspace}
+		\newcommand{\muW}		{$\mu W$\xspace}
+		\newcommand{\plusminus}	{$\pm $\xspace}
+	
+%------------------------------------------------------------------------------
+%- Worttrennung
+%------------------------------------------------------------------------------
+	
+	%\hyphenation{Ge-samt-ozon}	
+	\hyphenation{name-space}	
+	\hyphenation{name-spaces}
+	
+	\hyphenation{ge-samten}
+	\hyphenation{Ziel-addresse}
+	\hyphenation{Single-Request-Single-Response}
+	\hyphenation{Single-Request-Multi-Response}
+	\hyphenation{Multi-Request-Multi-Response}
+	%\hyphenation{}		
+%------------------------------------------------------------------------------
+%- Grafiken
+%------------------------------------------------------------------------------
+
+	\ifpdf
+	  \DeclareGraphicsExtensions{.jpg,.pdf,.png}   % for pdftex driver
+	\else
+	  \DeclareGraphicsExtensions{.eps}             % for dvips driver
+	\fi
+	
+	% Vereinfacht die Einbettung von Grafiken
+	% Beispiel: \myfig[5cm]{psdatei}{Übersicht über das Gesamtsystem}
+	\newcommand{\myfig}[3][\columnwidth]
+	{
+	 \begin{figure}[htbp]
+		 \begin{center}
+			 \includegraphics[width=#1]{img/#2}
+			 \caption{#3}
+			 \label{fig:#2}
+		 \end{center}
+	 \end{figure}
+	}
+	
+	\newcommand{\myfigtwo}[4][\columnwidth]
+	{
+		 \begin{figure}[htbp]
+				\begin{center}
+				  \mbox
+				  {
+				    \subfigure[#2] 
+				    { \includegraphics[width=.45\columnwidth]{img/#1-a} \label{fig:#1-a} } 
+				    \quad
+				    \subfigure[#3]
+				    { \includegraphics[width=.45\columnwidth]{img/#1-b} \label{fig:#1-b} }
+			    }
+				  \caption{#4}
+					\label{fig:#1}
+				\end{center}
+			\end{figure}
+	}
+	
+	\newcommand{\myfigthree}[5][\columnwidth]
+	{
+		 \begin{figure}[htbp]
+				\begin{center}
+				  \mbox{
+				    \subfigure[#2]
+				    {
+				    	\includegraphics[width=.3\columnwidth]{img/#1-a}
+				    	\label{fig:#1-a}
+				    } 
+				    \subfigure[#3]
+				    {
+							\includegraphics[width=.3\columnwidth]{img/#1-b}
+				    	\label{fig:#1-b}
+				    }
+				    \subfigure[#4]
+				    {
+							\includegraphics[width=.3\columnwidth]{img/#1-c}
+				    	\label{fig:#1-c}
+				    }
+			    }	
+				  \caption{#5}
+					\label{fig:#1}
+				\end{center}
+			\end{figure}
+	}
+	
+	\newcommand{\myfigfour}[6][\columnwidth]
+	{
+		 \begin{figure}[htbp]
+				\begin{center}
+				  \mbox
+				  {
+				    \subfigure[#2] 
+				    { \includegraphics[width=.45\columnwidth]{img/#1-a} \label{fig:#1-a} } 
+				    \quad
+				    \subfigure[#3]
+				    { \includegraphics[width=.45\columnwidth]{img/#1-b} \label{fig:#1-b} }
+			    }
+				  \mbox
+				  {
+				    \subfigure[#4] 
+				    { \includegraphics[width=.45\columnwidth]{img/#1-c} \label{fig:#1-c} } 
+				    \quad
+				    \subfigure[#5]
+				    { \includegraphics[width=.45\columnwidth]{img/#1-d} \label{fig:#1-d} }
+			    }
+			    
+				  \caption{#6}
+				\label{fig:#1}
+				\end{center}
+			\end{figure}
+	}
+	

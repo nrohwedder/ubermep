@@ -1,5 +1,6 @@
 package de.uniluebeck.itm.ubermep.mep.channel.pipelinefactory;
 
+import de.uniluebeck.itm.uberlay.TransmissionRateEmulationHandler;
 import de.uniluebeck.itm.ubermep.mep.channel.servicehandler.reliable.impl.ReliableServiceHandler;
 import de.uniluebeck.itm.ubermep.mep.channel.servicehandler.unreliable.UnreliableServiceHandler;
 import de.uniluebeck.itm.ubermep.mep.protocol.MEP;
@@ -40,6 +41,7 @@ public class UbermepApplicationChannelPipelineFactory implements ChannelPipeline
 	@Override
 	public ChannelPipeline getPipeline() throws Exception {
 		final ChannelPipeline pipeline = Channels.pipeline();
+
 		pipeline.addLast(CHANNEL_PIPELINE_PROTOBUF_ENCODER_MEP_NAME, new ProtobufEncoder());
 		pipeline.addLast(CHANNEL_PIPELINE_PROTOBUF_DECODER_MEP_NAME,
 				new ProtobufDecoder(MEP.MEPPacket.getDefaultInstance()));

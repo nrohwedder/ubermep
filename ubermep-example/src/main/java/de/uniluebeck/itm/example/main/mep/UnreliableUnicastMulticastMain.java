@@ -61,6 +61,10 @@ public class UnreliableUnicastMulticastMain {
 		transitHost.start();
 		client.start();
 
+
+		client.connect(server.getLocalSocketAddress());
+
+		log.info("{}", client.getRemoteSocketAddress());
 		//wait for network to build up
 		Thread.sleep(11000);
 

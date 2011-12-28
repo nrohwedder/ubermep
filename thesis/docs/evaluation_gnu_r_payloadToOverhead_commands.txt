@@ -1,0 +1,21 @@
+payloadToOverhead <- read.table("/Users/nrohwedder/IdeaProjects/itm/ubermep-parent/evaluation/PayloadToOverheadFor100Runs.txt", header=TRUE, sep="\t", check.names=FALSE)
+
+pdf(file="/Users/nrohwedder/bachelorarbeit/thesis/img/evaluation_PayloadToOverhead1To100000SingleHopBoxPlot.pdf")
+
+boxplot(payloadToOverhead[,c(1,2,3,4,5)],ylab = "Zeit in ms", xlab="Grš§e in Byte(s)")
+dev.off()
+
+pdf(file="/Users/nrohwedder/bachelorarbeit/thesis/img/evaluation_PayloadToOverhead100000BytesSingleHopBoxPlot.pdf")
+
+boxplot(payloadToOverhead$"100000",ylab = "Zeit in ms", xlab="Grš§e in Byte(s)")
+dev.off()
+
+pdf(file="/Users/nrohwedder/bachelorarbeit/thesis/img/evaluation_PayloadToOverheadSingleHopBoxPlot.pdf")
+
+boxplot(payloadToOverhead,ylab = "Zeit in ms", xlab="Grš§e in Byte(s)", log = "y")
+dev.off()
+
+pdf(file="/Users/nrohwedder/bachelorarbeit/thesis/img/evaluation_PayloadToOverheadSingleHopBoxPlot.pdf", width = 7)
+
+boxplot(payloadToOverhead,ylab = "Zeit in ms", xlab="Grš§e in Byte(s)")
+dev.off()

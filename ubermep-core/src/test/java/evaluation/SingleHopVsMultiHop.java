@@ -136,9 +136,11 @@ public class SingleHopVsMultiHop {
 	private static SingleRequestSingleResponseRequestListener singleRequestSingleResponseRequestListener = new SingleRequestSingleResponseRequestListener() {
 		@Override
 		public byte[] handleSingleRequestSingleResponseRequest(String senderUrn, byte[] requestPayload) throws UbermepExceptionEvent {
+			long stoppageTime = System.currentTimeMillis();
 			if (new String(requestPayload).equals(MESSAGE)){
-				((EvaluationTool.SingleRequestSingleResponseTimeInterval) interval)
-						.setHandlerStoppageTime(System.currentTimeMillis());
+				interval.setStopTimestamp(stoppageTime);
+				//((EvaluationTool.SingleRequestSingleResponseTimeInterval) interval)
+						//.setHandlerStoppageTime(System.currentTimeMillis());
 			}
 			return "done".getBytes();
 		}
@@ -154,8 +156,8 @@ public class SingleHopVsMultiHop {
 
 	public static void main(String[] args) throws ExecutionException, InterruptedException, IOException, ServiceException {
 		//setMessageType(MessageType.UnreliableUnicast);
-		setMessageType(MessageType.SingleRequestSingleResponse);
-		//setMessageType(MessageType.Uberlay);
+		//setMessageType(MessageType.SingleRequestSingleResponse);
+		setMessageType(MessageType.Uberlay);
 		//setMessageType(MessageType.RPC);
 
 		int[] hops = EvaluationTool.createKeyArrayForSingleHopVsMultiHop();
@@ -222,7 +224,8 @@ public class SingleHopVsMultiHop {
 		UPAddress destUrn = serverUrn;
 
 		long startingTime = System.currentTimeMillis();
-		interval = new EvaluationTool.SingleRequestSingleResponseTimeInterval(startingTime);
+		//interval = new EvaluationTool.SingleRequestSingleResponseTimeInterval(startingTime);
+		interval = new EvaluationTool.TimeInterval(startingTime);
 		long stoppageTime;
 		Future<Response> responseFuture;
 
@@ -265,7 +268,6 @@ public class SingleHopVsMultiHop {
 
 				interval = new EvaluationTool.TimeInterval(serviceMsg.getStartTimeInMillis());
 				interval.setStopTimestamp(stoppageTime);
-				//currentIntervalMap.put(hop, interval);
 				break;
 		}
 	}
@@ -328,7 +330,6 @@ public class SingleHopVsMultiHop {
 					ubermepTransitHost1 = new PeerImpl(transitHost1Urn, transitHost1LocalSocketAddress, clientLocalSocketAddress);
 					ubermepServer = new PeerImpl(serverUrn, serverLocalSocketAddress, transitHost1LocalSocketAddress);
 
-					ubermepTransitHost1.addRequestListener(unicastMulticastRequestListener);
 					ubermepServer.addRequestListener(unicastMulticastRequestListener);
 					ubermepServer.addRequestListener(singleRequestSingleResponseRequestListener);
 					ubermepServer.registerBlockingService(evaluationBlockingService);

@@ -36,7 +36,7 @@ public class PayloadToOverhead {
 
 	private static boolean errorOccurs = false;
 	private static int CURRENT_RUNS = 0;
-	private static final int TOTAL_RUNS = 10;
+	private static final int TOTAL_RUNS = 100;
 	private static final String FILE_NAME = EvaluationTool.formatOutput("PayloadToOverheadFor{}Runs.txt", TOTAL_RUNS);
 
 	private static HashMap<Integer, EvaluationTool.TimeInterval> currentIntervalMap = new HashMap<Integer, EvaluationTool.TimeInterval>();
