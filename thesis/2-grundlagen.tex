@@ -7,7 +7,7 @@ Im diesem Kapitel werden die technischen Grundlagen dieser Arbeit er"ortert, wel
 \label{sec:p-2-p}
 
 \cite{peer_to_peer_system_architekturen}
-Die klassische Internetkommunikation basiert auf der Client-Server-Architektur. Ausgew"ahlte Server (meist abh"angig von Leistungsf"ahigkeit) bieten Dienste, Dateien, Inhalte etc. an, die Clients konsumieren diese Ressourcen. Der Vorteil hierbei: Kennen Clients einen ausgew"ahlten Server, so lassen sich Dienste, Daten oder Inhalte leicht auffinden. Allerdings besitzt diese Architektur einige Nachteile: 
+Die klassische Internetkommunikation basiert auf der Client-Server-Archi\-tek\-tur. Ausgew"ahlte Server (meist abh"angig von Leistungsf"ahigkeit) bieten \\ Diens\-te, Dateien, Inhalte etc. an, die Clients konsumieren diese Ressourcen. Der Vorteil hierbei: Kennen Clients einen ausgew"ahlten Server, so lassen sich Dienste, Daten oder Inhalte leicht auffinden. Allerdings besitzt diese Architektur einige Nachteile: 
 \begin{itemize}
 \item Ist ein Server vor"ubergehend nicht erreichbar, so sind deren s"amtlich angebotene Ressourcen ebenfalls nicht verf"ugbar. Dies entspricht dabei dem System des \emph{Single Point of Failure}, d.h. der Ausfall des Servers sorgt f"ur den Zusammenbruch des ganzen Systems (Netzwerk). Dies kann zwar durch z.B. redundante Datenhaltung verhindert werden, verschiebt dabei aber nur das eigentliche Problem des Systems und l"ost es nicht.
 \item Die theoretisch zur Verf"ugung stehenden Ressourcen von Clients sind f"ur andere Clients nicht verf"ugbar. So ist z.B. das \emph{Filesharing}, bei dem Nutzer untereinander Dateien teilen oder das Nutzen der \emph{Grid Computing} Technologie in dem Rechenleistung geteilt wird, nicht oder nur bedingt m"oglich.
@@ -68,7 +68,7 @@ Dieses Verfahren erlaubt den Aufruf von entfernten Prozeduren (z.B. auf einem ve
 \myfig[13 cm]{rpc_arch-b}{Ablauf eines Remote-Procedure-Call}
  Der Ablauf eines Remote Procedure Calls sieht wie folgt aus:
 
-Auf dem Client wird f"ur eine Applikationslogik (1) mittels einem Service-Interface (2) ein Stub (Stellvertreter) generiert. Dieser Stub serialisiert den Aufruf (Marshalling), welcher dann "uber einen Kommunikationskanal an den Server "uber\-tra\-gen wird (3). Auf dem Server wird dann die serialisierte Nachricht vom Skeleton (4) in einen Aufruf deserialisiert (Unmarshalling). Mittels des Service-Interface (5) (dasselbe wie am Client) wird dann die entsprechende Service-Implementierung aufgerufen (6). Das Ergebnis wird "uber den Server-Skeleton serialisiert, an den Stub des Clients "uber\-tra\-gen und anschliessend wieder deserialisiert. Das Ergebnis kann schlie"slich in der Applikationslogik am Client verarbeitet werden.
+Auf dem Client wird f"ur eine Applikationslogik (1) mittels einem Service-Inter\-face (2) ein Stub (Stellvertreter) generiert. Dieser Stub serialisiert den Aufruf (Marshalling), welcher dann "uber einen Kommunikationskanal an den Server "uber\-tra\-gen wird (3). Auf dem Server wird dann die serialisierte Nachricht vom Skeleton (4) in einen Aufruf deserialisiert (Unmarshalling). Mittels des Service-Interface (5) (dasselbe wie am Client) wird dann die entsprechende Service-Implementierung aufgerufen (6). Das Ergebnis wird "uber den Server-Skeleton serialisiert, an den Stub des Clients "uber\-tra\-gen und anschliessend wieder deserialisiert. Das Ergebnis kann schlie"slich in der Applikationslogik am Client verarbeitet werden.
 
 Die Abbildung \ref{fig:rpc_arch-b} zeigt dabei den oben beschriebenen Ablauf eines RPC.
 
@@ -191,7 +191,7 @@ message Book{
 
 \subsection{Protobuf und RPC}
 Des weiteren bietet protobuf die M"oglichkeit RPC-Services (siehe dazu Abschnitt \ref{sec:rpc}) zu generieren, wie im folgenden Beispiel (Listing \ref{lst:protobuf-rpc}) erl"autert. 
-Daf"ur wird im ersten Schritt die Option \emph{java\_generic\_services} (f"ur Java-Applikationen) gesetzt --- f"ur weitere Programmiersprachen siehe \cite{protobuf_options}. Anschlie"send folgt die Beschreibung des Service, der in diesem Beispiel einen RPC-Aufruf \emph{order} erzeugt, welcher einen BookOrderRequest "ubergeben bekommt und einen BookOrderResponse zur"uckliefert.
+Daf"ur wird im ersten Schritt die Option \emph{java\_generic\_services} (f"ur Java-Appli\-ka\-tionen) gesetzt --- f"ur weitere Programmiersprachen siehe \cite{protobuf_options}. Anschlie"send folgt die Beschreibung des Service, der in diesem Beispiel einen RPC-Aufruf \emph{order} erzeugt, welcher einen BookOrderRequest "ubergeben bekommt und einen BookOrderResponse zur"uckliefert.
 
 \begin{lstlisting}[label=lst:protobuf-rpc, caption=Erweiterung der {\it proto}-Nachricht f"ur RPC, firstnumber=27]
 option java_generic_services = true;
@@ -218,18 +218,18 @@ Uberlay unterst"utzt den Aufbau von Multi-Hop Netzwerken (siehe Abschnitt \ref{s
 
 Das Uberlay-Netzwerk lehnt sich konzeptuell stark an IP an. Hierzu wurde f"ur den Paket-Transport ein einfaches (mittels Google Protobuf erstelltes) Protokoll entwickelt: das Uberlay-Protokoll (UP).
 
-Anwendungen, welche das Uberlay-Netzwerk verwenden, h"angen sich als ChannelHandler in die daf"ur bestimmte ChannelPipeline ({\bf ApplicationChannelPipeline}) ein (siehe Abbildung \ref{fig:uberlay_arch}). Dabei entspricht die ApplicationChannelPipeline einer Netty-ChannelPipeline (siehe Abschnitt \ref{sec:netty}) zur Verarbeitung von Nachrichten durch entsprechende Handler. Nachrichten werden, "ahnlich wie bei UDP, an andere Uberlay-Hosts gesendet, indem in den versendeten Protokoll-Nachrichten zus"atzlich die Adresse des Ziel-Knotens im Overlay-Netzwerk angegeben werden.
+Anwendungen, welche das Uberlay-Netzwerk verwenden, h"angen sich als ChannelHandler in die daf"ur bestimmte ChannelPipeline ({\bf Application\-Channel\-Pipeline}) ein (siehe Abbildung \ref{fig:uberlay_arch}). Dabei entspricht die ApplicationChannelPipeline einer Netty-ChannelPipeline (siehe Abschnitt \ref{sec:netty}) zur Verarbeitung von Nachrichten durch entsprechende Handler. Nachrichten werden, "ahnlich wie bei UDP, an andere Uberlay-Hosts gesendet, indem in den versendeten Protokoll-Nachrichten zus"atzlich die Adresse des Ziel-Knotens im Overlay-Netzwerk angegeben werden.
 
 Die Klasse {\bf UberlayNexus} verbindet nun die ChannelPipeline der Applikation, mit einer Menge von Verbindungen zum Overlay-Netzwerk. Sie implementiert eine Router-Funktionalit"at zum Empfangen ({\bf UPRouter}) und Versenden von Nachrichten ({\bf ApplicationChannelSink}) f"ur UP und w"ahlt je nach Zieladdresse den n"achsten Channel zum n"achsten Hop des Multi-Hop Netzwerk. Der zu benutzende Channel wird mit Hilfe einer Routing-Tabelle ermittelt. Die Routing-Tabelle wird dabei mittels eines implementierten Pfadvektorprotokolls (siehe Abschnitt \ref{subsec:uberlay-pvp}) erzeugt bzw. aktualisiert. Die Metrik der Routing-Tabellen wiederum wird durch das Round Trip Time Protokoll (siehe Abschnitt \ref{subsec:uberlay-rtt}) bestimmt.
 
-Die von Uberlay konfigurierten Encoder und Decoder, in der ChannelPipeline von Uberlay ({\bf UberlayChannelPipeline}), sorgen dann f"ur die Serialisierung bzw. Deserialisierung der Protokollnachrichten. Sollte die Zieladdresse der eigene Netzknoten sein, so wird die Nachricht vom UPRouter wieder an die ChannelPipeline der Applikation hoch gesendet (Loopback-Funktionalit"at).
+Die von Uberlay konfigurierten Encoder und Decoder, in der Channel\-Pipe\-line von Uberlay ({\bf UberlayChannelPipeline}), sorgen dann f"ur die Serialisierung bzw. Deserialisierung der Protokollnachrichten. Sollte die Zieladdresse der eigene Netzknoten sein, so wird die Nachricht vom UPRouter wieder an die ChannelPipeline der Applikation hoch gesendet (Loopback-Funktionalit"at).
 
 \subsection{Pfadvektor Protokoll}
 \label{subsec:uberlay-pvp}
 Wie bereits in Abschnitt \ref{subsec:p2p-routing} erw"ahnt, besitzen Overlay-Netzwerke, zur Adressierung von Peers, Routingverfahren. Das {\it Pfadvektor Routing}, welches in Uberlay verwendet wird, wird nun im Folgenden erl"autert, wobei dieses Routingverfahren kein Overlay-spezifisches Verfahren ist.
 
 \subsubsection{Algorithmus}
-Das Uberlay-Peer-to-Peer Netzwerk unterst"utzt die Nutzung von Multi-Hop-Topologien (siehe Abschnitt \ref{subsec:p2p-topo}). Das bedeutet, sind Peers nicht direkt miteinander verbunden, so m"ussen Nachrichten "uber dazwischenliegende Peers "uber\-tra\-gen werden. Die Entscheidung welche Peers f"ur die Weiterleitungen verwendet werden sollen, trifft das implementierte Routing-Protokoll.
+Das Uberlay-Peer-to-Peer Netzwerk unterst"utzt die Nutzung von Multi-Hop-Topologien (siehe Abschnitt \ref{subsec:p2p-topo}). Das bedeutet, sind Peers nicht direkt mit\-ei\-nan\-der verbunden, so m"ussen Nachrichten "uber dazwischenliegende Peers "uber\-tra\-gen werden. Die Entscheidung welche Peers f"ur die Weiterleitungen verwendet werden sollen, trifft das implementierte Routing-Protokoll.
 Das hier verwendete Pfadvektor Protokoll ist eines von diesen und geh"ort zur Familie der {\it Distanzvektor Routing Protokolle}. 
 
  {\it Distanzvektor Protokolle} dienen dabei zur Berechnung des k"urzesten Weges von einem Start- zu einem Zielknoten. Der Algorithmus sorgt daf"ur, das in periodischen Abst"anden eine Kopie der eigenen Routing-Tabelle an die Nachbarknoten weitergegeben wird, um mittels dieser Tabellen den k"urzesten Weg zu berechnen bzw. zu aktualisieren.
@@ -262,7 +262,7 @@ Die Entwickler des Maven-Projekts \cite{maven} sehen Maven als \emph{software pr
 \begin{itemize}
 \item Erzeugen eines Build-Systems, mit dessen Hilfe ganze Projekte gebaut oder einzelne Build-Phasen durchgef"uhrt werden k"onnen, wie z.B. das Validieren auf Korrektheit der Struktur des Projektverzeichnis und Verf"ugbarkeit aller ben"otigten Projekt-Informationen oder das Testen aller integrierten Software-Tests.
 \item Deklaratives Erzeugen und Verwalten von relevanten Projektinformationen wie z.B. das Verwalten von Abh"angigkeiten zu anderen Projekten.
-\item Versionierung von Projekt-Releases, einschlie"slich der automatisierten Ver"offentlichung auf der Projektseite.
+\item Versionierung von Projekt-Releases, einschlie"slich der automatisierten Ver\-"offentlichung auf der Projektseite.
 \end{itemize}
 \subsection{Funktionsweise}
 \subsubsection{POM}
@@ -308,7 +308,7 @@ Dabei haben die XML-Tags die folgende Bedeutung:
 
 \begin{itemize}
 \item {\bf groupId} enth"alt die eindeutige Produktgruppe unter welcher das Projekt entwickelt wird. (meist in der Form einer umgekehrten Domain wie: de.uniluebeck.
-\item {\bf artifactId} enth"alt die eindeutige Kennung (ID) des Artefakts in der Produktgruppe. Artefakte dienen dabei dem Bauen von Projekten, z.B. beim Erzeugen einer JAR, ist der Dateiname aus \texttt{$<$articfactId$>$-$<$version$>$.jar} zusammengesetzt. 
+\item {\bf artifactId} enth"alt die eindeutige Kennung (ID) des Artefakts in der Produktgruppe. Artefakte dienen dabei dem Bauen von Projekten, z.B. beim Erzeugen einer JAR, ist der Dateiname aus \\ \texttt{$<$articfactId$>$-$<$version$>$.jar} zusammengesetzt. 
 \item {\bf name} beschreibt den vollen ausgeschriebenen Namen des Projekts.
 \item {\bf packaging} definiert den Erstellungstyp des Artefakts des Projekts, wie z.B. {\bf jar}, {\bf war}, {\bf ear} oder {\bf pom}. Um das Generieren k"ummern sich Maven-Plugins.
 \item {\bf version} enth"alt die aktuelle Versionsnummer des Artefakts, welche zur Versionierung von Projekten ben"otigt werden.
@@ -322,10 +322,10 @@ Maven erzeugt die Verzeichnisstruktur eines Softwareprojekts entsprechend des Pr
 
 \lstinputlisting[language=Python,label=lst:maven:ubermep-core-dir]{lst/ubermep-core-dir.txt}
 
-Im Hauptverzeichis befindet sich in der {\tt pom.xml} das POM. Im Unterverzeichnis {\tt src/main/java} befindet sich der Quellcode. Die Quellcode-Dateien werden dann in Verzeichnissen entsprechend der Namen der packages abgelegt. Zus"atzlich ben"otigte Ressourcen finden sich im Verzeichnis {\tt src/main/resources}. Das Verzeichnis {\tt target/classes} enth"alt schlie"slich die compilierten Quellcode-Dateien, sowie das gesamte compilierte gepackte Projekt. Das Ausf"uhren einzelner Build-Phasen, sogenannter \emph{Goals}, erfolgt dabei im Wurzelverzeichnis des Projekts. Im Falle von \emph{compile} erfolgt dies durch das Ausf"uhren des Befehls \texttt{mvn compile}. 
+Im Hauptverzeichis befindet sich in der {\tt pom.xml} das POM. Im Unterverzeichnis {\tt src/main/java} befindet sich der Quellcode. Die Quellcode-Dateien werden dann in Verzeichnissen entsprechend der Namen der packages abgelegt. Zus"atzlich ben"otigte Ressourcen finden sich im Verzeichnis {\tt src/main/resources}. Das Verzeichnis {\tt target/classes} enth"alt schlie"slich die compilierten Quellcode-Da\-teien, sowie das gesamte compilierte gepackte Projekt. Das Ausf"uhren einzelner Build-Phasen, sogenannter \emph{Goals}, erfolgt dabei im Wurzelverzeichnis des Projekts. Im Falle von \emph{compile} erfolgt dies durch das Ausf"uhren des Befehls \texttt{mvn compile}. 
 
 \subsection{Maven in dieser Arbeit}
-Diese Arbeit verwendet Maven um die verschiedenen teils voneinander abh"angigen Module zu trennen. Hierbei gibt es eine {\bf Parent POM}: das {\bf Ubermep-Parent}. Diese Parent-POM ist zust"andig f"ur s"amtliche Untermodule wie {\bf Uberlay-Parent} oder {\bf Ubermep-Core}.
+Diese Arbeit verwendet Maven um die verschiedenen teils voneinander abh"angigen Module zu trennen. Hierbei gibt es eine {\bf Parent POM}: das {\bf Ubermep-Parent}. Diese Parent-POM ist zust"andig f"ur s"amtliche Untermodule wie {\bf Uber\-lay-Parent} oder {\bf Ubermep-Core}.
 
 \section{Mockito}
 \label{sec:mockito}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.12.28)  29 DEC 2011 14:04
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.12.28)  29 DEC 2011 23:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -650,12 +650,19 @@ e
 \c@lstlisting=\count136
 
 (./0-titlepage.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 24.
+<img/Logo_Inst_Telematik_cropped.pdf, id=256, 247.5089pt x 73.6886pt>
+File: img/Logo_Inst_Telematik_cropped.pdf Graphic file (type pdf)
+
+<use img/Logo_Inst_Telematik_cropped.pdf>
+Package pdftex.def Info: img/Logo_Inst_Telematik_cropped.pdf used on input line
+ 17.
+(pdftex.def)             Requested size: 227.62204pt x 67.76959pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 27.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 24.
+LaTeX Font Info:    Try loading font information for U+msb on input line 27.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -667,14 +674,14 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 
 
-{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/L
+ogo_Inst_Telematik_cropped.pdf>] [2
 
 
 ] [3] [4
 
 
-])
-[5] [6
+]) [5] [6
 
 
 ] (./thesis.toc [7])
@@ -684,7 +691,8 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
  [8]
 \openout2 = `1-einleitung.aux'.
 
- (./1-einleitung.tex
+
+(./1-einleitung.tex
 Kapitel 1.
 
 Class scrbook Warning: \float@addtolists detected!
@@ -702,30 +710,22 @@ Class scrbook Warning: \float@addtolists detected!
 
 
 ]
-Overfull \hbox (14.9304pt too wide) in paragraph at lines 19--20
-\OT1/cmr/m/n/10.95 lua-ti-ons-kri-te-ri-en erl[]autert. Ab-schlie-^^Yend wer-de
-n die ge-mes-se-nen Er-geb-nis-se pr[]asen-
- []
+
+LaTeX Warning: Reference `sec:zukunft' on page 2 undefined on input line 17.
 
 ) [2]
 \openout2 = `2-grundlagen.aux'.
 
  (./2-grundlagen.tex
 Kapitel 2.
-
-Overfull \hbox (16.57169pt too wide) in paragraph at lines 9--12
- \OT1/cmr/m/n/10.95 [[][]4[][]] Die klas-si-sche In-ter-net-kom-mu-ni-ka-ti-on 
-ba-siert auf der Client-Server-Architektur.
- []
-
-<img/cs_p2p_arch-a.pdf, id=407, 227.85126pt x 218.8175pt>
+<img/cs_p2p_arch-a.pdf, id=404, 227.85126pt x 218.8175pt>
 File: img/cs_p2p_arch-a.pdf Graphic file (type pdf)
 
 <use img/cs_p2p_arch-a.pdf>
 Package pdftex.def Info: img/cs_p2p_arch-a.pdf used on input line 20.
 (pdftex.def)             Requested size: 169.11055pt x 162.40988pt.
 
-<img/cs_p2p_arch-b.pdf, id=408, 227.85126pt x 221.82875pt>
+<img/cs_p2p_arch-b.pdf, id=405, 227.85126pt x 221.82875pt>
 File: img/cs_p2p_arch-b.pdf Graphic file (type pdf)
 
 <use img/cs_p2p_arch-b.pdf>
@@ -746,7 +746,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 [4 <./img/cs_p2p_arch-a.pdf> <./img/cs_p2p_arch-b.pdf>]
-<img/cs_p2p_overlay.pdf, id=481, 446.66875pt x 228.855pt>
+<img/cs_p2p_overlay.pdf, id=478, 446.66875pt x 228.855pt>
 File: img/cs_p2p_overlay.pdf Graphic file (type pdf)
 
 <use img/cs_p2p_overlay.pdf>
@@ -755,14 +755,14 @@ Package pdftex.def Info: img/cs_p2p_overlay.pdf used on input line 40.
 
 Underfull \vbox (badness 3058) has occurred while \output is active []
 
- [5 <./img/cs_p2p_overlay.pdf>] <img/rpc_arch-a.pdf, id=607, 320.19624pt x 91.3
+ [5 <./img/cs_p2p_overlay.pdf>] <img/rpc_arch-a.pdf, id=604, 320.19624pt x 91.3
 4125pt>
 File: img/rpc_arch-a.pdf Graphic file (type pdf)
 
 <use img/rpc_arch-a.pdf>
 Package pdftex.def Info: img/rpc_arch-a.pdf used on input line 62.
 (pdftex.def)             Requested size: 284.52756pt x 81.168pt.
- <img/rpc_arch-b.pdf, id=609, 310.15875pt x 104.39pt>
+ <img/rpc_arch-b.pdf, id=606, 310.15875pt x 104.39pt>
 File: img/rpc_arch-b.pdf Graphic file (type pdf)
 
 <use img/rpc_arch-b.pdf>
@@ -771,20 +771,14 @@ Package pdftex.def Info: img/rpc_arch-b.pdf used on input line 68.
 
 Underfull \vbox (badness 1242) has occurred while \output is active []
 
- [6 <./img/rpc_arch-a.pdf>]
-Overfull \hbox (6.16924pt too wide) in paragraph at lines 71--72
-[]\OT1/cmr/m/n/10.95 Auf dem Cli-ent wird f[]ur ei-ne Ap-pli-ka-ti-ons-lo-gik (
-1) mit-tels ei-nem Service-Interface
- []
-
-[7 <./img/rpc_arch-b.pdf>] [8]
+ [6 <./img/rpc_arch-a.pdf>] [7 <./img/rpc_arch-b.pdf>] [8]
 LaTeX Font Info:    Try loading font information for OT1+txtt on input line 108
 .
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/ot1txtt.fd
 File: ot1txtt.fd 2000/12/15 v3.1
 )
-<img/netty-arch.pdf, id=665, 356.33125pt x 305.14pt>
+<img/netty-arch.pdf, id=662, 356.33125pt x 305.14pt>
 File: img/netty-arch.pdf Graphic file (type pdf)
  <use img/netty-arch.pdf>
 Package pdftex.def Info: img/netty-arch.pdf used on input line 114.
@@ -803,13 +797,7 @@ Underfull \vbox (badness 2600) has occurred while \output is active []
 [11]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 161.
-
-Overfull \hbox (29.44048pt too wide) in paragraph at lines 193--195
-\OT1/cmr/m/n/10.95 Daf[]ur wird im ers-ten Schritt die Op-ti-on \OT1/cmr/m/it/1
-0.95 ja-va[]generic[]services \OT1/cmr/m/n/10.95 (f[]ur Java-Applikationen)
- []
-
-[12] <img/uberlay_arch.pdf, id=751, 381.425pt x 287.0725pt>
+ [12] <img/uberlay_arch.pdf, id=748, 381.425pt x 287.0725pt>
 File: img/uberlay_arch.pdf Graphic file (type pdf)
 
 <use img/uberlay_arch.pdf>
@@ -818,7 +806,7 @@ Package pdftex.def Info: img/uberlay_arch.pdf used on input line 215.
  [13]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <./img/uberlay_arch.pdf>] <img/uberlay_pvp-a.pdf, id=783, 247.92625pt x 12
+ [14 <./img/uberlay_arch.pdf>] <img/uberlay_pvp-a.pdf, id=780, 247.92625pt x 12
 2.4575pt>
 File: img/uberlay_pvp-a.pdf Graphic file (type pdf)
 
@@ -826,7 +814,7 @@ File: img/uberlay_pvp-a.pdf Graphic file (type pdf)
 Package pdftex.def Info: img/uberlay_pvp-a.pdf used on input line 243.
 (pdftex.def)             Requested size: 169.11055pt x 83.52785pt.
 
-<img/uberlay_pvp-b.pdf, id=784, 241.90375pt x 105.39375pt>
+<img/uberlay_pvp-b.pdf, id=781, 241.90375pt x 105.39375pt>
 File: img/uberlay_pvp-b.pdf Graphic file (type pdf)
 
 <use img/uberlay_pvp-b.pdf>
@@ -836,7 +824,7 @@ Package pdftex.def Info: img/uberlay_pvp-b.pdf used on input line 243.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15 <./img/uberlay_pvp-a.pdf> <./img/uberlay_pvp-b.pdf>]
-<img/uberlay_rtt.pdf, id=846, 309.155pt x 69.25874pt>
+<img/uberlay_rtt.pdf, id=843, 309.155pt x 69.25874pt>
 File: img/uberlay_rtt.pdf Graphic file (type pdf)
 
 <use img/uberlay_rtt.pdf>
@@ -849,9 +837,9 @@ zeich-nis und Verf[]ugbar-
  []
 
 
-Overfull \hbox (30.1375pt too wide) in paragraph at lines 265--266
+Overfull \hbox (3.3708pt too wide) in paragraph at lines 265--266
 []\OT1/cmr/m/n/10.95 Versionierung von Projekt-Releases, ein-schlie^^Y-lich der
- au-to-ma-ti-sier-ten Ver[]offent-
+ au-to-ma-ti-sier-ten Ver-
  []
 
 
@@ -860,29 +848,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [16 <./img/uberlay_rtt.pdf>]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-Overfull \hbox (21.25542pt too wide) in paragraph at lines 311--312
-\OT1/cmr/m/n/10.95 Er-zeu-gen ei-ner JAR, ist der Da-teiname aus $\OML/cmm/m/it
-/10.95 <$\OT1/txtt/m/n/10.95 articfactId$\OML/cmm/m/it/10.95 >$\OT1/txtt/m/n/10
-.95 -$\OML/cmm/m/it/10.95 <$\OT1/txtt/m/n/10.95 version$\OML/cmm/m/it/10.95 >$\
-OT1/txtt/m/n/10.95 .jar
- []
-
-[17] (./lst/ubermep-core-dir.txt
+) [17]
+(./lst/ubermep-core-dir.txt
 LaTeX Font Info:    Font shape `OT1/txtt/bx/n' in size <9> not available
 (Font)              Font shape `OT1/txtt/b/n' tried instead on input line 24.
  [18])
-Overfull \hbox (18.30507pt too wide) in paragraph at lines 325--326
-\OT1/cmr/m/n/10.95 Ver-zeich-nis \OT1/txtt/m/n/10.95 target/classes \OT1/cmr/m/
-n/10.95 enth[]alt schlie^^Y-lich die com-pi-lier-ten Quellcode-Dateien,
- []
-
-
-Overfull \hbox (14.746pt too wide) in paragraph at lines 328--329
-\OT1/cmr/bx/n/10.95 Parent\OT1/cmr/m/n/10.95 . Die-se Parent-POM ist zust[]andi
-g f[]ur s[]amt-li-che Un-ter-mo-du-le wie \OT1/cmr/bx/n/10.95 Uberlay-
- []
-
 (/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 ) [19]
@@ -918,35 +888,35 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<img/mep_arch_unicast.pdf, id=1005, 227.85126pt x 139.52126pt>
+<img/mep_arch_unicast.pdf, id=1002, 227.85126pt x 139.52126pt>
 File: img/mep_arch_unicast.pdf Graphic file (type pdf)
 
 <use img/mep_arch_unicast.pdf>
 Package pdftex.def Info: img/mep_arch_unicast.pdf used on input line 57.
 (pdftex.def)             Requested size: 161.59286pt x 98.95007pt.
 
-<img/mep_arch_multicast.pdf, id=1006, 216.81pt x 133.49875pt>
+<img/mep_arch_multicast.pdf, id=1003, 216.81pt x 133.49875pt>
 File: img/mep_arch_multicast.pdf Graphic file (type pdf)
 
 <use img/mep_arch_multicast.pdf>
 Package pdftex.def Info: img/mep_arch_multicast.pdf used on input line 72.
 (pdftex.def)             Requested size: 161.59286pt x 99.50453pt.
  [22 <./img/mep_arch_unicast.pdf> <./img/mep_arch_multicast.pdf>] <img/mep_arch
-_srsr.pdf, id=1064, 227.85126pt x 34.1275pt>
+_srsr.pdf, id=1061, 227.85126pt x 34.1275pt>
 File: img/mep_arch_srsr.pdf Graphic file (type pdf)
 
 <use img/mep_arch_srsr.pdf>
 Package pdftex.def Info: img/mep_arch_srsr.pdf used on input line 136.
 (pdftex.def)             Requested size: 161.59286pt x 24.2036pt.
 
-<img/mep_arch_srmr.pdf, id=1065, 227.85126pt x 34.1275pt>
+<img/mep_arch_srmr.pdf, id=1062, 227.85126pt x 34.1275pt>
 File: img/mep_arch_srmr.pdf Graphic file (type pdf)
 
 <use img/mep_arch_srmr.pdf>
 Package pdftex.def Info: img/mep_arch_srmr.pdf used on input line 151.
 (pdftex.def)             Requested size: 161.59286pt x 24.2036pt.
 
-<img/mep_arch_mrmr.pdf, id=1066, 221.82875pt x 119.44624pt>
+<img/mep_arch_mrmr.pdf, id=1063, 221.82875pt x 119.44624pt>
 File: img/mep_arch_mrmr.pdf Graphic file (type pdf)
 
 <use img/mep_arch_mrmr.pdf>
@@ -964,7 +934,7 @@ Overfull \hbox (3.03748pt too wide) in paragraph at lines 205--206
 s der Channel-Architektur
  []
 
-<img/mep-channel-arch.pdf, id=1130, 446.66875pt x 214.8025pt>
+<img/mep-channel-arch.pdf, id=1127, 446.66875pt x 214.8025pt>
 File: img/mep-channel-arch.pdf Graphic file (type pdf)
 
 <use img/mep-channel-arch.pdf>
@@ -976,14 +946,14 @@ Overfull \hbox (10.73283pt too wide) in paragraph at lines 224--225
 -spon-ses des Request-Response-
  []
 
-[24] <img/mep_protokoll.pdf, id=1142, 328.22626pt x 30.1125pt>
+[24] <img/mep_protokoll.pdf, id=1139, 328.22626pt x 30.1125pt>
 File: img/mep_protokoll.pdf Graphic file (type pdf)
 
 <use img/mep_protokoll.pdf>
 Package pdftex.def Info: img/mep_protokoll.pdf used on input line 352.
 (pdftex.def)             Requested size: 375.80377pt x 34.47792pt.
  [25 <./img/mep-channel-arch.pdf> <./img/mep_protokoll.pdf>]
-<img/mep_protokoll_unrel_unicast.pdf, id=1195, 225.84375pt x 46.1725pt>
+<img/mep_protokoll_unrel_unicast.pdf, id=1192, 225.84375pt x 46.1725pt>
 File: img/mep_protokoll_unrel_unicast.pdf Graphic file (type pdf)
 
 <use img/mep_protokoll_unrel_unicast.pdf>
@@ -991,7 +961,7 @@ Package pdftex.def Info: img/mep_protokoll_unrel_unicast.pdf used on input line
  418.
 (pdftex.def)             Requested size: 225.84319pt x 46.17236pt.
 
-<img/mep_protokoll_unrel_multicast.pdf, id=1196, 225.84375pt x 46.1725pt>
+<img/mep_protokoll_unrel_multicast.pdf, id=1193, 225.84375pt x 46.1725pt>
 File: img/mep_protokoll_unrel_multicast.pdf Graphic file (type pdf)
 
 <use img/mep_protokoll_unrel_multicast.pdf>
@@ -1002,7 +972,7 @@ ne 424.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/mep_protokoll_rel_unicast.pdf, id=1197, 225.84375pt x 46.1725pt>
+<img/mep_protokoll_rel_unicast.pdf, id=1194, 225.84375pt x 46.1725pt>
 File: img/mep_protokoll_rel_unicast.pdf Graphic file (type pdf)
 
 <use img/mep_protokoll_rel_unicast.pdf>
@@ -1010,7 +980,7 @@ Package pdftex.def Info: img/mep_protokoll_rel_unicast.pdf used on input line 4
 34.
 (pdftex.def)             Requested size: 225.84319pt x 46.17236pt.
 
-<img/mep_protokoll_rel_multicast.pdf, id=1198, 225.84375pt x 46.1725pt>
+<img/mep_protokoll_rel_multicast.pdf, id=1195, 225.84375pt x 46.1725pt>
 File: img/mep_protokoll_rel_multicast.pdf Graphic file (type pdf)
 
 <use img/mep_protokoll_rel_multicast.pdf>
@@ -1021,7 +991,7 @@ Package pdftex.def Info: img/mep_protokoll_rel_multicast.pdf used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/mep_protokoll_srsr_req.pdf, id=1199, 225.84375pt x 46.1725pt>
+<img/mep_protokoll_srsr_req.pdf, id=1196, 225.84375pt x 46.1725pt>
 File: img/mep_protokoll_srsr_req.pdf Graphic file (type pdf)
 
 <use img/mep_protokoll_srsr_req.pdf>
@@ -1029,7 +999,7 @@ Package pdftex.def Info: img/mep_protokoll_srsr_req.pdf used on input line 448.
 
 (pdftex.def)             Requested size: 225.84319pt x 46.17236pt.
 
-<img/mep_protokoll_srsr_res.pdf, id=1200, 225.84375pt x 46.1725pt>
+<img/mep_protokoll_srsr_res.pdf, id=1197, 225.84375pt x 46.1725pt>
 File: img/mep_protokoll_srsr_res.pdf Graphic file (type pdf)
 
 <use img/mep_protokoll_srsr_res.pdf>
@@ -1043,7 +1013,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [26] [27 <./img/mep_protokoll_unrel_unicast.pdf> <./img/mep_protokoll_unrel_mul
 ticast.pdf> <./img/mep_protokoll_rel_unicast.pdf> <./img/mep_protokoll_rel_mult
 icast.pdf> <./img/mep_protokoll_srsr_req.pdf> <./img/mep_protokoll_srsr_res.pdf
->] <img/mep_protokoll_mr_req.pdf, id=1274, 225.84375pt x 46.1725pt>
+>] <img/mep_protokoll_mr_req.pdf, id=1271, 225.84375pt x 46.1725pt>
 File: img/mep_protokoll_mr_req.pdf Graphic file (type pdf)
 
 <use img/mep_protokoll_mr_req.pdf>
@@ -1055,7 +1025,7 @@ Underfull \hbox (badness 2635) in paragraph at lines 460--466
 d Mul-ti Re-
  []
 
-<img/mep_protokoll_mr_res.pdf, id=1275, 400.49625pt x 46.1725pt>
+<img/mep_protokoll_mr_res.pdf, id=1272, 400.49625pt x 46.1725pt>
 File: img/mep_protokoll_mr_res.pdf Graphic file (type pdf)
 
 <use img/mep_protokoll_mr_res.pdf>
@@ -1066,14 +1036,14 @@ Overfull \hbox (31.99149pt too wide) in paragraph at lines 470--471
 [][]
  []
 
-<img/mep_protokoll_rpc_req.pdf, id=1276, 225.84375pt x 46.1725pt>
+<img/mep_protokoll_rpc_req.pdf, id=1273, 225.84375pt x 46.1725pt>
 File: img/mep_protokoll_rpc_req.pdf Graphic file (type pdf)
 
 <use img/mep_protokoll_rpc_req.pdf>
 Package pdftex.def Info: img/mep_protokoll_rpc_req.pdf used on input line 478.
 (pdftex.def)             Requested size: 225.84319pt x 46.17236pt.
 
-<img/mep_protokoll_rpc_res.pdf, id=1277, 225.84375pt x 46.1725pt>
+<img/mep_protokoll_rpc_res.pdf, id=1274, 225.84375pt x 46.1725pt>
 File: img/mep_protokoll_rpc_res.pdf Graphic file (type pdf)
 
 <use img/mep_protokoll_rpc_res.pdf>
@@ -1087,6 +1057,9 @@ rotokoll_rpc_req.pdf> <./img/mep_protokoll_rpc_res.pdf>]
 
  (./4-implementierung.tex
 Kapitel 4.
+
+LaTeX Warning: Reference `sec:zukunft' on page 29 undefined on input line 11.
+
 (./lst/ubermep-parent-dir.txt) [29
 
 
@@ -1099,39 +1072,15 @@ e-ser Ar-beit, wel-ches den Parent-
  []
 
 
-Overfull \hbox (13.51427pt too wide) in paragraph at lines 29--30
-[]\OT1/cmr/bx/n/10.95 ubermep-gui \OT1/cmr/m/n/10.95 enth[]alt ei-ne gra-fi-sch
-e Ober-fl[]ache zum Er-zeu-gen ei-nes Overlay-
- []
-
-
-Overfull \hbox (16.52727pt too wide) in paragraph at lines 37--38
-\OT1/cmr/m/n/10.95 Nachrichten Google-Protobuf ver-wen-det. Im Lis-ting [][]4.2
-[][] ist die mit-tels der Protobuf-
- []
-
-
-Overfull \hbox (9.69633pt too wide) in paragraph at lines 37--38
-\OT1/cmr/m/n/10.95 IDL er-stell-ten Protokoll-Datei zu er-ken-nen, die auf der 
-Spe-zi-fi-ka-ti-on des Protokoll-
+Overfull \hbox (1.01474pt too wide) in paragraph at lines 37--38
+\OT1/cmr/m/n/10.95 Nachrichten Google-Proto-buf ver-wen-det. Im Lis-ting [][]4.
+2[][] ist die mit-tels der Proto-
  []
 
 [30]
 Overfull \hbox (13.12813pt too wide) in paragraph at lines 63--65
 \OT1/cmr/m/n/10.95 sowie den op-tio-na-len \OT1/cmr/m/it/10.95 (op-tio-nal) \OT
 1/cmr/m/n/10.95 Fel-dern, die nur []ubert-ra-gen wer-den, wenn ben[]otigt: 
- []
-
-
-Overfull \hbox (25.03502pt too wide) in paragraph at lines 65--66
-[]\OT1/cmr/bx/n/10.95 requestID \OT1/cmr/m/n/10.95 wird in-tern f[]ur die Ab-ar
--bei-tung von Request-Response-Nachrichten
- []
-
-
-Overfull \hbox (27.55902pt too wide) in paragraph at lines 66--67
-[]\OT1/cmr/bx/n/10.95 exceptionOccured \OT1/cmr/m/n/10.95 zeigt an ob Server-se
-itig, al-so auf der Sei-te des Empf[]angers,
  []
 
 
@@ -1164,38 +1113,30 @@ Overfull \hbox (11.72888pt too wide) in paragraph at lines 114--115
 n des auf-zu-ru-fen-den RPC-Services. 
  []
 
-
-Overfull \hbox (37.68102pt too wide) in paragraph at lines 121--123
-[] []\OT1/cmss/bx/n/10.95 ServiceType[][] \OT1/cmr/m/n/10.95 In uber-mep wird z
-wi-schen ei-nem blo-ckie-ren-dem und nicht-blockierendem
- []
-
-[32] <img/Interfaces_Peer.pdf, id=1404, 353.32pt x 128.48pt>
+[32] <img/Interfaces_Peer.pdf, id=1400, 353.32pt x 128.48pt>
 File: img/Interfaces_Peer.pdf Graphic file (type pdf)
 
 <use img/Interfaces_Peer.pdf>
 Package pdftex.def Info: img/Interfaces_Peer.pdf used on input line 151.
 (pdftex.def)             Requested size: 241.84842pt x 87.94553pt.
-
-Overfull \hbox (17.81876pt too wide) in paragraph at lines 155--156
-\OT1/cmr/m/n/10.95 deu-ti-ge Ad-dres-sie-rung f[]ur Nach-rich-ten in ei-nem Ove
-rlay-Netzwerk erm[]oglicht.
- []
-
-[33] <img/Interfaces_Service.pdf, id=1411, 96.36pt x 64.24pt>
+ [33]
+<img/Interfaces_Service.pdf, id=1407, 96.36pt x 64.24pt>
 File: img/Interfaces_Service.pdf Graphic file (type pdf)
 
 <use img/Interfaces_Service.pdf>
 Package pdftex.def Info: img/Interfaces_Service.pdf used on input line 167.
 (pdftex.def)             Requested size: 71.13188pt x 47.42117pt.
 
-<img/Interfaces_UbermepService.pdf, id=1412, 513.92pt x 96.36pt>
+<img/Interfaces_UbermepService.pdf, id=1408, 513.92pt x 96.36pt>
 File: img/Interfaces_UbermepService.pdf Graphic file (type pdf)
 
 <use img/Interfaces_UbermepService.pdf>
 Package pdftex.def Info: img/Interfaces_UbermepService.pdf used on input line 1
 77.
 (pdftex.def)             Requested size: 375.80377pt x 70.46423pt.
+
+Underfull \vbox (badness 3826) has occurred while \output is active []
+
  [34 <./img/Interfaces_Peer.pdf> <./img/Interfaces_Service.pdf>]
 Overfull \hbox (7.25578pt too wide) in paragraph at lines 185--186
 []\OT1/cmr/m/it/10.95 registerUpstreamHandler(ChannelUpstreamHandler hand-ler) 
@@ -1203,15 +1144,15 @@ Overfull \hbox (7.25578pt too wide) in paragraph at lines 185--186
  []
 
 
-Overfull \hbox (16.12509pt too wide) in paragraph at lines 186--187
+Overfull \hbox (2.74173pt too wide) in paragraph at lines 186--187
 []\OT1/cmr/m/it/10.95 registerDownstreamHandler(ChannelDownstreamHandler hand-l
-er) \OT1/cmr/m/n/10.95 f[]ugt einen
+er) \OT1/cmr/m/n/10.95 f[]ugt ei-
  []
 
 
-Overfull \hbox (0.42046pt too wide) in paragraph at lines 186--187
-\OT1/cmr/m/n/10.95 im-ple-men-tier-ten Chan-nel-Down-stre-am-Hand-ler (aus dem 
-Netty-Framework
+Overfull \hbox (0.39003pt too wide) in paragraph at lines 186--187
+\OT1/cmr/m/n/10.95 nen im-ple-men-tier-ten Chan-nel-Down-stre-am-Hand-ler (aus 
+dem Netty-Frame-
  []
 
 
@@ -1224,7 +1165,7 @@ T1/cmr/m/it/10.95 handleDownstream(Channel-
 Underfull \vbox (badness 1122) has occurred while \output is active []
 
  [35 <./img/Interfaces_UbermepService.pdf>]
-<img/Interfaces_UbermepUnreliableService.pdf, id=1498, 264.99pt x 56.21pt>
+<img/Interfaces_UbermepUnreliableService.pdf, id=1494, 264.99pt x 56.21pt>
 File: img/Interfaces_UbermepUnreliableService.pdf Graphic file (type pdf)
 
 <use img/Interfaces_UbermepUnreliableService.pdf>
@@ -1232,7 +1173,7 @@ Package pdftex.def Info: img/Interfaces_UbermepUnreliableService.pdf used on in
 put line 206.
 (pdftex.def)             Requested size: 199.16928pt x 42.24829pt.
 
-<img/Interfaces_UbermepReliableService.pdf, id=1500, 377.41pt x 64.24pt>
+<img/Interfaces_UbermepReliableService.pdf, id=1496, 377.41pt x 64.24pt>
 File: img/Interfaces_UbermepReliableService.pdf Graphic file (type pdf)
 
 <use img/Interfaces_UbermepReliableService.pdf>
@@ -1241,7 +1182,7 @@ t line 215.
 (pdftex.def)             Requested size: 284.52756pt x 48.42982pt.
  [36 <./img/Interfaces_UbermepUnreliableService.pdf> <./img/Interfaces_UbermepR
 eliableService.pdf>]
-<img/Interfaces_UbermepRpcService.pdf, id=1549, 361.35pt x 88.33pt>
+<img/Interfaces_UbermepRpcService.pdf, id=1545, 361.35pt x 88.33pt>
 File: img/Interfaces_UbermepRpcService.pdf Graphic file (type pdf)
 
 <use img/Interfaces_UbermepRpcService.pdf>
@@ -1249,7 +1190,12 @@ Package pdftex.def Info: img/Interfaces_UbermepRpcService.pdf used on input lin
 e 224.
 (pdftex.def)             Requested size: 270.30118pt x 66.07346pt.
 
-<img/Interfaces_RequestListenerService.pdf, id=1551, 481.8pt x 80.3pt>
+Overfull \hbox (1.09447pt too wide) in paragraph at lines 228--229
+[]\OT1/cmr/m/it/10.95 getRpcChannel(UPAddress urn) \OT1/cmr/m/n/10.95 er-zeugt 
+einen Rp-c-Chan-nel zu ei-ner Adres-
+ []
+
+<img/Interfaces_RequestListenerService.pdf, id=1547, 481.8pt x 80.3pt>
 File: img/Interfaces_RequestListenerService.pdf Graphic file (type pdf)
 
 <use img/Interfaces_RequestListenerService.pdf>
@@ -1280,7 +1226,7 @@ r) \OT1/cmr/m/n/10.95 f[]ugt ein Multi-
  []
 
 [37 <./img/Interfaces_UbermepRpcService.pdf>]
-<img/Interfaces_UnicastMulticastRequestListener.pdf, id=1580, 457.71pt x 56.21p
+<img/Interfaces_UnicastMulticastRequestListener.pdf, id=1576, 457.71pt x 56.21p
 t>
 File: img/Interfaces_UnicastMulticastRequestListener.pdf Graphic file (type pdf
 )
@@ -1300,7 +1246,7 @@ Overfull \hbox (2.03969pt too wide) in paragraph at lines 256--257
  []
 
 
-<img/Interfaces_SingleRequestSingleResponseRequestListener.pdf, id=1581, 529.98
+<img/Interfaces_SingleRequestSingleResponseRequestListener.pdf, id=1577, 529.98
 pt x 56.21pt>
 File: img/Interfaces_SingleRequestSingleResponseRequestListener.pdf Graphic fil
 e (type pdf)
@@ -1335,7 +1281,7 @@ Overfull \hbox (9.66069pt too wide) in paragraph at lines 264--265
 [38 <./img/Interfaces_RequestListenerService.pdf> <./img/Interfaces_UnicastMult
 icastRequestListener.pdf> <./img/Interfaces_SingleRequestSingleResponseRequestL
 istener.pdf>]
-<img/Interfaces_MultiResponseRequestListener.pdf, id=1649, 602.25pt x 64.24pt>
+<img/Interfaces_MultiResponseRequestListener.pdf, id=1645, 602.25pt x 64.24pt>
 File: img/Interfaces_MultiResponseRequestListener.pdf Graphic file (type pdf)
 
 <use img/Interfaces_MultiResponseRequestListener.pdf>
@@ -1353,14 +1299,7 @@ Overfull \hbox (6.39134pt too wide) in paragraph at lines 272--273
 Hand-le, String
  []
 
-
-Overfull \hbox (43.22125pt too wide) in paragraph at lines 272--273
-\OT1/cmr/m/it/10.95 sen-der-Urn, byte[] re-quest-Pay-load) \OT1/cmr/m/n/10.95 v
-er-ar-bei-tet den In-halt von \OT1/cmr/m/it/10.95 ei-nem \OT1/cmr/m/n/10.95 Mul
-tiResponse-
- []
-
-<img/Interfaces_MultiResponseHandle.pdf, id=1650, 401.5pt x 56.21pt>
+<img/Interfaces_MultiResponseHandle.pdf, id=1646, 401.5pt x 56.21pt>
 File: img/Interfaces_MultiResponseHandle.pdf Graphic file (type pdf)
 
 <use img/Interfaces_MultiResponseHandle.pdf>
@@ -1369,7 +1308,7 @@ ine 279.
 (pdftex.def)             Requested size: 298.75394pt x 41.82803pt.
  [39 <./img/Interfaces_MultiResponseRequestListener.pdf> <./img/Interfaces_Mult
 iResponseHandle.pdf>]
-<img/Interfaces_ProgressListenerRunnable.pdf, id=1699, 433.62pt x 64.24pt>
+<img/Interfaces_ProgressListenerRunnable.pdf, id=1694, 433.62pt x 64.24pt>
 File: img/Interfaces_ProgressListenerRunnable.pdf Graphic file (type pdf)
 
 <use img/Interfaces_ProgressListenerRunnable.pdf>
@@ -1377,7 +1316,7 @@ Package pdftex.def Info: img/Interfaces_ProgressListenerRunnable.pdf used on in
 put line 291.
 (pdftex.def)             Requested size: 341.43306pt x 50.58534pt.
 
-<img/PeerImpl.pdf, id=1701, 642.4pt x 433.62pt>
+<img/PeerImpl.pdf, id=1696, 642.4pt x 433.62pt>
 File: img/PeerImpl.pdf Graphic file (type pdf)
  <use img/PeerImpl.pdf>
 Package pdftex.def Info: img/PeerImpl.pdf used on input line 305.
@@ -1395,7 +1334,7 @@ Overfull \hbox (1.54709pt too wide) in paragraph at lines 311--312
  []
 
 [40 <./img/Interfaces_ProgressListenerRunnable.pdf>]
-<img/Dependencies_AbstractServiceHandler.pdf, id=1733, 682.55pt x 192.72pt>
+<img/Dependencies_AbstractServiceHandler.pdf, id=1729, 682.55pt x 192.72pt>
 File: img/Dependencies_AbstractServiceHandler.pdf Graphic file (type pdf)
 
 <use img/Dependencies_AbstractServiceHandler.pdf>
@@ -1403,7 +1342,7 @@ Package pdftex.def Info: img/Dependencies_AbstractServiceHandler.pdf used on in
 put line 319.
 (pdftex.def)             Requested size: 375.80377pt x 106.111pt.
  [41 <./img/PeerImpl.pdf>]
-<img/Dependencies_Unicast_Multicast.pdf, id=1751, 393.47pt x 216.81pt>
+<img/Dependencies_Unicast_Multicast.pdf, id=1747, 393.47pt x 216.81pt>
 File: img/Dependencies_Unicast_Multicast.pdf Graphic file (type pdf)
 
 <use img/Dependencies_Unicast_Multicast.pdf>
@@ -1412,9 +1351,15 @@ ine 329.
 (pdftex.def)             Requested size: 227.62204pt x 125.42236pt.
  [42 <./img/Dependencies_AbstractServiceHandler.pdf> <./img/Dependencies_Unicas
 t_Multicast.pdf>]
+Overfull \hbox (10.42749pt too wide) in paragraph at lines 338--339
+\OT1/cmr/m/n/10.95 SingleRequest-SingleResponse-Request han-delt, wird die Nach
+-richt up-stream
+ []
+
+
 Overfull \hbox (9.18407pt too wide) in paragraph at lines 339--340
 []\OT1/cmr/m/it/10.95 handleDownstream(ChannelHandlerContext ctx, Chan-ne-lE-ve
-nt e) \OT1/cmr/m/n/10.95 empf[]angt
+nt e) \OT1/cmr/m/n/10.95 em-pf[]angt
  []
 
 
@@ -1460,7 +1405,7 @@ Overfull \hbox (8.14622pt too wide) in paragraph at lines 347--348
 g-le-Re-quest-
  []
 
-<img/Dependencies_RequestResponse.pdf, id=1782, 714.67pt x 513.92pt>
+<img/Dependencies_RequestResponse.pdf, id=1778, 714.67pt x 513.92pt>
 File: img/Dependencies_RequestResponse.pdf Graphic file (type pdf)
 
 <use img/Dependencies_RequestResponse.pdf>
@@ -1477,18 +1422,6 @@ Overfull \hbox (1.49785pt too wide) in paragraph at lines 353--354
 Underfull \vbox (badness 3895) has occurred while \output is active []
 
  [43]
-Overfull \hbox (52.41818pt too wide) in paragraph at lines 356--357
-\OT1/cmr/m/it/10.95 Mul-ti-Re-spon-se-Re-quest-Lis-te-ner \OT1/cmr/m/n/10.95 wi
-rd die Me-tho-de \OT1/cmr/m/it/10.95 handle-MultiResponseRequest(Multi-
- []
-
-
-Overfull \hbox (2.15733pt too wide) in paragraph at lines 356--357
-\OT1/cmr/m/it/10.95 ResponseHandle re-spon-seHand-le, String sen-der-Urn, byte[
-] re-quest-Pay-load)
- []
-
-
 Overfull \hbox (9.18407pt too wide) in paragraph at lines 357--358
 []\OT1/cmr/m/it/10.95 handleDownstream(ChannelHandlerContext ctx, Chan-ne-lE-ve
 nt e) \OT1/cmr/m/n/10.95 empf[]angt
@@ -1519,7 +1452,7 @@ d down-stream
  []
 
 [44 <./img/Dependencies_RequestResponse.pdf>]
-<img/sequence_srsr.png, id=1806, 8914.30376pt x 4542.9725pt>
+<img/sequence_srsr.png, id=1802, 8914.30376pt x 4542.9725pt>
 File: img/sequence_srsr.png Graphic file (type png)
 
 <use img/sequence_srsr.png>
@@ -1531,7 +1464,7 @@ Overfull \hbox (2.42546pt too wide) in paragraph at lines 396--397
 /10.95 Uber den Sing-le-Re-quest-Sing-le-Re-spon-
  []
 
-<img/mep-app_srsr_mr_channel.pdf, id=1817, 361.35pt x 182.6825pt>
+<img/mep-app_srsr_mr_channel.pdf, id=1813, 361.35pt x 182.6825pt>
 File: img/mep-app_srsr_mr_channel.pdf Graphic file (type pdf)
 
 <use img/mep-app_srsr_mr_channel.pdf>
@@ -1556,7 +1489,7 @@ Overfull \hbox (5.98668pt too wide) in paragraph at lines 415--416
 -wort als Protokoll-
  []
 
-<img/Dependencies_UbermepRpcChannel.pdf, id=1830, 682.55pt x 353.32pt>
+<img/Dependencies_UbermepRpcChannel.pdf, id=1826, 682.55pt x 353.32pt>
 File: img/Dependencies_UbermepRpcChannel.pdf Graphic file (type pdf)
 
 <use img/Dependencies_UbermepRpcChannel.pdf>
@@ -1626,7 +1559,7 @@ Overfull \hbox (0.92183pt too wide) in paragraph at lines 657--658
 der von Uber-lay ver-wen-de-ten Thread-
  []
 
-[51] <img/example_p2p_network.pdf, id=1908, 343.2825pt x 71.26625pt>
+[51] <img/example_p2p_network.pdf, id=1904, 343.2825pt x 71.26625pt>
 File: img/example_p2p_network.pdf Graphic file (type pdf)
 
 <use img/example_p2p_network.pdf>
@@ -1651,24 +1584,13 @@ Overfull \hbox (13.05pt too wide) in paragraph at lines 829--831
 0.95 Um einen SingleRequest-Single-Response-
  []
 
-[55] [56]
-Overfull \hbox (29.7725pt too wide) in paragraph at lines 902--903
-[]\OT1/cmr/m/n/10.95 Das Hin-zuf[]ugen ei-nes Pro-gress-Lis-te-ners f[]ur ei-ne
- SingleRequestMultiResponseRequest-
- []
-
-[57] (./lst/FlashNodeServiceProtocol.proto) [58] [59]
-Overfull \hbox (14.2414pt too wide) in paragraph at lines 1005--1006
-\OT1/cmr/m/n/10.95 und in die-sem Zu-sam-men-hang auch die Er-wei-te-rung um \O
-T1/cmr/m/it/10.95 Broadcast\OT1/cmr/m/n/10.95 -Messaging
- []
-
-) [60]
+[55] [56] [57] (./lst/FlashNodeServiceProtocol.proto) [58] [59]) [60]
 \openout2 = `5-evaluation.aux'.
 
- (./5-evaluation.tex
+
+(./5-evaluation.tex
 Kapitel 5.
-<img/Evaluations_Szenario_SingleHop.pdf, id=2208, 224.84pt x 43.16125pt>
+<img/Evaluations_Szenario_SingleHop.pdf, id=2202, 224.84pt x 43.16125pt>
 File: img/Evaluations_Szenario_SingleHop.pdf Graphic file (type pdf)
 
 <use img/Evaluations_Szenario_SingleHop.pdf>
@@ -1676,7 +1598,7 @@ Package pdftex.def Info: img/Evaluations_Szenario_SingleHop.pdf used on input l
 ine 6.
 (pdftex.def)             Requested size: 199.16928pt x 38.2349pt.
 
-<img/Evaluations_Szenario_MultiHop.pdf, id=2209, 418.56375pt x 43.16125pt>
+<img/Evaluations_Szenario_MultiHop.pdf, id=2203, 418.56375pt x 43.16125pt>
 File: img/Evaluations_Szenario_MultiHop.pdf Graphic file (type pdf)
 
 <use img/Evaluations_Szenario_MultiHop.pdf>
@@ -1693,7 +1615,7 @@ Underfull \vbox (badness 4779) has occurred while \output is active []
 
  <./img/Evaluations_Szenario_SingleHop.pdf> <./img/Evaluations_Szenario_MultiHo
 p.pdf>]
-<img/evaluation_example.pdf, id=2261, 505.89pt x 505.89pt>
+<img/evaluation_example.pdf, id=2255, 505.89pt x 505.89pt>
 File: img/evaluation_example.pdf Graphic file (type pdf)
 
 <use img/evaluation_example.pdf>
@@ -1707,7 +1629,7 @@ r/m/it/10.95 Un-te-ren Whis-
  []
 
 [63 <./img/evaluation_example.pdf>]
-<img/evaluation_PayloadToOverheadSingleHopBoxPlot.pdf, id=2281, 505.89pt x 505.
+<img/evaluation_PayloadToOverheadSingleHopBoxPlot.pdf, id=2274, 505.89pt x 505.
 89pt>
 File: img/evaluation_PayloadToOverheadSingleHopBoxPlot.pdf Graphic file (type p
 df)
@@ -1715,8 +1637,8 @@ df)
 Package pdftex.def Info: img/evaluation_PayloadToOverheadSingleHopBoxPlot.pdf u
 sed on input line 46.
 (pdftex.def)             Requested size: 341.43306pt x 341.43785pt.
-
-<img/evaluation_SingleHopVsMultiHop_UberlayVsUnicast-a.pdf, id=2283, 361.35pt x
+ [64 <./img/evaluation_PayloadToOverheadSingleHopBoxPlot.pdf>]
+<img/evaluation_SingleHopVsMultiHop_UberlayVsUnicast-a.pdf, id=2290, 361.35pt x
  505.89pt>
 File: img/evaluation_SingleHopVsMultiHop_UberlayVsUnicast-a.pdf Graphic file (t
 ype pdf)
@@ -1725,7 +1647,7 @@ Package pdftex.def Info: img/evaluation_SingleHopVsMultiHop_UberlayVsUnicast-a.
 pdf used on input line 56.
 (pdftex.def)             Requested size: 169.11055pt x 236.7571pt.
 
-<img/evaluation_SingleHopVsMultiHop_UberlayVsUnicast-b.pdf, id=2284, 361.35pt x
+<img/evaluation_SingleHopVsMultiHop_UberlayVsUnicast-b.pdf, id=2291, 361.35pt x
  505.89pt>
 File: img/evaluation_SingleHopVsMultiHop_UberlayVsUnicast-b.pdf Graphic file (t
 ype pdf)
@@ -1740,7 +1662,7 @@ keit der Hop-
  []
 
 
-<img/evaluation_SingleHopVsMultiHop_SRSRVsRPC-a.pdf, id=2285, 361.35pt x 505.89
+<img/evaluation_SingleHopVsMultiHop_SRSRVsRPC-a.pdf, id=2292, 361.35pt x 505.89
 pt>
 File: img/evaluation_SingleHopVsMultiHop_SRSRVsRPC-a.pdf Graphic file (type pdf
 )
@@ -1749,7 +1671,7 @@ Package pdftex.def Info: img/evaluation_SingleHopVsMultiHop_SRSRVsRPC-a.pdf use
 d on input line 58.
 (pdftex.def)             Requested size: 169.11055pt x 236.7571pt.
 
-<img/evaluation_SingleHopVsMultiHop_SRSRVsRPC-b.pdf, id=2286, 361.35pt x 505.89
+<img/evaluation_SingleHopVsMultiHop_SRSRVsRPC-b.pdf, id=2293, 361.35pt x 505.89
 pt>
 File: img/evaluation_SingleHopVsMultiHop_SRSRVsRPC-b.pdf Graphic file (type pdf
 )
@@ -1763,19 +1685,12 @@ Underfull \hbox (badness 2261) in paragraph at lines 58--58
 keit der Hop-
  []
 
-[64]
+[65 <./img/evaluation_SingleHopVsMultiHop_UberlayVsUnicast-a.pdf> <./img/evalua
+tion_SingleHopVsMultiHop_UberlayVsUnicast-b.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65 <./img/evaluation_PayloadToOverheadSingleHopBoxPlot.pdf>]
-Overfull \hbox (2.82332pt too wide) in paragraph at lines 75--76
-[]\OT1/cmr/m/n/10.95 Ubermep pro-du-ziert kei-nen zus[]atz-li-chen Over-head zu
- ver-gleich-ba-ren Nach-
- []
-
-[66 <./img/evaluation_SingleHopVsMultiHop_UberlayVsUnicast-a.pdf> <./img/evalua
-tion_SingleHopVsMultiHop_UberlayVsUnicast-b.pdf>]) [67 <./img/evaluation_Single
-HopVsMultiHop_SRSRVsRPC-a.pdf> <./img/evaluation_SingleHopVsMultiHop_SRSRVsRPC-
-b.pdf>] [68
+ [66 <./img/evaluation_SingleHopVsMultiHop_SRSRVsRPC-a.pdf> <./img/evaluation_S
+ingleHopVsMultiHop_SRSRVsRPC-b.pdf>]) [67] [68
 
 
 
@@ -1785,16 +1700,15 @@ b.pdf>] [68
 
  (./6-zusammenfassung.tex
 Kapitel 6.
-) [69
+)
+Underfull \vbox (badness 8056) has occurred while \output is active []
 
-
-
-] [70
-
+ [69
 
 
 
 ]
+[70]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 55.
@@ -1806,6 +1720,10 @@ tener-Interface[][] [][]
  []
 
 [71
+
+
+
+
 
 
 ])
@@ -1823,13 +1741,13 @@ tener-Interface[][] [][]
 
 
 ] (./thesis.bbl
-Underfull \hbox (badness 1635) in paragraph at lines 25--28
+Underfull \hbox (badness 1635) in paragraph at lines 19--22
 []\OT1/cmr/m/sc/10.95 Google\OT1/cmr/m/n/10.95 .  Goo-gle Pro-to-col Buf-fers. 
  [][]$\OT1/txtt/m/n/10.95 http : / / code . google . com / p /
  []
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 57--61
+Underfull \hbox (badness 1968) in paragraph at lines 45--49
 []\OT1/cmr/m/sc/10.95 OMG\OT1/cmr/m/n/10.95 .  Com-mon Ob-ject Re-quest Bro-ker
  Ar-chi-tec-ture (CORBA)-
  []
@@ -1850,18 +1768,21 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 78.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 78.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 78.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: FA5FF836399353E6BEFAADE20275A923;4573.
+(rerunfilecheck)             Checksum: 5F461843C3696A2BBA9BEC86B31BAEFA;4496.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 78.
  ) 
 Here is how much of TeX's memory you used:
- 13365 strings out of 493633
- 208691 string characters out of 3143376
- 517987 words of memory out of 3000000
- 15630 multiletter control sequences out of 15000+200000
+ 13364 strings out of 493633
+ 208815 string characters out of 3143376
+ 517990 words of memory out of 3000000
+ 15631 multiletter control sequences out of 15000+200000
  15595 words of font info for 57 fonts, out of 3000000 for 9000
  838 hyphenation exceptions out of 8191
  45i,12n,51p,1294b,1884s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1883,10 +1804,10 @@ live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texli
 ve/2011/texmf-dist/fonts/type1/public/txfonts/txbtt.pfb></usr/local/texlive/201
 1/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2011/texmf
 -dist/fonts/type1/public/txfonts/txtt.pfb>
-Output written on thesis.pdf (84 pages, 2739102 bytes).
+Output written on thesis.pdf (84 pages, 2770590 bytes).
 PDF statistics:
- 2659 PDF objects out of 2984 (max. 8388607)
- 2246 compressed objects within 23 object streams
- 704 named destinations out of 1000 (max. 500000)
- 788 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2652 PDF objects out of 2984 (max. 8388607)
+ 2237 compressed objects within 23 object streams
+ 701 named destinations out of 1000 (max. 500000)
+ 785 words of extra memory for PDF output out of 10000 (max. 10000000)
 

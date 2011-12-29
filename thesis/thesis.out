@@ -46,19 +46,18 @@
 \BOOKMARK [1][]{section.4.4}{4.4 Beispiele}{chapter.4}% 46
 \BOOKMARK [2][]{subsection.4.4.1}{4.4.1 Aufbau eines Peer-to-Peer Netzwerk}{section.4.4}% 47
 \BOOKMARK [2][]{subsection.4.4.2}{4.4.2 Kommunikation}{section.4.4}% 48
-\BOOKMARK [1][]{section.4.5}{4.5 Zuk\374nftige Erweiterungen}{chapter.4}% 49
-\BOOKMARK [0][]{chapter.5}{5 Evaluation}{}% 50
-\BOOKMARK [1][]{section.5.1}{5.1 Netzwerk-Topologien}{chapter.5}% 51
-\BOOKMARK [1][]{section.5.2}{5.2 Evaluationskriterien}{chapter.5}% 52
-\BOOKMARK [2][]{subsection.5.2.1}{5.2.1 \334bertragungsdauer in Abh\344ngigkeit der Payload-Gr\366\337e}{section.5.2}% 53
-\BOOKMARK [2][]{subsection.5.2.2}{5.2.2 \334bertragungsdauer in Abh\344ngigkeit der Hop-Anzahl}{section.5.2}% 54
-\BOOKMARK [1][]{section.5.3}{5.3 Testergebnisse}{chapter.5}% 55
-\BOOKMARK [2][]{subsection.5.3.1}{5.3.1 Boxplot}{section.5.3}% 56
-\BOOKMARK [2][]{subsection.5.3.2}{5.3.2 \334bertragungsdauer in Abh\344ngigkeit der Payload-Gr\366\337e}{section.5.3}% 57
-\BOOKMARK [2][]{subsection.5.3.3}{5.3.3 \334bertragungsdauer in Abh\344ngigkeit der Hop-Anzahl}{section.5.3}% 58
-\BOOKMARK [2][]{subsection.5.3.4}{5.3.4 Schlussfolgerung}{section.5.3}% 59
-\BOOKMARK [0][]{chapter.6}{6 Zusammenfassung und Ausblick}{}% 60
-\BOOKMARK [0][]{chapter.6}{Verzeichnisse}{}% 61
-\BOOKMARK [1][]{section*.142}{Abbildungsverzeichnis}{chapter.6}% 62
-\BOOKMARK [1][]{appendix*.143}{Abk\374rzungsverzeichnis}{chapter.6}% 63
-\BOOKMARK [1][]{appendix*.144}{Bibliographie}{chapter.6}% 64
+\BOOKMARK [0][]{chapter.5}{5 Evaluation}{}% 49
+\BOOKMARK [1][]{section.5.1}{5.1 Netzwerk-Topologien}{chapter.5}% 50
+\BOOKMARK [1][]{section.5.2}{5.2 Evaluationskriterien}{chapter.5}% 51
+\BOOKMARK [2][]{subsection.5.2.1}{5.2.1 \334bertragungsdauer in Abh\344ngigkeit der Payload-Gr\366\337e}{section.5.2}% 52
+\BOOKMARK [2][]{subsection.5.2.2}{5.2.2 \334bertragungsdauer in Abh\344ngigkeit der Hop-Anzahl}{section.5.2}% 53
+\BOOKMARK [1][]{section.5.3}{5.3 Testergebnisse}{chapter.5}% 54
+\BOOKMARK [2][]{subsection.5.3.1}{5.3.1 Boxplot}{section.5.3}% 55
+\BOOKMARK [2][]{subsection.5.3.2}{5.3.2 \334bertragungsdauer in Abh\344ngigkeit der Payload-Gr\366\337e}{section.5.3}% 56
+\BOOKMARK [2][]{subsection.5.3.3}{5.3.3 \334bertragungsdauer in Abh\344ngigkeit der Hop-Anzahl}{section.5.3}% 57
+\BOOKMARK [2][]{subsection.5.3.4}{5.3.4 Schlussfolgerung}{section.5.3}% 58
+\BOOKMARK [0][]{chapter.6}{6 Zusammenfassung und Ausblick}{}% 59
+\BOOKMARK [0][]{chapter.6}{Verzeichnisse}{}% 60
+\BOOKMARK [1][]{section*.142}{Abbildungsverzeichnis}{chapter.6}% 61
+\BOOKMARK [1][]{appendix*.143}{Abk\374rzungsverzeichnis}{chapter.6}% 62
+\BOOKMARK [1][]{appendix*.144}{Bibliographie}{chapter.6}% 63

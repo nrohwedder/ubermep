@@ -26,7 +26,7 @@ Im Folgenden nun eine kurze Beschreibung der einzelnen Module:
 \item{\bf ubermep-cmdline} enth"alt den Einstiegspunkt zum starten der Applikation aus der Kommandozeile. 
 \item{\bf ubermep-core} enth"alt die Bibliothek von ubermep. Dieses Modul h"alt unter anderem das zentrale Interface {\bf Peer} bereit, welches ben"otigt wird um ein Overlay-Netzwerk zu erzeugen und Nachrichten des Message Exchange Pattern auszutauschen. Dieses Modul wird in Abschnitt \ref{sec:ubermep-core} detailiert erkl"art.
 \item{\bf ubermep-example} enth"alt Beispiel-Anwendungen wie ubermep-core genutzt werden kann. 
-\item{\bf ubermep-gui} enth"alt eine grafische Oberfl"ache zum Erzeugen eines Overlay-Netzwerks sowie zum Senden von Nachrichten des Message Exchange Pattern.
+\item{\bf ubermep-gui} enth"alt eine grafische Oberfl"ache zum Erzeugen eines Over\-lay-Netzwerks sowie zum Senden von Nachrichten des Message Exchange Pattern.
 \end{itemize}
 Nur das Modul {\bf Ubermep-core} enth"alt die Bibliothek von ubermep und deshalb wird in diesem Kapitel, in Abschnitt \ref{sec:ubermep-core}, auch nur auf dieses Modul n"aher eingegangen. Im Folgenden aber zun"achst die Implementierung des in Abschnitt \ref{sec:protokoll} vorgestellten Protokolls.
 
@@ -34,7 +34,7 @@ Nur das Modul {\bf Ubermep-core} enth"alt die Bibliothek von ubermep und deshalb
 
 \section{Protokoll}
 \label{sec:impl_protokoll}
-Wie im Abschnitt \ref{sec:google-protobuf} bereits erl"autert, wird zum Generieren der Protokoll-Nachrichten Google-Protobuf verwendet. Im Listing \ref{lst:meppacket} ist die mittels der Protobuf-IDL erstellten Protokoll-Datei zu erkennen, die auf der Spezifikation des Protokoll-Entwurfs (\ref{sec:protokoll}) des Entwurfskapitel 3 basiert. Diese kann unter Benutzung des Protobuf-Compiler als serialisierte Protokoll-Nachricht "uber den Kommunikationskanal versendet werden.
+Wie im Abschnitt \ref{sec:google-protobuf} bereits erl"autert, wird zum Generieren der Protokoll-Nachrichten Google-Proto\-buf verwendet. Im Listing \ref{lst:meppacket} ist die mittels der Proto\-buf-IDL erstellten Protokoll-Datei zu erkennen, die auf der Spezifikation des Protokoll-Entwurfs (\ref{sec:protokoll}) des Entwurfskapitel 3 basiert. Diese kann unter Benutzung des Protobuf-Compiler als serialisierte Protokoll-Nachricht "uber den Kommunikationskanal versendet werden.
 
 \subsubsection{MEPPacket}
 Das serialisierbare Protokoll dieser Applikation, das {\it MEPPacket}, ist wie folgt aufgebaut:
@@ -62,8 +62,8 @@ Es besteht aus den ben"otigten {\it (required)} Feldern:
 \end{itemize}
 sowie den optionalen {\it (optional)} Feldern, die nur "ubertragen werden, wenn ben"otigt:
 \begin{itemize}
-\item {\bf requestID} wird intern f"ur die Abarbeitung von Request-Response-Nachrichten ben"otigt. Jeder Request bekommt beim Aufruf eine RequestID zugewiesen. Wird die "uber die RequestID gekennzeichnete korrespondierende Response empfangen, so wird der Request als erfolgreich ausgeliefert gewertet.
-\item {\bf exceptionOccured} zeigt an ob Server-seitig, also auf der Seite des Empf"angers, beim Abarbeiten des {\it payloads} eine Ausnahme aufgetreten ist.
+\item {\bf requestID} wird intern f"ur die Abarbeitung von Request-Response-Nach\-rich\-ten ben"otigt. Jeder Request bekommt beim Aufruf eine RequestID zugewiesen. Wird die "uber die RequestID gekennzeichnete korrespondierende Response empfangen, so wird der Request als erfolgreich ausgeliefert gewertet.
+\item {\bf exceptionOccured} zeigt an ob Server-seitig, also auf der Seite des Em\-pf"ang\-ers, beim Abarbeiten des {\it payloads} eine Ausnahme aufgetreten ist.
 \item {\bf currentMessageNumber} zeigt an, welche Nummer die Antwort besitzt. Dieses Feld wird ausschlie"slich f"ur MultiResponse-Responses ben"otigt.
 \item {\bf totalMessageNumber} zeigt an, wieviel Antworten versendet bzw. erwartet werden. Dieses Feld wird ausschlie"slich f"ur MultiResponse-Responses ben"otigt.
 \item {\bf rpcMessage} beschreibt eine RPC-Message. Eine genauere Erl"auterung findet sich weiter unten.
@@ -118,7 +118,7 @@ Der {\it RpcMessage}-Typ besteht aus den ben"otigten {\it (required)} Feldern:
 Da die Parameter immer mittels eigens generierten Protobuf-RPC-Requests "ubertragen werden (siehe Abschnitt \ref{sec:google-protobuf}), brauchen diese nicht in der RPCMessage integriert zu werden.
 
 \paragraph{ServiceType}
-In ubermep wird zwischen einem blockierendem und nicht-blockierendem RPC-Aufruf unterschieden. Aus diesem Grund muss der {\bf ServiceType} f"ur die Beschreibung des {\it RpcMessage}-Typ "ubertragen werden. Dieser ist wie folgt aufgebaut:
+In ubermep wird zwischen einem blockierendem und nicht-block\-ier\-en\-dem RPC-Aufruf unterschieden. Aus diesem Grund muss der {\bf ServiceType} f"ur die Beschreibung des {\it RpcMessage}-Typ "ubertragen werden. Dieser ist wie folgt aufgebaut:
 \lstset{firstnumber=27, label=lst:serviceType}
 \begin{lstlisting}
 enum ServiceType {
@@ -152,9 +152,9 @@ Im Folgenden die entscheidenden Schnittstellen des Ubermep-core Moduls, welche d
 
 Aus der Beschreibung zum Erzeugen, Verbinden bzw. Trennen eines Peers ergibt sich die folgende Schnittstelle:
 \begin{itemize}
-\item {\it getLocalUPAddress()} gibt die lokale UPAddresse zur"uck, welche die eindeutige Addressierung f"ur Nachrichten in einem Overlay-Netzwerk erm"oglicht. Sie ist vom Typ {\bf UPAddress}, kommt aus dem Uberlay-Projekt (\ref {sec:uberlay}) und ist eine Unterklasse vom Typ {\bf SocketAddress} aus dem Package {\it java.net}. Die typische Addressierung in einem Peer-to-Peer Overlay-Netzwerk erfolgt dabei z.B. "uber eine {\bf URN} (Uniform Resource Name), welche wie folgt aufgebaut ist: {\it urn:namensraum:id}, also z.B. {\it urn:itm:1} f"ur den ersten Knoten im itm-Namensraum. 
-\item {\it getLocalSocketAddress()} gibt die lokale Socket-Addresse zur"uck. Sie ist vom Typ {\bf InetSocketAddress} aus dem Package java.net, enth"alt einen {\it hostname}, typischerweise eine IPv4 oder eine IPv6 Adresse und einen Port. An diese lokale Socket-Addresse wird der Netty-Channel zum Nachrichtenaustausch gebunden.
-\item {\it getRemoteSocketAddress()} gibt die remote Socket-Addresse vom Typ {\bf InetSocketAddress} zur"uck, mit welcher der Peer beim Start verbunden wird. 
+\item {\it getLocalUPAddress()} gibt die lokale UPAdresse zur"uck, welche die eindeutige Adressierung f"ur Nachrichten in einem Overlay-Netzwerk er\-m"o\-glicht. Sie ist vom Typ {\bf UPAddress}, kommt aus dem Uberlay-Projekt (\ref {sec:uberlay}) und ist eine Unterklasse vom Typ {\bf SocketAddress} aus dem Pack\-age {\it java.net}. Die typische Addressierung in einem Peer-to-Peer Overlay-Netzwerk erfolgt dabei z.B. "uber eine {\bf URN} (Uniform Resource Name), welche wie folgt aufgebaut ist: {\it urn:namensraum:id}, also z.B. {\it urn:itm:1} f"ur den ersten Knoten im itm-Namensraum. 
+\item {\it getLocalSocketAddress()} gibt die lokale Socket-Adresse zur"uck. Sie ist vom Typ {\bf InetSocketAddress} aus dem Package java.net, enth"alt einen {\it hostname}, typischerweise eine IPv4 oder eine IPv6 Adresse und einen Port. An diese lokale Socket-Adresse wird der Netty-Channel zum Nachrichtenaustausch gebunden.
+\item {\it getRemoteSocketAddress()} gibt die remote Socket-Adresse vom Typ {\bf Inet\-SocketAddress} zur"uck, mit welcher der Peer beim Start verbunden wird. 
 \item {\it connect(InetSocketAddress remoteAddress)} verbindet den Peer mit einem weiteren Peer welcher zu der "ubergebenen {\it remoteAddress} geh"ort.
 \end{itemize}
 
@@ -183,7 +183,7 @@ F"ur die Unterst"utzung von eigens hinzugef"ugten Nachrichtentypen sind die folg
 \begin{itemize}
 \item {\it registerChannelHandler(SimpleChannelHandler handler)} f"ugt einen implementierten SimpleChannelHandler (aus dem Netty-Framework \ref{sec:netty}) an einem Peer hinzu. SimpleChannelHandler k"onnen sowohl empfangende, als auch gesendete Nachrichten verarbeiten.
 \item {\it registerUpstreamHandler(ChannelUpstreamHandler handler)} f"ugt einen implementierten ChannelUpstreamHandler (aus dem Netty-Framework \ref{sec:netty}) an einem Peer hinzu. ChannelUpstreamHandler sind einzig f"ur das Verarbeiten von Empfangenden Nachrichten zust"andig.
-\item {\it registerDownstreamHandler(ChannelDownstreamHandler handler)} f"ugt einen implementierten ChannelDownstreamHandler (aus dem Netty-Framework \ref{sec:netty}) an einem Peer hinzu. ChannelDownstreamHandler sind einzig f"ur das Verarbeiten von gesendeten Nachrichten zust"andig.
+\item {\it registerDownstreamHandler(ChannelDownstreamHandler handler)} f"ugt ei\-nen implementierten ChannelDownstreamHandler (aus dem Netty-Frame\-work \ref{sec:netty}) an einem Peer hinzu. ChannelDownstreamHandler sind einzig f"ur das Verarbeiten von gesendeten Nachrichten zust"andig.
 \end{itemize}
 F"ur das Nutzen von eigenen Nachrichtentypen m"ussen dann eigene entsprechende Handler implementiert und an einem Peer mittels der entsprechenden {\it register}-Methode registriert werden. In den eigens implementierten ChannelHandlern m"ussen die jeweiligen zust"andigen Methoden "uberschrieben bzw. implementiert werden. Diese ChannelHandler werden der ChannelPipeline der entsprechenden Peers gem"a"s der Architektur des Netty-Frameworks hinzugef"ugt.
 
@@ -225,11 +225,11 @@ Die Aufgabe des UbermepReliableService liegt in der Versendung von Reliable Nach
 
 Die Aufgabe des UbermepRpcService liegt in der Verarbeitung von Remote Procedure Calls (RPC). F"ur das Ausf"uhren von RPC's sind dabei die folgenden Methoden von Bedeutung:
 \begin{itemize}
-\item {\it getRpcChannel(UPAddress urn)} erzeugt einen RpcChannel zu einer Addresse eines Peers des Overlay-Netzwerk.
+\item {\it getRpcChannel(UPAddress urn)} erzeugt einen RpcChannel zu einer Adresse eines Peers des Overlay-Netzwerk.
 \item {\it registerService(RpcService service)} registriert einen RpcService an einem Peer, so dass dieser von anderen Peers aufgerufen werden kann,
 \item {\it registerBlockingService(RpcBlockingService service)} registriert einen Rpc\-BlockingService an einem Peer zum Ausf"uhren eines RPC.
 \end{itemize}
-Der Ablauf ist dabei wie folgt: zuerst registriert man einen RpcService an einem Peer. Anschliessend l"asst man sich einen Rpc\-Channel zu einer Addresse eines Peers erzeugen. "Uber diesen Channel kann man dann einen RPC ausf"uhren. Der Unterschied zwischen einem (Non-Blocking) RpcService und einem Rpc\-BlockingService ist der, das ein RpcService ein nicht-blockierender Aufruf ist, welcher den R"uckgabewert in einem RpcCallback zur"uckgibt. Der Rpc\-BlockingService ist ein blockierender Aufruf, der den R"uckgabewert "uber den Methodenauruf zur"uckbekommt. 
+Der Ablauf ist dabei wie folgt: zuerst registriert man einen RpcService an einem Peer. Anschliessend l"asst man sich einen Rpc\-Channel zu einer Adresse eines Peers erzeugen. "Uber diesen Channel kann man dann einen RPC ausf"uhren. Der Unterschied zwischen einem (Non-Blocking) RpcService und einem Rpc\-BlockingService ist der, das ein RpcService ein nicht-blockierender Aufruf ist, welcher den R"uckgabewert in einem RpcCallback zur"uckgibt. Der Rpc\-BlockingService ist ein blockierender Aufruf, der den R"uckgabewert "uber den Methodenauruf zur"uckbekommt. 
 
 Das Erzeugen und Aufrufen eines RPC ist im Abschnitt \ref{sec:beispiele} anhand eines Beispielaufrufes zu erkennen.
 
@@ -269,7 +269,7 @@ Im Folgenden nun die verschiedenen Listener-Schnittstellen:
 \myfig[150 mm]{Interfaces_MultiResponseRequestListener}{Aufbau des MultiResponseRequestListener-Interface}
 
 \begin{itemize}
-\item {\it handleMultiResponseRequest(MultiResponseHandle responseHandle, String senderUrn, byte[] requestPayload)} verarbeitet den Inhalt von {\it einem} MultiResponse-Request. Es wird {\it true} zur"uckgeliefert, wenn der Inhalt erfolgreich verarbeitet wurde, sonst {\it false}. Falls bei der Verarbeitung eine {\it Exception} auftritt, wird ein {\it MEPMultiResponseExceptionEvent} geworfen.
+\item {\it handleMultiResponseRequest(MultiResponseHandle responseHandle, String senderUrn, byte[] requestPayload)} verarbeitet den Inhalt von {\it einem} Multi\-Response-Request. Es wird {\it true} zur"uckgeliefert, wenn der Inhalt erfolgreich verarbeitet wurde, sonst {\it false}. Falls bei der Verarbeitung eine {\it Exception} auftritt, wird ein {\it MEPMultiResponseExceptionEvent} geworfen.
 \end{itemize}
 
 F"ur das Erzeugen der einzelnen Antworten eines MultiResponseRequests, mu"s jeweils die folgende Methode des MultiResponseHandle-Interface aufgerufen werden:
@@ -295,7 +295,7 @@ Des weiteren gibt es client-seitig einen zus"atzlichen Listener f"ur den Eingang
 \item {\it run()} wird bei Eingang aller einzelnen MultiResponses aufgerufen.
 \end{itemize}
 
-Ein ProgressListenerRunnable kann dann "uber das ResponseFuture eines ReliableRequests "uber die Methode \emph{addListener(ProgressListenerRunnable listener, Executer executer)} hinzugef"ugt werden.
+Ein ProgressListenerRunnable kann dann "uber das ResponseFuture eines Reli\-ableRequests "uber die Methode \emph{addListener(ProgressListenerRunnable listener, Executer executer)} hinzugef"ugt werden.
 
 \subsection{Implementierung und Abh"angigkeiten}
 \label{subsec:ubermep_core_impl}
@@ -304,14 +304,14 @@ Im Folgenden werden nun die Abh"angigkeiten des oben beschriebenen Peer-Interfac
 
 \myfig[12 cm]{PeerImpl}{Vererbungshierarchie und Abh"angigkeiten der PeerImpl}
 
-Die PeerImpl besitzt eine Aggregationsabh"angigkeit zum UberlayModule aus dem Uberlay-Projekt. Des weiteren ist sie die Oberklasse des AbstractPeer welche die Adressierung eines Peer steuert. Der AbstractPeer wiederum, ist die Oberklasse des Interface Peer, welches wiederum die Interfaces Service, ServiceHandler, UbermepService, UbermepUnreliableService sowie UbermepReliableService implementiert. Die Implementierungen s"amtlicher Service-Interfaces sind dabei in der PeerImpl zu finden.
+Die PeerImpl besitzt eine Aggregationsabh"angigkeit zum UberlayModule aus dem Uberlay-Projekt. Des weiteren ist sie die Oberklasse des AbstractPeer welche die Adressierung eines Peer steuert. Der AbstractPeer wiederum, ist die Oberklasse des Interface Peer, welches wiederum die Interfaces Service, ServiceHandler, UbermepService, UbermepUnreliableService sowie UbermepReli\-ableService implementiert. Die Implementierungen s"amtlicher Service-Interfaces sind dabei in der PeerImpl zu finden.
 
 In den Folgenden Erl"auterungen der Methoden wird von einer \emph{Transport-Schicht} f"ur ubermep gesprochen. Diese Transport-Schicht entspricht dem Uberlay-Projekt. Das Zusammenspiel von ubermep und uberlay ist im Entwurfskapitel \ref{cha:entwurf} in Abschnitt \ref{sec:architektur} beschrieben.
 
 Bevor hier nun die ServiceHandler-Interfaces beschrieben werden, soll nun kurz auf den AbstractServiceHandler eingegangen werden. Der AbstractServiceHandler bildet die Oberklasse der nun folgenden ServiceHandler, welche sich f"ur den Austausch von Nachrichten des Message Exchange Pattern verantwortlich zeichnen. Der AbstractServiceHandler implementiert dabei das bereits beschriebene RequestListenerService-Interface sowie die Simple\-Channel\-Handler-Klasse aus dem Netty-Framework. Die Abh"angigkeiten sind dabei in der Abbildung \ref{fig:Dependencies_AbstractServiceHandler} veranschaulicht. Hierbei wird aber nur auf die wichtigen Methoden des AbstractServiceHandler eingegangen.
 
 \begin{itemize}
-\item {\it messageReceived(ChannelHandlerContext ctx, ChannelEvent e)} wird aufgerufen, wenn eine Protokoll-Nachricht im entsprechenden Handler empfangen wurde.
+\item {\it messageReceived(ChannelHandlerContext ctx, ChannelEvent e)} wird aufgerufen, wenn eine Protokoll-Nachricht im entsprechenden Handler em\-pfangen wurde.
 \item {\it handleUpstream(ChannelHandlerContext ctx, ChannelEvent e)} behandelt ein event, das upstream empfangen wurde.
 \item {\it handleDownstream(ChannelHandlerContext ctx, ChannelEvent e)} behandelt ein event, das downstream empfangen wurde.
 \end{itemize}   
@@ -335,8 +335,8 @@ Im ReliableServiceHandler sind dabei folgende Methoden von Bedeutung:
 \begin{itemize}
 \item {\it send(ReliableRequest request, Channel channel)} sendet ein ReliableRequest "uber den im Parameter angegeben {\it channel}. Gibt eine Response als Future-Objekt zur"uck. Eine genau Beschreibung der zur"uckgelieferten Response findet sich weiter unten im Abschnitt \ref{subsec:ubermep_core_msg}. Falls der Request eine Request-Response-Pattern-Nachricht ist, wird diese an den korrespondierenden Channel weitergeleitet. Eine ausf"uhrliche Beschreibung hierf"ur findet sich weiter unten im Unterabschnitt {\it RequestResponseChannel}.
 \item {\it messageReceived(ChannelHandlerContext ctx, MessageEvent e)} empf"angt ReliableUnicast- bzw. ReliableMulticast-Protokoll-Nachrichten und ruft f"ur die registrierten {\it UnicastMulticastRequestListener} die Methode {\it handleUnicastMulticastRequest(String senderUrn, byte[] payload)} auf.
-\item {\it handleUpstream(ChannelHandlerContext ctx, ChannelEvent e)} empf"angt einen ReliableRequest upstream. F"ur den Fall dass es sich um einen SingleRequest\-SingleResponse-Request handelt, wird die Nachricht upstream an den \emph{SingleRequestSingleResponseServiceHandler} weitergereicht. Falls es sich um einen MultiResponse-Request handelt, wird die Nachricht upstream an den \emph{SingleRequestMultiResponseServiceHandler} bzw. \emph{MultiRequestMultiResponseServiceHandler} weitergereicht.
-\item {\it handleDownstream(ChannelHandlerContext ctx, ChannelEvent e)} empf"angt einen ReliableRequest downstream. F"ur den Fall dass es sich um einen SingleRequest\-SingleResponse-Request handelt, wird die Nachricht downstream an den SingleRequestSingleResponseServiceHandler weitergereicht. Falls es sich um einen MultiResponse-Request handelt, wird die Nachricht downstream an den \emph{SingleRequestMultiResponseServiceHandler} bzw. \emph{MultiRequestMultiResponseServiceHandler} weitergereicht. Sonst wird die oben beschriebene {\it send(request, channel)} aufgerufen.
+\item {\it handleUpstream(ChannelHandlerContext ctx, ChannelEvent e)} empf"angt einen ReliableRequest up\-stream. F"ur den Fall dass es sich um einen SingleRequest\-SingleResponse-Request handelt, wird die Nachricht up\-stream an den \emph{SingleRequestSingleResponseServiceHandler} weitergereicht. Falls es sich um einen MultiResponse-Request handelt, wird die Nachricht up\-stream an den \emph{SingleRequestMultiResponseServiceHandler} bzw. \emph{MultiRequestMultiResponseServiceHandler} weitergereicht.
+\item {\it handleDownstream(ChannelHandlerContext ctx, ChannelEvent e)} em\-pf"angt einen ReliableRequest downstream. F"ur den Fall dass es sich um einen SingleRequest\-SingleResponse-Request handelt, wird die Nachricht downstream an den SingleRequestSingleResponseServiceHandler weitergereicht. Falls es sich um einen MultiResponse-Request handelt, wird die Nachricht downstream an den \emph{SingleRequestMultiResponseServiceHandler} bzw. \emph{MultiRequestMultiResponseServiceHandler} weitergereicht. Sonst wird die oben beschriebene {\it send(request, channel)} aufgerufen.
 \end{itemize}
 
 \paragraph{SingleRequestSingleResponseServiceHandler}
@@ -353,7 +353,7 @@ Im SingleRequestSingleResponseServiceHandler werden nur Single\-Request\-Single\
 Im SingleRequestMultiResponseServiceHandler werden nur Single\-Request\-Multi\-Response-Nachrichten verarbeitet. Dabei sind die folgenden Methoden von Bedeutung:
 
 \begin{itemize}
-\item {\it messageReceived(ChannelHandlerContext ctx, MessageEvent e)} empf"angt Single\-Request\-Multi\-Response-Protokoll-Nachrichten. F"ur die registrierten {\it MultiResponseRequestListener} wird die Methode {\it handle\-MultiResponseRequest(Multi\-ResponseHandle responseHandle, String senderUrn, byte[] requestPayload)} aufgerufen. "Uber das Multi\-ResponseHandle werden dann einzeln Responses zur"uckgesendet.
+\item {\it messageReceived(ChannelHandlerContext ctx, MessageEvent e)} empf"angt Single\-Request\-Multi\-Response-Protokoll-Nachrichten. F"ur die registrierten {\it MultiResponseRequestListener} wird die Methode \emph{handle\-Multi\-Re\-sponse\-Re\-quest(Multi\-Response\-Handle responseHandle, String senderUrn, byte[] requestPayload)} aufgerufen. "Uber das Multi\-ResponseHandle werden dann einzeln Responses zur"uckgesendet.
 \item {\it handleDownstream(ChannelHandlerContext ctx, ChannelEvent e)} empf"angt einen SingleRequestMultiResponse-Request downstream im MultiResponseChannel, wandelt diese in eine Protokoll-Nachricht um und sendet diese "uber die Transport-Schicht. Der genaue Ablauf hierbei ist weiter unten im Unterabschnitt des {\it SingleRequestSingleResponseChannel} zu finden.
 \end{itemize}
 
@@ -365,7 +365,7 @@ Im MultiRequestMultiResponseServiceHandler werden nur MultiRequestMulti\-Respons
 \end{itemize}
 
 \subsubsection{RpcServiceHandler}
-Ubermep unterst"utzt den Aufruf von Remote Procedure Calls (RPC) (siehe Abschnitt \ref{sec:rpc} im Grundlagenkapitel) auf einzelnen Peers des Peer-to-Peer-Netzwerks. Dazu muss an einem Peer eine UbermepRpcChannel generiert werden, "uber welchen dann der RPC aufgerufen werden kann. Die n"ahere Beschreibung des UbermepRpcChannel ist weiter unten im Unterabschnitt {\it UbermepRpcChannel} zu finden. Im Folgenden wird nun der {\it RpcServiceHandler}, welcher sich f"ur die Abarbeitung der Remote Procedure Calls verantwortlich zeichnet, n"aher beschrieben.
+Ubermep unterst"utzt den Aufruf von Remote Procedure Calls (RPC) (siehe Abschnitt \ref{sec:rpc} im Grundlagenkapitel) auf einzelnen Peers des Peer-to-Peer-Netzwerks. Dazu muss an einem Peer eine UbermepRpcChannel generiert werden, "uber welchen dann der RPC aufgerufen werden kann. Die n"ahere Beschreibung des UbermepRpcChannel ist weiter unten im Unterabschnitt {\it Ubermep\-Rpc\-Channel} zu finden. Im Folgenden wird nun der {\it RpcServiceHandler}, welcher sich f"ur die Abarbeitung der Remote Procedure Calls verantwortlich zeichnet, n"aher beschrieben.
 
 Im RpcServiceHandler werden nur {\it Remote Procedure Call} -Nachrichten verarbeitet. Dabei sind die folgenden Methoden von Bedeutung:
 \begin{itemize}
@@ -518,7 +518,7 @@ Ein ReliableMulticastRequest ist wie folgt spezifiziert:
 %\end{table}
 
 Anmerkung: Eine ReliableMulticastResponse enth"alt die Responses als Map. Die Responses werden dabei in der Map-"ublichen Weise,  also als \emph{Key,Value}-Paar   
-der Response-Map hinzugef"ugt. Der {\it Key} entspricht dabei der UPAddress des geantworteten Peers, der {\it Value} einer einzelnen Response vom Typ  {\it ReliableMulticastResponse.SingleReliableMulticastResponse}.
+der Response-Map hinzugef"ugt. Der {\it Key} entspricht dabei der UPAddress des geantworteten Peers, der {\it Value} einer einzelnen Response vom Typ  {\it Reli\-ableMulticastResponse.SingleReliableMulticastResponse}.
 
 \paragraph{SingleRequestSingleResponseRequest}
 Ein SingleRequestSingleResponseRequest ist wie folgt spezifiziert:
@@ -899,7 +899,7 @@ if (response instanceof SingleRequestMultiResponseResponse){
 }
 \end{lstlisting}
 
-Das Hinzuf"ugen eines ProgressListeners f"ur eine SingleRequestMultiResponseRequest-Nachrichten ist weiter unten erkl"art.
+Das Hinzuf"ugen eines ProgressListeners f"ur eine SingleRequestMultiResponse\-Request-Nachrichten ist weiter unten erkl"art.
 
 \paragraph{MultiRequestMultiResponseRequest}
 Der Aufruf eines MultiRequestMultiResponseRequest geschieht analog zu dem eines SingleRequestMultiResponseRequest.
@@ -966,7 +966,7 @@ public class FlashNodeBlockingServiceImpl implements FlashNodeServiceProtocol.Fl
 	}
 }
 \end{lstlisting}
-Im Folgenden soll nun ein RPC, "uber das bereits oben erzeugte Peer-to-Peer Netzwerk, vom Client auf dem Server ausgef"uhrt werden. Hierf"ur muss zuerst die {\it FlashNodeBlockingServiceImpl} am entsprechenden Peer Server-seitig hinzugef"ugt werden. Anschlie"send kann ein entsprechender FlashNodeRequest mittlels des RPC-Channel auf dem Server wie folgt aufgerufen werden:
+Im Folgenden soll nun ein RPC, "uber das bereits oben erzeugte Peer-to-Peer Netzwerk, vom Client auf dem Server ausgef"uhrt werden. Hierf"ur muss zuerst die {\it FlashNodeBlockingServiceImpl} am entsprechenden Peer Server-seitig hinzugef"ugt werden. Anschlie"send kann ein entsprechender FlashNodeRequest mit\-tels des RPC-Channel auf dem Server wie folgt aufgerufen werden:
 \lstset{caption=Aufruf des FlashNodeBlockingService,tabsize=2,language=Java,firstnumber=1,literate={Ÿ}{{\"u}}1, label=bsp:callBlockingService}
 \begin{lstlisting}
 //Service am Server registrieren
@@ -997,12 +997,12 @@ MEPRpcCallback<FlashNodeServiceProtocol.FlashNodeResponse> callback = new RpcCal
 \end{lstlisting}
 erzeugt werden kann.
 
-\section{Zuk"unftige Erweiterungen}
-\label{sec:zukunft}
+%\section{Zuk"unftige Erweiterungen}
+%\label{sec:zukunft}
 
-Folgende Erweiterungen sind fest f"ur die n"ahere Zukunft eingeplant:
-\begin{itemize}
-\item Bilden von Peer-to-Peer-Communities, also eine Gemeinschaft von Peers und in diesem Zusammenhang auch die Erweiterung um {\it Broadcast}-Messaging f"ur einzelne Communities. Eine m"ogliche Realisierung w"are z.B. der Entwurf und die Implementierung des Publish-Subscribe Pattern als Nachrichtentyp.
-\item Hinzuf"ugen einer Peer-to-Peer-Proxy-Funktionalit"at und daraus resultierend auch das Hinzuf"ugen einer Firewall-Funktionalit"at f"ur bestimmte Peers zum Kontrollieren von deren Netzwerkverkehr.
-\item Erweiterung des RoundTripTime-Protokoll von Uberlay um eine dynamische Anpassung der Zeitintervalle, z.B. mittels einer Implementierung des {\it Trickle}-Algorithmus \cite{trickle}.
-\end{itemize} 
+%Folgende Erweiterungen sind fest f"ur die n"ahere Zukunft eingeplant:
+%\begin{itemize}
+%\item Entwurf und die Implementierung des Publish-Subscribe Pattern zur Unterst"utzung von Publish-Subscribe ... f"ur Peers.
+%\item Hinzuf"ugen einer Peer-to-Peer-Proxy-Funktionalit"at und daraus resultierend auch das Hinzuf"ugen einer Firewall-Funktionalit"at f"ur bestimmte Peers zum Kontrollieren von deren Netzwerkverkehr.
+%\item Erweiterung des RoundTripTime-Protokoll von Uberlay um eine dynamische Anpassung der Zeitintervalle, z.B. mittels einer Implementierung des {\it Trickle}-Algorithmus \cite{trickle}.
+%\end{itemize} 
