@@ -1,13 +1,13 @@
 \chapter{Grundlagen}
 \label{cha:grundlagen}
 
-Im diesem Kapitel werden die technischen Grundlagen dieser Arbeit er"ortert, welche im Entwurf und der daraus resultierenden Implementierung angewendet werden. Im Abschnitt \ref{sec:p-2-p} wird das Peer-to-Peer Architektur-Konzept vorgestellt, welche die Basis dieser Arbeit bildet. Anschlie"send wird im Abschnitt \ref{sec:rpc} das Verfahren von Remote Procedure Calls erl"autert, welches einen Bestandteil dieser Arbeit bildet. Danach wird im Abschnitt \ref{sec:netty} das Netty-Framework beschrieben, welches zusammen mit dem  Uberlay Projekt, beschrieben in Abschnitt \ref{sec:uberlay}, die Basis des Architektur-Entwurfes bildet. Im Abschnitt \ref{sec:google-protobuf} wird das Google Protobuf Projekt beschrieben, welches die Protokoll-Schicht dieser Arbeit bildet. Danach wird in Abschnitt \ref{sec:maven} das Projektverwaltungs- und Buildtool Maven vorgestellt und erl"autert in wieweit sich dieses Tool in dieser Arbeit wiederfindet. Abschlie"send wird die Java-Programmbibliothek Mockito vorgestellt, welches hier zum Testen der Implementierung verwendet wurde.
+Im diesem Kapitel werden die technischen Grundlagen dieser Arbeit er"ortert, welche im Entwurf und der daraus resultierenden Implementierung angewendet werden. Im Abschnitt \ref{sec:p-2-p} wird das Peer-to-Peer Architektur-Konzept vorgestellt, welches die Basis dieser Arbeit bildet. Anschlie"send wird im Abschnitt \ref{sec:rpc} das Verfahren von Remote Procedure Calls erl"autert, welches einen wesentlicher Bestandteil dieser Arbeit ist. Danach wird im Abschnitt \ref{sec:netty} das Netty-Framework beschrieben, welches zusammen mit dem  Uberlay Projekt, beschrieben in Abschnitt \ref{sec:uberlay}, die Basis des Architektur-Entwurfes bildet. Im Abschnitt \ref{sec:google-protobuf} wird das Google Protobuf Projekt beschrieben, welches die Protokoll-Schicht dieser Arbeit bildet. Danach wird in Abschnitt \ref{sec:maven} das Projektverwaltungs- und Buildtool Maven vorgestellt und erl"autert in wieweit sich dieses Tool in dieser Arbeit wiederfindet. Abschlie"send wird die Java-Programmbibliothek Mockito vorgestellt, welche in dieser Arbeit zum Testen der Implementierung verwendet wurde.
 
 \section{Peer-to-Peer Architektur}
 \label{sec:p-2-p}
 
 \cite{peer_to_peer_system_architekturen}
-Die klassische Internetkommunikation basiert auf der Client-Server-Architektur. Ausgew"ahlte Server (meist abh"angig von Leistungsf"ahigkeit) bieten Dienste, Dateien, Inhalte etc. an, die Clients konsumieren diese Ressourcen. Der Vorteil hierbei: Kennen Clients einen ausge"ahlten Server, so lassen sich Dienste, Daten oder Inhalte leicht auffinden. Allerdings besitzt diese Architektur ebenfalls einige Nachteile: 
+Die klassische Internetkommunikation basiert auf der Client-Server-Architektur. Ausgew"ahlte Server (meist abh"angig von Leistungsf"ahigkeit) bieten Dienste, Dateien, Inhalte etc. an, die Clients konsumieren diese Ressourcen. Der Vorteil hierbei: Kennen Clients einen ausgew"ahlten Server, so lassen sich Dienste, Daten oder Inhalte leicht auffinden. Allerdings besitzt diese Architektur einige Nachteile: 
 \begin{itemize}
 \item Ist ein Server vor"ubergehend nicht erreichbar, so sind deren s"amtlich angebotene Ressourcen ebenfalls nicht verf"ugbar. Dies entspricht dabei dem System des \emph{Single Point of Failure}, d.h. der Ausfall des Servers sorgt f"ur den Zusammenbruch des ganzen Systems (Netzwerk). Dies kann zwar durch z.B. redundante Datenhaltung verhindert werden, verschiebt dabei aber nur das eigentliche Problem des Systems und l"ost es nicht.
 \item Die theoretisch zur Verf"ugung stehenden Ressourcen von Clients sind f"ur andere Clients nicht verf"ugbar. So ist z.B. das \emph{Filesharing}, bei dem Nutzer untereinander Dateien teilen oder das Nutzen der \emph{Grid Computing} Technologie in dem Rechenleistung geteilt wird, nicht oder nur bedingt m"oglich.
@@ -19,18 +19,18 @@ Die Peer-to-Peer-Architektur ist ein alternatives Konzept um diese Nachteile auf
 
 \myfigtwo[cs_p2p_arch]{Client-Server Architektur}{Peer-to-Peer Architektur}{Client-Server vs. Peer-to-Peer}
 
-Peer-to-Peer-Netzwerke sind verteilte Systeme, bestehend aus mehreren Knoten, die {\it Peers} genannt werden. Jeder Peer im Netzwerk ist ein gleichwertiger Partner ({\it Peer:} engl. f"ur \emph{Gleichgestellter}) und kann sowohl Client als auch Server-Aufgaben ausf"uhren. Peers eines Netzwerks kommunizieren unmittelbar miteinander, (siehe Abbildung \ref{fig:cs_p2p_arch}) dies bedeutet aber \emph{nicht}, dass jeder Peer mit jedem weiteren Peer des Netzwerks verbunden sein mu"s. Es bedeutet lediglich, dass Peers keine Server ben"otigen, um Informationen auszutauschen. So ist im Beispiel in Abbildung \ref{fig:cs_p2p_arch} einzig Peer 1 mit Peer 2, Peer 2 mit Peer 3 und Peer 4 und Peer 3 mit Peer 4 verbunden. Das Peer-to-Peer-Architektur-Konzept erlaubt aber trotzdem die Kommunikation zwischen s"amtlichen Peers des Netzwerk (wie z.B. zwischen Peer 1 und Peer 4).
+Peer-to-Peer-Netzwerke sind verteilte Systeme, bestehend aus mehreren Knoten, die {\it Peers} genannt werden. Jeder Peer im Netzwerk ist ein gleichwertiger Partner ({\it Peer:} engl. f"ur \emph{Gleichgestellter}) und kann sowohl Client- als auch Server-Aufgaben ausf"uhren. Peers eines Netzwerks kommunizieren unmittelbar miteinander, (siehe Abbildung \ref{fig:cs_p2p_arch}) dies bedeutet aber \emph{nicht}, dass jeder Peer mit jedem weiteren Peer des Netzwerks verbunden sein mu"s. Es bedeutet lediglich, dass Peers keine Server ben"otigen, um Informationen auszutauschen. So ist im Beispiel in Abbildung \ref{fig:cs_p2p_arch} einzig Peer 1 mit Peer 2, Peer 2 mit Peer 3 und Peer 4 und Peer 3 mit Peer 4 verbunden. Das Peer-to-Peer-Architektur-Konzept erlaubt aber trotzdem die Kommunikation zwischen s"amtlichen Peers des Netzwerk (wie z.B. zwischen Peer 1 und Peer 4).
 
 \subsection{Routing}
 \label{subsec:p2p-routing}
-Um die Kommunikation zwischen Peers eines Netzwerks, unabh"angig ihrer Topologie, zu erm"oglichen, m"u"sen die Informationen, wo und wie einzelne Peers zu erreichen sind, f"ur jeden Peer verf"ugbar sein. (m"ochte, bezogen auf Abbildung \ref{fig:cs_p2p_arch-b}, z.B. Peer 1 mit Peer 4 kommunizieren). Diese Informationen wo und wie Peers erreicht werden k"onnen, werden in sogenannten {\it Routing-Tabellen} gespeichert. Die Such- und Weiterleitungsverfahren, welche die Routing-Tabellen zum Auffinden von Knoten in Netzwerken ben"otigen, nennt man dann {\it Routingverfahren}. Das Routingverfahren eines Netzwerks ist implementierungsabh"angig, das bedeutet, jedes Peer-to-Peer Netzerk kann sein eigenes Routingverfahren besitzen. Bekannte Routingverfahren in Peer-to-Peer-Netzwerken sind z.B. \emph{CAN (Content Addressable Network)} \cite{dht_can} oder \emph{Chord} \cite{dht_can} welche auf der Datenstruktur \emph{DHT (Distributed Hash Table)} \cite{dht_can} aufsetzen.
+Um die Kommunikation zwischen Peers eines Netzwerks, unabh"angig ihrer Topologie, zu erm"oglichen, m"ussen die Informationen, wo und wie einzelne Peers zu erreichen sind, f"ur jeden Peer verf"ugbar sein; (m"ochte, bezogen auf Abbildung \ref{fig:cs_p2p_arch-b}, z.B. Peer 1 mit Peer 4 kommunizieren). Diese Informationen wo und wie Peers erreicht werden k"onnen, werden in sogenannten {\it Routing-Tabellen} gespeichert. Die Such- und Weiterleitungsverfahren, welche die Routing-Tabellen zum Auffinden von Knoten in Netzwerken ben"otigen, nennt man dann {\it Routingverfahren}. Das Routingverfahren eines Netzwerks ist implementierungsabh"angig, das bedeutet, jedes Peer-to-Peer Netzwerk kann sein eigenes Routingverfahren besitzen. Bekannte Routingverfahren in Peer-to-Peer-Netzwerken sind z.B. \emph{CAN (Content Addressable Network)} \cite{dht_can} oder \emph{Chord} \cite{dht_can} welche auf der Datenstruktur \emph{DHT (Distributed Hash Table)} \cite{dht_can} aufsetzen.
 
 \nomenclature{DHT}{Distributed Hash Table}
 \nomenclature{CAN}{Content Addressable Network}
 
 %{\it Distance Vector Routing} oder {\it Link State Routing}. Ein m"ogliches Routingverfahren, welches zur Grupper der {\it Distance Vector Routing}-Verfahren geh"ort, wird dabei %im Abschnitt \ref{subsec:uberlay-pvp} erkl"art. 
 
-Da ein Peer-to-Peer Netzwerk hoch-dynamisch ist, da sich Knoten jederzeit vom Netzwerk an und wieder abmelden k"onnen, bzw. Knoten vor"ubergehend nicht verf"ugbar sein k"onnen, m"ussen sich die Routing-Tabellen dynamisch an das Netzwerk anpassen, d.h. Peer-to-Peer Netzwerke sind selbstorganisierend. Daraus resultiert eine hohe Fehlertoleranz, da selbst durch den Ausfall von einem oderer mehrerer Knoten die Kommunikation weiterhin gew"ahrleistet bleibt. 
+Ein Peer-to-Peer Netzwerk ist hoch-dynamisch. Da Knoten sich jederzeit vom Netzwerk an und wieder abmelden k"onnen oder Knoten vor"ubergehend nicht verf"ugbar sein k"onnen, m"ussen sich die Routing-Tabellen dynamisch an das Netzwerk anpassen. D.h. Peer-to-Peer Netzwerke organisieren sich selbst. Daraus resultiert eine hohe Fehlertoleranz, da selbst durch den Ausfall von einem oderer mehrerer Knoten die Kommunikation weiterhin gew"ahrleistet bleibt. 
 
 %Des weiteren besitzen die Kommunikationsverbindungen (Routes) in Peer-2-Peer-Netzwerken metrische Daten (Metrik), welche die G"ute eine Verbindung beschreiben (z.B. %Berechnung des Zeitabschnitts vom Versenden einer Nachricht an einen Peer bis zum Empfangen seiner Antwort). 
 
@@ -39,7 +39,7 @@ Die Kommunikation eines Peer-to-Peer Overlay-Netzwerks findet auf einer eigenen 
 
 \myfig{cs_p2p_overlay}{Netzwerk mit einer Overlay- und einer Underlay-Topologie}
 
-Ein Peer-to-Peer-Overlay-Netzwerk mit einer darunterliegenden Underlay Topologie ist in Abbildung \ref{fig:cs_p2p_overlay} anhand eines Beispiels zu erkennen. Die physikalische Netzwerktopologie (Underlay) besteht dabei aus 6 Hosts, wobei jeweils 3 Hosts mittels einem Router "uber das Internet miteinander verbunden sind. Das Overlay wiederum besteht aus 6 Peers. Jedem Peer wird dabei jeweils ein Host des Underlay zugeordnet. Die Peers sind ringf"ormig miteinander verbunden. Es besitzt eigene Addressierungs- sowie Routingverfahren f"ur Nachrichten, welche  unabh"angig von der Struktur des Underlay arbeiten.
+Ein Peer-to-Peer-Overlay-Netzwerk mit einer darunterliegenden Underlay Topologie ist in Abbildung \ref{fig:cs_p2p_overlay} anhand eines Beispiels zu erkennen. Die physikalische Netzwerktopologie (Underlay) besteht dabei aus 6 Hosts, wobei jeweils 3 Hosts mittels einem Router "uber das Internet miteinander verbunden sind. Das Overlay wiederum besteht aus 6 Peers. Jedem Peer wird dabei jeweils ein Host des Underlay zugeordnet. Die Peers sind ringf"ormig miteinander verbunden und besitzen eigene Addressierungs- sowie Routingverfahren f"ur Nachrichten, die  unabh"angig von der Struktur des Underlay arbeiten.
 
 \subsection{Topologien}
 \label{subsec:p2p-topo}
@@ -58,23 +58,22 @@ Multi-Hop-Topologie bedeutet: Bei der Kommunikation von einem Peer des Netzwerks
 
 \nomenclature{RPC}{Remote Procedure Call}
 
-\subsection{Verfahren}
-Remote Procedure Call (RPC) ist ein Verfahren zur Abwicklung von Interprozesskommunikation welche den Austausch von Daten in verteilten Systemen erlaubt. 
+Remote Procedure Call (RPC) ist ein Verfahren zur Abwicklung von Interprozesskommunikation welches den Austausch von Daten in verteilten Systemen erlaubt. 
 \myfig[10 cm]{rpc_arch-a}{"Ubertragung eines Remote-Procedure-Call}
-Daf"ur muss dieser Aufruf, welcher von einem Client zu dem aufrufenden Server "uber\-tra\-gen wird, in eine Nachricht serialisiert werden. Diese Serialisierung nennt man {\it Marshalling}. Der serialisierte Aufruf wird dann "uber einen Kommunikationskanal "uber\-tra\-gen und beim Server deserialisiert, die Deserialisierung hei"st {\it Unmarshalling}. Der Ablauf ist dabei in Abbildung \ref{fig:rpc_arch-a} zu erkennen.
+Daf"ur muss der Aufruf, der von einem Client zum aufrufenden Server "uber\-tra\-gen wird, in eine Nachricht serialisiert werden. Diese Serialisierung nennt man {\it Marshalling}. Der serialisierte Aufruf wird dann "uber einen Kommunikationskanal "uber\-tra\-gen und beim Server deserialisiert, die Deserialisierung hei"st {\it Unmarshalling}. Der Ablauf ist dabei in Abbildung \ref{fig:rpc_arch-a} zu erkennen.
 
-Dieses Verfahren erlaubt den Aufruf von entfernter Prozeduren (z.B. auf einem verbundenen Remote-Peer). Der Konsument wird dabei im Allgemeinen als Client, der Dienstleister als Server bezeichnet.
+Dieses Verfahren erlaubt den Aufruf von entfernten Prozeduren (z.B. auf einem verbundenen Remote-Peer). Der Konsument wird dabei im Allgemeinen als Client, der Dienstleister als Server bezeichnet.
 
 \subsection{Ablauf}
 \myfig[13 cm]{rpc_arch-b}{Ablauf eines Remote-Procedure-Call}
  Der Ablauf eines Remote Procedure Calls sieht wie folgt aus:
 
-Auf dem Client wird f"ur eine Applikationslogik (1) mittels einem Service-Interface (2) ein Stub (Stellvertreter) generiert. Dieser Stub serialisiert den Aufruf (Marshalling), welcher dann "uber einen Kommunikationskanal an den Server "uber\-tra\-gen wird (3). Auf dem Server wird dann die serialisierte Nachricht vom Skeleton (4) in einen Aufruf deserialisiert (Unmarshalling). Mittels dem Service-Interface (5) (demselben wie am Client) wird dann die entsprechende Service-Implementierung aufgerufen (6). Das Ergebnis wird "uber den Server-Skeleton serialisiert, an den Stub des Clients "uber\-tra\-gen und anschliessend wieder deserialisiert. Das Ergebnis kann schlie"slich in der Applikationslogik am Client verarbeitet werden.
+Auf dem Client wird f"ur eine Applikationslogik (1) mittels einem Service-Interface (2) ein Stub (Stellvertreter) generiert. Dieser Stub serialisiert den Aufruf (Marshalling), welcher dann "uber einen Kommunikationskanal an den Server "uber\-tra\-gen wird (3). Auf dem Server wird dann die serialisierte Nachricht vom Skeleton (4) in einen Aufruf deserialisiert (Unmarshalling). Mittels des Service-Interface (5) (dasselbe wie am Client) wird dann die entsprechende Service-Implementierung aufgerufen (6). Das Ergebnis wird "uber den Server-Skeleton serialisiert, an den Stub des Clients "uber\-tra\-gen und anschliessend wieder deserialisiert. Das Ergebnis kann schlie"slich in der Applikationslogik am Client verarbeitet werden.
 
 Die Abbildung \ref{fig:rpc_arch-b} zeigt dabei den oben beschriebenen Ablauf eines RPC.
 
 \subsection{Realisierungen}
-F"ur die Verwendung von RPC gibt es mehrere verschiedene Arten der Realisierung. Im Zusammenhang anwendungssorientierter Middleware w"are da zum einen \emph{CORBA} \cite{corba} zu nennen, einer Spezifikation f"ur objektorientierte Programmiersprachen. Im Bereich kommunikationsorientierter Middleware w"are da \emph{Web services} \cite{web_services} zu nennen, einem System um den Aufruf verteilter Webanwendungen zu unterst"utzen. In dieser Implementierung wird die vom Google-Protobuf-Projekt \cite{protobuf} mitgelieferte RPC-Variante realisiert (siehe dazu Abschnitt \ref{sec:google-protobuf}).
+F"ur die Verwendung von RPC gibt es mehrere verschiedene Arten der Realisierung. Im Zusammenhang anwendungssorientierter Middleware w"are da zum einen \emph{CORBA} \cite{corba} zu nennen, eine Spezifikation f"ur objektorientierte Programmiersprachen. Im Bereich kommunikationsorientierter Middleware w"are da \emph{Web services} \cite{web_services} zu nennen, ein System um den Aufruf verteilter Webanwendungen zu unterst"utzen. In dieser Implementierung wird die vom Google-Protobuf-Projekt \cite{protobuf} mitgelieferte RPC-Variante realisiert (siehe dazu Abschnitt \ref{sec:google-protobuf}).
 
 \section{Netty}
 \label{sec:netty}
@@ -82,8 +81,8 @@ F"ur die Verwendung von RPC gibt es mehrere verschiedene Arten der Realisierung.
 Die Implementierung dieser Arbeit basiert auf Netty \cite{netty}, einem asynchronen \emph{network application framework}.
 Die Architektur setzt sich dabei aus drei Teilen zusammen:
 \begin{itemize}
-\item {\bf Pipelines:} Der Transport in Netty findet "uber Sockets statt. Jeder Socket ist mit einer \emph{ChannelPipeline} verbunden, welche \emph{ChannelHandler} bereith"alt, die f"ur die Verarbeitung der Nachrichten sorgen. Die Nachrichten-Paketen werden dabei mittels einem \emph{Event-Driven} Client-Server-Model verarbeitet.
-\item {\bf Codecs:} Die zu "ubermittelnden Objekte werden mittels entsprechenden Decodern und Encodern in Nachrichten-Pakete umgewandelt.
+\item {\bf Pipelines:} Der Transport in Netty findet "uber Sockets statt. Jeder Socket ist mit einer \emph{ChannelPipeline} verbunden, welche \emph{ChannelHandler} bereith"alt, die f"ur die Verarbeitung der Nachrichten sorgen. Die Nachrichten-Pakete werden dabei mittels einem \emph{Event-Driven} Client-Server-Model verarbeitet.
+\item {\bf Codecs:} Die zu "ubermittelnden Objekte werden mittels entsprechender Decoder und Encoder in Nachrichten-Pakete umgewandelt.
 \item {\bf Buffers:} Die Nachrichten-Pakete werden mittels des \emph{Zero-Copy Mechanismus} in \emph{ChannelBuffer} verpackt und dann versendet.
 \end{itemize}
 
@@ -100,15 +99,15 @@ Genau hier setzt die \emph{Event-Driven Architektur} an. Jeder Aufruf einer I/O-
 Dabei wird das Verarbeiten eines Events an einen sogenannten {\it Worker Thread}, aus einem Pool von Threads, weitergeleitet, welcher dann das Event an die Handler in der Pipeline weiterreicht. Dabei k"onnen sich verschiedene Events einen Worker Thread teilen.
 
 \subsubsection{Zero-Copy Mechanismus}
-Beim Versenden von Nachrichten-Paketen liegen die zu versendeten Daten typischerweise auf der Festplatte oder im Kernel-eigenen Cache vor. Im Folgenden soll davon ausgegangen werden, das die Daten im Kernel-space vorliegen. 
+Beim Versenden von Nachrichten-Paketen liegen die zu versendenden Daten typischerweise auf der Festplatte oder im Kernel-eigenen Cache vor. Im Folgenden soll davon ausgegangen werden, das die Daten im Kernel-space vorliegen. 
 
-F"ur das Schreiben der Daten auf einem Client-Socket, m"u"sen diese allerdings im Socket-Buffer vorliegen. Normalerweise w"urde dies "uber einen Kopiervorgang geschehen, welcher die Daten aus dem Kernel-space "uber den Userspace in den Socket-Buffer kopiert. Nun hat der Kopiervorgang vom Kernel-space in den User-space den Nachteil der schlechten Performance, zumal sich der Inhalt nicht ver"andert hat.
+F"ur das Schreiben der Daten auf einem Client-Socket, m"ussen diese allerdings im Socket-Buffer vorliegen. Normalerweise w"urde dies "uber einen Kopiervorgang geschehen, welcher die Daten aus dem Kernel-space "uber den Userspace in den Socket-Buffer kopiert. Allerdings hat der Kopiervorgang vom Kernel-space in den User-space den Nachteil der schlechten Performance, zumal sich der Inhalt nicht ver"andert hat.
 
-Anstatt diese Daten nun hin und her zu kopieren, wird beim Zero-Copy-Ansatz ein virtueller Puffer im User-space erzeugt, welcher einzig {\it Pointer} auf den tats"achlichen Inhalt im Kernel-space generiert. Wird dann beim Schreiben der Daten in den Socket-Buffer auf den Inhalt zugegriffen, werden dann lediglich der Pointer gelesen und der Speicherinhalt vom Kernel-space via {\it Direct Memory Access} in den Socket-Buffer geschrieben. Derselbe Mechanismus gilt dann ebenso f"ur das Empfangen von Nachrichten am Server, also beim Verschieben von Daten-Paketen aus dem Socket-Buffer in den Kernel-space.
+Anstatt diese Daten nun hin und her zu kopieren, wird beim Zero-Copy-Ansatz ein virtueller Puffer im User-space erzeugt, welcher einzig {\it Pointer} auf den tats"achlichen Inhalt im Kernel-space generiert. Wird dann beim Schreiben der Daten in den Socket-Buffer auf den Inhalt zugegriffen, wird lediglich der Pointer gelesen und der Speicherinhalt vom Kernel-space via {\it Direct Memory Access} in den Socket-Buffer geschrieben. Derselbe Mechanismus greift dann ebenso beim Empfangen von Nachrichten am Server, also beim Verschieben von Daten-Paketen aus dem Socket-Buffer in den Kernel-space.
 
 Eine ausf"uhrlichere Beschreibung der beiden Mechanismen -- Event-Driven und Zero-Copy Mechanismus -- ist auf der Dokumentationsseite von Netty unter \url{http://www.jboss.org/netty/documentation.html} zu finden.
 
-In dieser Arbeit spielt der Zero-Copy Mechanismus f"ur Nachrichten von geringer Gr"o"se eine ungeordnete Rolle, gewinnt aber an Bedeutung, je gr"o"ser die zu versendeten Nachrichten werden. 
+In dieser Arbeit spielt der Zero-Copy Mechanismus f"ur Nachrichten von geringer Gr"o"se eine ungeordnete Rolle, gewinnt aber an Bedeutung, je gr"o"ser die zu versendenden Nachrichten werden. 
 
 \subsection{Architektur}
 \label{subsec:netty-arch}
@@ -119,9 +118,9 @@ F"ur weiterf"uhrende Information, die "uber diese Arbeit hinaus gehen, steht die
 
 \subsubsection{Pipelines und Buffers}
 Das Netty-Framework bietet die M"oglichkeit Nachrichten von einem Client-Socket zu einem Server-Socket zu senden. Jeder Socket besitzt eine {\bf ChannelPipeline}.
-Die Kommunikation findet dabei "uber einen {\bf Channel} statt, welcher zwischen einem Client-Socket und einem Server-Socket aufgebaut wird. Wie bereits erw"ahnt, basiert Netty auf der Event-driven Architektur, d.h. die Nachrichten werden als {\bf ChannelEvents} verschickt. Dabei gibt es verschiedene Arten von ChannelEvents, am wichtigsten hierbei ist das {\bf MessageEvent}, welches den Empf"anger eines Events, den {\bf ChannelFuture} (also das Ergebnis der asynchronen Verarbeitung) sowie die Nachricht selbst enth"alt. 
+Die Kommunikation findet dabei "uber einen {\bf Channel} statt, welcher zwischen einem Client-Socket und einem Server-Socket aufgebaut wird. Wie bereits erw"ahnt, basiert Netty auf der Event-driven Architektur, d.h. die Nachrichten werden als {\bf ChannelEvents} verschickt. Dabei gibt es verschiedene Arten von ChannelEvents. Am wichtigsten hierbei ist das {\bf MessageEvent}, welches den Empf"anger eines Events, den {\bf ChannelFuture} (also das Ergebnis der asynchronen Verarbeitung) sowie die Nachricht selbst enth"alt. 
 
-Wie in Abbildung \ref{fig:netty-arch} zu erkennen ist, enth"alt die ChannelPipeline beliebig viele {\bf ChannelHandler}, die dann f"ur die Verarbeitung der Nachricht sorgen. Das Prinzip hierbei ist relativ simpel: Die Nachrichten werden in der Pipeline von einem Handler zum n"achsten weitergereicht. F"ur die Richtung ist dabei entscheidend, ob eine Nachricht downstream (sendend) oder upstream (empfangend) verarbeitet wird. Downstream werden die Nachrichten von oben nach unten (top-down) in der Pipeline weitergereicht, upstream von unten nach oben (bottom-up). Ist ein Handler f"ur eine Nachricht verantwortlich, so wird diese dort verarbeitet und anschlie"send weitergereicht, wenn nicht wird sie direkt, ohne Verarbeitung, weitergereicht. ChannelHandler k"onnen dabei unterschiedliche Aufgaben erf"ullen, wie z.B. das De-/Encodieren von Nachrichten oder das Abarbeiten einer Applikationslogik.
+Wie in Abbildung \ref{fig:netty-arch} zu erkennen ist, enth"alt die ChannelPipeline beliebig viele {\bf ChannelHandler}, die dann f"ur die Verarbeitung der Nachricht sorgen. Das Prinzip hierbei ist wie folgt: Die Nachrichten werden in der Pipeline von einem Handler zum n"achsten weitergereicht. F"ur die Richtung ist dabei entscheidend, ob eine Nachricht downstream (sendend) oder upstream (empfangend) verarbeitet wird. Downstream werden die Nachrichten von oben nach unten (top-down) in der Pipeline weitergereicht, upstream von unten nach oben (bottom-up). Ist ein Handler f"ur eine Nachricht verantwortlich, so wird diese dort verarbeitet und anschlie"send weitergereicht, wenn nicht wird sie direkt, ohne Verarbeitung, weitergereicht. ChannelHandler k"onnen dabei unterschiedliche Aufgaben erf"ullen, wie z.B. das De-/Encodieren von Nachrichten oder das Abarbeiten einer Applikationslogik.
 Die ChannelHandler in der Pipeline sind positionsbezogen. Beim Versenden muss schlu"sendlich der letzte, f"ur den Nachrichtentyp verantwortliche ChannelHandler in der ChannelPipeline, daf"ur sorgen, dass die Nachricht serialisierbar ist, d.h. vom Framework "uber den Channel versendet werden kann.
 
 Es gibt dabei zwei Arten von ChannelHandlern: Klassen die das Interface {\bf ChannelDownstreamHandler} implementieren sind f"ur das Verarbeiten von versendeten Nachrichten und Klassen die das Interface {\bf ChannelUpstreamHandler} implementieren f"ur das Verarbeiten von empfangenden Nachrichten zust"andig.
@@ -132,8 +131,7 @@ Die Nachricht selbst, wird in einen {\bf ChannelBuffer} verpackt und dann "uber\
 Die Serialisierung bzw. Deserialisierung von Nachrichten findet bei Netty "uber Encoder (Serialisierer) bzw. Decoder (Deserialisierer) statt.
 Die Dekodierte Nachricht, also die eigentliche Protokoll-Nachricht, wird dann "uber die Channels mittels der ChannelEvents versendet.
 
- Dabei gibt es die M"oglichkeit mitgelieferte De-/Encoder zu verwenden (wie. z.B. f"ur Http- oder String-Nachrichten) oder eigene En-/Decoder zu implementieren.
-F"ur das De- bzw. Enkodieren von Nachrichten gibt es zwei M"oglichkeiten: Zum einen das Verwenden von Netty bereitgestellten Dekodern und Enkodern (wie z.B. {\bf HttpRequestEncoder}, {\bf HttpRequestDecoder} und {\bf HttpResponseEncoder}, {\bf HttpResponseDecoder}) oder das Implementieren von eigenen De- bzw. Enkodern. Die Implementierung von eigenen De- bzw. Enkodern soll hier nicht n"aher beschrieben werden, zumal dies anhand von Beispiel-Applikationen auf der Netty-Homepage nachvollzogen werden kann. Die genutzten De- und Enkoder m"ussen dann in die ChannelPipeline hinzugef"ugt werden. 
+F"ur das De- bzw. Enkodieren von Nachrichten gibt es zwei M"oglichkeiten: Zum Einen das Verwenden von Netty bereitgestellten Dekodern und Enkodern (wie z.B. {\bf HttpRequestEncoder}, {\bf HttpRequestDecoder} und {\bf HttpResponseEncoder}, {\bf HttpResponseDecoder}), zum Anderen das Implementieren von eigenen De- bzw. Enkodern. Die Implementierung von eigenen De- bzw. Enkodern soll hier nicht n"aher beschrieben werden, zumal dies anhand von Beispiel-Applikationen auf der Netty-Homepage nachvollzogen werden kann. Die genutzten De- und Enkoder m"ussen dann in der ChannelPipeline hinzugef"ugt werden. 
 
 In dieser Implementierung werden die Protokoll-Nachrichten unter Verwendung des Google-Protobuf-Projekts \cite{protobuf} versendet. Um diese nutzen zu k"onnen, m"ussen als De- bzw. Enkoder die von Netty mitgelieferten {\bf ProtobufDecoder} und {\bf ProtobufEncoder} der Pipeline hinzugef"ugt werden.
 
@@ -144,21 +142,21 @@ Im folgenden wird nun auf die Google-Protobuf-Nachrichten eingegangen.
 
 \nomenclature{IDL}{Interface Definition Language}
 
-Google Protocol Buffers (protobuf) ist ein Format zu Serialisierung von strukturierten Daten (wie z.B. Nachrichtenprotokollen) mittels einer {\it Interface Definition Language} (IDL). 
+Google Protocol Buffers (protobuf) ist ein Format zur Serialisierung von strukturierten Daten (wie z.B. Nachrichtenprotokollen) mittels einer {\it Interface Definition Language} (IDL). 
 Google Protobuf erlaubt dabei eine programmiersprachenunabh"angige und effiziente Protokollnachrichten-Serialisierung. 
 
 Die Effizienz wird unter anderem dadurch erreicht, dass f"ur die Serialisierung von zu "uber\-tra\-genen Daten eine Kodierung variabler L"ange, sogenannte \emph{Varints}, verwendet werden. Dabei gilt die Regel: Je gr"o"ser die Zahl, desto mehr Bytes werden ben"otigt, d.h. die Anzahl der Bytes ist abh"angig von der Gr"o"se der Zahl. Dabei wird diese Form der Serialiserung eben nicht nur f"ur Zahlen (wie z.B. {\it int32}, {\it int64}), sondern auch f"ur andere Datentypen (wie z.B. f"ur L"angenfelder von {\it Strings}) verwendet \cite{protobuf_encoding}. Eine genaue Erkl"arung wie Varints enkodiert bzw. dekodiert werden, findet sich auf der entsprechenden Dokumentationsseite von protobuf \cite{protobuf_encoding}. 
 
-Des weiteren wurde protobuf als Bin"arformat konstruiert und ist deshalb schneller als andere Formate die nicht Bin"ardaten enthalten, aber dasselbe Prinzip verfolgen, wie z.B. textbasierte Serialisierungsformate.
+Des weiteren wurde protobuf als Bin"arformat konstruiert und ist deshalb schneller als andere Formate die nicht Bin"ardaten enthalten, aber dasselbe Prinzip verfolgen, wie z.B. textbasierte Serialisierungsformate wie XML.
 
-Um nun strukturierte Daten zu serialisieren, mu"s man diese mittels einer \emph{.proto}-Datei beschreiben. Diese {\it proto}-Dateien werden dann mittels dem Protobuf-eigenen IDL-Compiler \emph{protoc} generiert. Dies bietet den Vorteil der einfachen Erweiterbar- bzw. Austauschbarkeit von Protokoll-Nachrichten.
+Um nun strukturierte Daten zu serialisieren, mu"s man diese mittels einer \emph{.proto}-Datei beschreiben. Diese {\it proto}-Dateien werden dann mit Hilfe des Protobuf-eigenen IDL-Compilers \emph{protoc} generiert. Dies bietet den Vorteil der einfachen Erweiterbar- bzw. Austauschbarkeit von Protokoll-Nachrichten.
 
 Die Erweiterbarkeit bzw. Austauschbarkeit ist dadurch gegeben, dass zus"atzlich ben"otigte Felder in der proto-Datei hinzugef"ugt bzw. ausgetauscht werden k"onnen und die Datei dann nur noch erneut kompiliert werden mu"s.
 
 \subsection{Nachrichten-Generierung}
 
 Im folgenden (Listing \ref{lst:protobuf}) soll eine Beispiel-{\it Proto}-Nachricht zum Versenden von Buchbestellungs-Nachrichten den Aufbau von Google Protobuf-Nachrichten veranschaulichen.
-Hierbei handelt es sich um ein Protokoll, bestehend aus einem \emph{BookOrderRequest}- und \emph{BookOrderResponse}-Nachrichtentyp. Die Nachrichtentypen bestehen dabei aus erforderlichen (\emph{required}), optionalen (optional) und mehrfachen (repeated) Attributen, die wiederum einen Typ, einen Bezeichner und eine Reihenfolge besitzen. Die Typen bestehen dabei aus von protobuf mitgelieferten Datentypen, enums sowie den eigenen definierten Nachrichtentypen \emph{Customer} und \emph{Book}.
+Hierbei handelt es sich um ein Protokoll, bestehend aus einem \emph{BookOrderRequest}- und \emph{BookOrderResponse}-Nachrichtentyp. Die Nachrichtentypen bestehen dabei aus erforderlichen (\emph{required}), optionalen (optional) und mehrfachen (repeated) Attributen, die wiederum einen Typ, einen Bezeichner und eine Reihenfolge besitzen. Die Typen bestehen dabei aus von protobuf mitgelieferten Datentypen, aus enums sowie aus den eigenen definierten Nachrichtentypen \emph{Customer} und \emph{Book}.
 
 \begin{lstlisting}[label=lst:protobuf, caption=Aufbau einer proto-Nachricht ,tabsize=2]
 message BookOrderRequest{
@@ -211,7 +209,7 @@ Dieser Service muss dann nur noch der proto-Datei angeh"angt werden.
 Das Uberlay-Projekt \cite{uberlay} ist ein \emph{high-performance small-scale overlay network}.
 Entwickelt wurde das Uberlay-Projekt am Institut der Telematik an der Universit"at zu L"ubeck. Es basiert auf dem Netty-Framework (siehe Abschnitt \ref{sec:netty}) sowie dem Google-Protobuf-Projekt (siehe Abschnitt \ref{sec:google-protobuf}). 
 
-Uberlay unterst"utzt den Aufbau von Multi-Hop Netzwerken (siehe Abschnitt \ref{subsec:p2p-topo}) und da in dieser Arbeit Nachrichtentypen des Message Exchange Pattern versendet werden, musste das Uberlay dahingehend angepasst werden, dass die Nachrichtentypen, der verwendeten Multi-Hop Topologie entsprechend "ubermittelt werden. Dabei wurde die Uberlay Architektur, wie in Abbildung \ref{fig:uberlay_arch} beschrieben, nicht ver"andert.
+Uberlay unterst"utzt den Aufbau von Multi-Hop Netzwerken (siehe Abschnitt \ref{subsec:p2p-topo}). Da in dieser Arbeit Nachrichtentypen des Message Exchange Pattern versendet werden, musste das Uberlay dahingehend angepasst werden, dass die Nachrichtentypen, der verwendeten Multi-Hop Topologie, entsprechend "ubermittelt werden. Dabei wurde die Uberlay Architektur, wie in Abbildung \ref{fig:uberlay_arch} beschrieben, nicht ver"andert.
 
 \subsection{Architektur}
 \myfig{uberlay_arch}{Uberlay Layer Architektur}
@@ -222,7 +220,7 @@ Das Uberlay-Netzwerk lehnt sich konzeptuell stark an IP an. Hierzu wurde f"ur de
 
 Anwendungen, welche das Uberlay-Netzwerk verwenden, h"angen sich als ChannelHandler in die daf"ur bestimmte ChannelPipeline ({\bf ApplicationChannelPipeline}) ein (siehe Abbildung \ref{fig:uberlay_arch}). Dabei entspricht die ApplicationChannelPipeline einer Netty-ChannelPipeline (siehe Abschnitt \ref{sec:netty}) zur Verarbeitung von Nachrichten durch entsprechende Handler. Nachrichten werden, "ahnlich wie bei UDP, an andere Uberlay-Hosts gesendet, indem in den versendeten Protokoll-Nachrichten zus"atzlich die Adresse des Ziel-Knotens im Overlay-Netzwerk angegeben werden.
 
-Die Klasse {\bf UberlayNexus} verbindet nun die ChannelPipeline der Applikation, mit einer Menge von Verbindungen zum Overlay-Netzwerk. Sie implementiert eine Router-Funktionalit"at zum Empfangen ({\bf UPRouter}) und Versenden von Nachrichten ({\bf ApplicationChannelSink}) f"ur UP und w"ahlt je nach Zieladdresse den n"achsten Channel zum n"achsten Hop des Multi-Hop Netzwerk. Der zu benutzende Channel wird mit Hilfe einer Routing-Tabelle ermittelt. Die Routing-Tabelle wird dabei mittels eines implementierten Pfadvektorprotokolls (siehe Abschnitt \ref{subsec:uberlay-pvp}) erzeugt bzw. aktualisiert. Die Metrik der Routing-Tabellen wiederum werden durch das Round Trip Time Protokoll (siehe Abschnitt \ref{subsec:uberlay-rtt}) bestimmt.
+Die Klasse {\bf UberlayNexus} verbindet nun die ChannelPipeline der Applikation, mit einer Menge von Verbindungen zum Overlay-Netzwerk. Sie implementiert eine Router-Funktionalit"at zum Empfangen ({\bf UPRouter}) und Versenden von Nachrichten ({\bf ApplicationChannelSink}) f"ur UP und w"ahlt je nach Zieladdresse den n"achsten Channel zum n"achsten Hop des Multi-Hop Netzwerk. Der zu benutzende Channel wird mit Hilfe einer Routing-Tabelle ermittelt. Die Routing-Tabelle wird dabei mittels eines implementierten Pfadvektorprotokolls (siehe Abschnitt \ref{subsec:uberlay-pvp}) erzeugt bzw. aktualisiert. Die Metrik der Routing-Tabellen wiederum wird durch das Round Trip Time Protokoll (siehe Abschnitt \ref{subsec:uberlay-rtt}) bestimmt.
 
 Die von Uberlay konfigurierten Encoder und Decoder, in der ChannelPipeline von Uberlay ({\bf UberlayChannelPipeline}), sorgen dann f"ur die Serialisierung bzw. Deserialisierung der Protokollnachrichten. Sollte die Zieladdresse der eigene Netzknoten sein, so wird die Nachricht vom UPRouter wieder an die ChannelPipeline der Applikation hoch gesendet (Loopback-Funktionalit"at).
 
@@ -231,10 +229,10 @@ Die von Uberlay konfigurierten Encoder und Decoder, in der ChannelPipeline von U
 Wie bereits in Abschnitt \ref{subsec:p2p-routing} erw"ahnt, besitzen Overlay-Netzwerke, zur Adressierung von Peers, Routingverfahren. Das {\it Pfadvektor Routing}, welches in Uberlay verwendet wird, wird nun im Folgenden erl"autert, wobei dieses Routingverfahren kein Overlay-spezifisches Verfahren ist.
 
 \subsubsection{Algorithmus}
-Das Uberlay-Peer-to-Peer Netzwerk unterst"utzt die Nutzung von Multi-Hop-Topologien (siehe Abschnitt \ref{subsec:p2p-topo}). Das bedeutet, sind Peers nicht direkt miteinander verbunden, so m"u"sen Nachrichten "uber dazwischenliegende Peers "uber\-tra\-gen werden. Das hei"st,  bezogen auf Abbildung \ref{fig:uberlay_pvp-a}, werden Informationen von Peer A nach Peer D "uber\-tra\-gen, so m"ussen diese z.B. "uber Peer C "uber\-tra\-gen werden. Die Entscheidung welche Peers f"ur diese Weiterleitungen verwendet werden sollen, trifft das implementierte Routing-Protokoll.
+Das Uberlay-Peer-to-Peer Netzwerk unterst"utzt die Nutzung von Multi-Hop-Topologien (siehe Abschnitt \ref{subsec:p2p-topo}). Das bedeutet, sind Peers nicht direkt miteinander verbunden, so m"ussen Nachrichten "uber dazwischenliegende Peers "uber\-tra\-gen werden. Die Entscheidung welche Peers f"ur die Weiterleitungen verwendet werden sollen, trifft das implementierte Routing-Protokoll.
 Das hier verwendete Pfadvektor Protokoll ist eines von diesen und geh"ort zur Familie der {\it Distanzvektor Routing Protokolle}. 
 
- {\it Distanzvektor Protokolle} dienen dabei zur Berechnung des k"urzesten Weges von einem Start- zu einem Zielknoten. Der Algorithmus sorgt daf"ur, das in periodischen Abst"anden eine Kopie der eigenen Routing-Tabelle an die Nachbarknoten weitergegeben werden, um mittels dieser Tabellen den k"urzesten Weg zu berechnen bzw. zu aktualisieren.
+ {\it Distanzvektor Protokolle} dienen dabei zur Berechnung des k"urzesten Weges von einem Start- zu einem Zielknoten. Der Algorithmus sorgt daf"ur, das in periodischen Abst"anden eine Kopie der eigenen Routing-Tabelle an die Nachbarknoten weitergegeben wird, um mittels dieser Tabellen den k"urzesten Weg zu berechnen bzw. zu aktualisieren.
 
 Der {\it Pfadvektor Protokoll Algorithmus} arbeitet wie folgt:
 
@@ -324,7 +322,7 @@ Maven erzeugt die Verzeichnisstruktur eines Softwareprojekts entsprechend des Pr
 
 \lstinputlisting[language=Python,label=lst:maven:ubermep-core-dir]{lst/ubermep-core-dir.txt}
 
-Im Hauptverzeichis befindet sich in der {\tt pom.xml} das POM. Im Unterverzeichnis {\tt src/main/java} befindet sich der Quellcode. Die Quellcode-Dateien werden dann in Verzeichnissen entsprechend der Namen der packages abgelegt. Zus"atzlich ben"otigte Ressourcen finden sich im Verzeichnis {\tt src/main/resources}. Das Verzeichnis {\tt target/classes} enth"alt schlie"slich die compilierten Quellcode-Dateien, sowie das gesamte compilierte gepackte Projekt. Das Ausf"uhren einzelner Build-Phasen, sogenannter \emph{Goals}, erfolgt dabei im Wurzelverzeichnis des Projekts, im Falle von \emph{compile} durch das Ausf"uhren des Befehls \texttt{mvn compile}. 
+Im Hauptverzeichis befindet sich in der {\tt pom.xml} das POM. Im Unterverzeichnis {\tt src/main/java} befindet sich der Quellcode. Die Quellcode-Dateien werden dann in Verzeichnissen entsprechend der Namen der packages abgelegt. Zus"atzlich ben"otigte Ressourcen finden sich im Verzeichnis {\tt src/main/resources}. Das Verzeichnis {\tt target/classes} enth"alt schlie"slich die compilierten Quellcode-Dateien, sowie das gesamte compilierte gepackte Projekt. Das Ausf"uhren einzelner Build-Phasen, sogenannter \emph{Goals}, erfolgt dabei im Wurzelverzeichnis des Projekts. Im Falle von \emph{compile} erfolgt dies durch das Ausf"uhren des Befehls \texttt{mvn compile}. 
 
 \subsection{Maven in dieser Arbeit}
 Diese Arbeit verwendet Maven um die verschiedenen teils voneinander abh"angigen Module zu trennen. Hierbei gibt es eine {\bf Parent POM}: das {\bf Ubermep-Parent}. Diese Parent-POM ist zust"andig f"ur s"amtliche Untermodule wie {\bf Uberlay-Parent} oder {\bf Ubermep-Core}.
@@ -354,7 +352,7 @@ public class PhoneBook{
 	}
 }
 \end{lstlisting}
-Angenommen es existiert nun das Interface {\it PhoneBookEntry}. Jetzt kann man das korrekte Verhalten der Methode {\it add(PhoneBookEntry entry)} der Klasse {\it PhoneBook} wie folgt testen:
+Es wird angenommen, es existiert das Interface {\it PhoneBookEntry}. Jetzt kann das korrekte Verhalten der Methode {\it add(PhoneBookEntry entry)} der Klasse {\it PhoneBook} wie folgt getestet werden:
 \lstset{tabsize=4,language=Java,emph={verify},emphstyle=\it,literate={Š}{{\"a}}1}
 \begin{lstlisting}[label=lst:mockito, caption=Testklasse PhoneBookTest]
 @RunWith(MockitoJUnitRunner.class)
@@ -382,4 +380,4 @@ public class PhoneBookTest {
 Der Vorteil hierbei: {\it nur} das Verhalten der Klasse {\it PhoneBook} wird getestet, nicht das der Interfaces {\it PhoneBookEntry} bzw. {\it List}.
 
 \subsection{Weitere Funktionen}
-An dieser Stelle soll auf die weiteren vielf"altigen Funktionalit"aten von Mockito nicht weiter eingegangen werde. Sei hier nur auf die Dokumentationsseite von Mockito \cite{mockito_doc} verwiesen, wo diese n"aher beschrieben und anhand von Beispielen leicht nachzuvollziehen sind.
+An dieser Stelle soll auf die weiteren vielf"altigen Funktionalit"aten von Mockito nicht weiter eingegangen werde. Es sei hier nur auf die Dokumentationsseite von Mockito \cite{mockito_doc} verwiesen, wo diese n"aher beschrieben und anhand von Beispielen leicht nachzuvollziehen sind.

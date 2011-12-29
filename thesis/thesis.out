@@ -8,58 +8,57 @@
 \BOOKMARK [2][]{subsection.2.1.3}{2.1.3 Peer-to-Peer Overlay-Netzwerk}{section.2.1}% 8
 \BOOKMARK [2][]{subsection.2.1.4}{2.1.4 Topologien}{section.2.1}% 9
 \BOOKMARK [1][]{section.2.2}{2.2 Remote Procedure Call \(RPC\)}{chapter.2}% 10
-\BOOKMARK [2][]{subsection.2.2.1}{2.2.1 Verfahren}{section.2.2}% 11
-\BOOKMARK [2][]{subsection.2.2.2}{2.2.2 Ablauf}{section.2.2}% 12
-\BOOKMARK [2][]{subsection.2.2.3}{2.2.3 Realisierungen}{section.2.2}% 13
-\BOOKMARK [1][]{section.2.3}{2.3 Netty}{chapter.2}% 14
-\BOOKMARK [2][]{subsection.2.3.1}{2.3.1 Architektur}{section.2.3}% 15
-\BOOKMARK [1][]{section.2.4}{2.4 Google Protocol Buffers}{chapter.2}% 16
-\BOOKMARK [2][]{subsection.2.4.1}{2.4.1 Nachrichten-Generierung}{section.2.4}% 17
-\BOOKMARK [2][]{subsection.2.4.2}{2.4.2 Protobuf und RPC}{section.2.4}% 18
-\BOOKMARK [1][]{section.2.5}{2.5 Uberlay}{chapter.2}% 19
-\BOOKMARK [2][]{subsection.2.5.1}{2.5.1 Architektur}{section.2.5}% 20
-\BOOKMARK [2][]{subsection.2.5.2}{2.5.2 Pfadvektor Protokoll}{section.2.5}% 21
-\BOOKMARK [2][]{subsection.2.5.3}{2.5.3 Round Trip Time Protokoll}{section.2.5}% 22
-\BOOKMARK [1][]{section.2.6}{2.6 Maven}{chapter.2}% 23
-\BOOKMARK [2][]{subsection.2.6.1}{2.6.1 Funktionsweise}{section.2.6}% 24
-\BOOKMARK [2][]{subsection.2.6.2}{2.6.2 Maven in dieser Arbeit}{section.2.6}% 25
-\BOOKMARK [1][]{section.2.7}{2.7 Mockito}{chapter.2}% 26
-\BOOKMARK [2][]{subsection.2.7.1}{2.7.1 Mockito in dieser Arbeit}{section.2.7}% 27
-\BOOKMARK [2][]{subsection.2.7.2}{2.7.2 Weitere Funktionen}{section.2.7}% 28
-\BOOKMARK [0][]{chapter.3}{3 Entwurf}{}% 29
-\BOOKMARK [1][]{section.3.1}{3.1 Message Exchange Pattern}{chapter.3}% 30
-\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Definition}{section.3.1}% 31
-\BOOKMARK [1][]{section.3.2}{3.2 Architektur}{chapter.3}% 32
-\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Aufbau}{section.3.2}% 33
-\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Erl\344uterung}{section.3.2}% 34
-\BOOKMARK [1][]{section.3.3}{3.3 Protokoll}{chapter.3}% 35
-\BOOKMARK [2][]{subsection.3.3.1}{3.3.1 Struktur}{section.3.3}% 36
-\BOOKMARK [2][]{subsection.3.3.2}{3.3.2 Nachrichten}{section.3.3}% 37
-\BOOKMARK [0][]{chapter.4}{4 Implementierung}{}% 38
-\BOOKMARK [1][]{section.4.1}{4.1 Einleitung und \334berblick}{chapter.4}% 39
-\BOOKMARK [1][]{section.4.2}{4.2 Protokoll}{chapter.4}% 40
-\BOOKMARK [1][]{section.4.3}{4.3 Ubermep-core}{chapter.4}% 41
-\BOOKMARK [2][]{subsection.4.3.1}{4.3.1 Einleitung}{section.4.3}% 42
-\BOOKMARK [2][]{subsection.4.3.2}{4.3.2 Schnittstellen}{section.4.3}% 43
-\BOOKMARK [2][]{subsection.4.3.3}{4.3.3 Implementierung und Abh\344ngigkeiten}{section.4.3}% 44
-\BOOKMARK [2][]{subsection.4.3.4}{4.3.4 Messaging}{section.4.3}% 45
-\BOOKMARK [2][]{subsection.4.3.5}{4.3.5 Konfiguration}{section.4.3}% 46
-\BOOKMARK [1][]{section.4.4}{4.4 Beispiele}{chapter.4}% 47
-\BOOKMARK [2][]{subsection.4.4.1}{4.4.1 Aufbau eines Peer-to-Peer Netzwerk}{section.4.4}% 48
-\BOOKMARK [2][]{subsection.4.4.2}{4.4.2 Kommunikation}{section.4.4}% 49
-\BOOKMARK [1][]{section.4.5}{4.5 Zuk\374nftige Erweiterungen}{chapter.4}% 50
-\BOOKMARK [0][]{chapter.5}{5 Evaluation}{}% 51
-\BOOKMARK [1][]{section.5.1}{5.1 Netzwerk-Topologien}{chapter.5}% 52
-\BOOKMARK [1][]{section.5.2}{5.2 Evaluationskriterien}{chapter.5}% 53
-\BOOKMARK [2][]{subsection.5.2.1}{5.2.1 \334bertragungsdauer in Abh\344ngigkeit der Payload-Gr\366\337e}{section.5.2}% 54
-\BOOKMARK [2][]{subsection.5.2.2}{5.2.2 \334bertragungsdauer in Abh\344ngigkeit der Hop-Anzahl}{section.5.2}% 55
-\BOOKMARK [1][]{section.5.3}{5.3 Testergebnisse}{chapter.5}% 56
-\BOOKMARK [2][]{subsection.5.3.1}{5.3.1 Boxplot}{section.5.3}% 57
-\BOOKMARK [2][]{subsection.5.3.2}{5.3.2 \334bertragungsdauer in Abh\344ngigkeit der Payload-Gr\366\337e}{section.5.3}% 58
-\BOOKMARK [2][]{subsection.5.3.3}{5.3.3 \334bertragungsdauer in Abh\344ngigkeit der Hop-Anzahl}{section.5.3}% 59
-\BOOKMARK [2][]{subsection.5.3.4}{5.3.4 Schlussfolgerung}{section.5.3}% 60
-\BOOKMARK [0][]{chapter.6}{6 Zusammenfassung und Ausblick}{}% 61
-\BOOKMARK [0][]{chapter.6}{Verzeichnisse}{}% 62
-\BOOKMARK [1][]{section*.142}{Abbildungsverzeichnis}{chapter.6}% 63
-\BOOKMARK [1][]{appendix*.143}{Abk\374rzungsverzeichnis}{chapter.6}% 64
-\BOOKMARK [1][]{appendix*.144}{Bibliographie}{chapter.6}% 65
+\BOOKMARK [2][]{subsection.2.2.1}{2.2.1 Ablauf}{section.2.2}% 11
+\BOOKMARK [2][]{subsection.2.2.2}{2.2.2 Realisierungen}{section.2.2}% 12
+\BOOKMARK [1][]{section.2.3}{2.3 Netty}{chapter.2}% 13
+\BOOKMARK [2][]{subsection.2.3.1}{2.3.1 Architektur}{section.2.3}% 14
+\BOOKMARK [1][]{section.2.4}{2.4 Google Protocol Buffers}{chapter.2}% 15
+\BOOKMARK [2][]{subsection.2.4.1}{2.4.1 Nachrichten-Generierung}{section.2.4}% 16
+\BOOKMARK [2][]{subsection.2.4.2}{2.4.2 Protobuf und RPC}{section.2.4}% 17
+\BOOKMARK [1][]{section.2.5}{2.5 Uberlay}{chapter.2}% 18
+\BOOKMARK [2][]{subsection.2.5.1}{2.5.1 Architektur}{section.2.5}% 19
+\BOOKMARK [2][]{subsection.2.5.2}{2.5.2 Pfadvektor Protokoll}{section.2.5}% 20
+\BOOKMARK [2][]{subsection.2.5.3}{2.5.3 Round Trip Time Protokoll}{section.2.5}% 21
+\BOOKMARK [1][]{section.2.6}{2.6 Maven}{chapter.2}% 22
+\BOOKMARK [2][]{subsection.2.6.1}{2.6.1 Funktionsweise}{section.2.6}% 23
+\BOOKMARK [2][]{subsection.2.6.2}{2.6.2 Maven in dieser Arbeit}{section.2.6}% 24
+\BOOKMARK [1][]{section.2.7}{2.7 Mockito}{chapter.2}% 25
+\BOOKMARK [2][]{subsection.2.7.1}{2.7.1 Mockito in dieser Arbeit}{section.2.7}% 26
+\BOOKMARK [2][]{subsection.2.7.2}{2.7.2 Weitere Funktionen}{section.2.7}% 27
+\BOOKMARK [0][]{chapter.3}{3 Entwurf}{}% 28
+\BOOKMARK [1][]{section.3.1}{3.1 Message Exchange Pattern}{chapter.3}% 29
+\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Definition}{section.3.1}% 30
+\BOOKMARK [1][]{section.3.2}{3.2 Architektur}{chapter.3}% 31
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Aufbau}{section.3.2}% 32
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Erl\344uterung}{section.3.2}% 33
+\BOOKMARK [1][]{section.3.3}{3.3 Protokoll}{chapter.3}% 34
+\BOOKMARK [2][]{subsection.3.3.1}{3.3.1 Struktur}{section.3.3}% 35
+\BOOKMARK [2][]{subsection.3.3.2}{3.3.2 Nachrichten}{section.3.3}% 36
+\BOOKMARK [0][]{chapter.4}{4 Implementierung}{}% 37
+\BOOKMARK [1][]{section.4.1}{4.1 Einleitung und \334berblick}{chapter.4}% 38
+\BOOKMARK [1][]{section.4.2}{4.2 Protokoll}{chapter.4}% 39
+\BOOKMARK [1][]{section.4.3}{4.3 Ubermep-core}{chapter.4}% 40
+\BOOKMARK [2][]{subsection.4.3.1}{4.3.1 Einleitung}{section.4.3}% 41
+\BOOKMARK [2][]{subsection.4.3.2}{4.3.2 Schnittstellen}{section.4.3}% 42
+\BOOKMARK [2][]{subsection.4.3.3}{4.3.3 Implementierung und Abh\344ngigkeiten}{section.4.3}% 43
+\BOOKMARK [2][]{subsection.4.3.4}{4.3.4 Messaging}{section.4.3}% 44
+\BOOKMARK [2][]{subsection.4.3.5}{4.3.5 Konfiguration}{section.4.3}% 45
+\BOOKMARK [1][]{section.4.4}{4.4 Beispiele}{chapter.4}% 46
+\BOOKMARK [2][]{subsection.4.4.1}{4.4.1 Aufbau eines Peer-to-Peer Netzwerk}{section.4.4}% 47
+\BOOKMARK [2][]{subsection.4.4.2}{4.4.2 Kommunikation}{section.4.4}% 48
+\BOOKMARK [1][]{section.4.5}{4.5 Zuk\374nftige Erweiterungen}{chapter.4}% 49
+\BOOKMARK [0][]{chapter.5}{5 Evaluation}{}% 50
+\BOOKMARK [1][]{section.5.1}{5.1 Netzwerk-Topologien}{chapter.5}% 51
+\BOOKMARK [1][]{section.5.2}{5.2 Evaluationskriterien}{chapter.5}% 52
+\BOOKMARK [2][]{subsection.5.2.1}{5.2.1 \334bertragungsdauer in Abh\344ngigkeit der Payload-Gr\366\337e}{section.5.2}% 53
+\BOOKMARK [2][]{subsection.5.2.2}{5.2.2 \334bertragungsdauer in Abh\344ngigkeit der Hop-Anzahl}{section.5.2}% 54
+\BOOKMARK [1][]{section.5.3}{5.3 Testergebnisse}{chapter.5}% 55
+\BOOKMARK [2][]{subsection.5.3.1}{5.3.1 Boxplot}{section.5.3}% 56
+\BOOKMARK [2][]{subsection.5.3.2}{5.3.2 \334bertragungsdauer in Abh\344ngigkeit der Payload-Gr\366\337e}{section.5.3}% 57
+\BOOKMARK [2][]{subsection.5.3.3}{5.3.3 \334bertragungsdauer in Abh\344ngigkeit der Hop-Anzahl}{section.5.3}% 58
+\BOOKMARK [2][]{subsection.5.3.4}{5.3.4 Schlussfolgerung}{section.5.3}% 59
+\BOOKMARK [0][]{chapter.6}{6 Zusammenfassung und Ausblick}{}% 60
+\BOOKMARK [0][]{chapter.6}{Verzeichnisse}{}% 61
+\BOOKMARK [1][]{section*.142}{Abbildungsverzeichnis}{chapter.6}% 62
+\BOOKMARK [1][]{appendix*.143}{Abk\374rzungsverzeichnis}{chapter.6}% 63
+\BOOKMARK [1][]{appendix*.144}{Bibliographie}{chapter.6}% 64

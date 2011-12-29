@@ -154,7 +154,7 @@ public class ReliableServiceHandler extends AbstractServiceHandler {
 		}
 	}
 
-	public ListenableFuture<Response> send(ReliableRequest request, Channel applicationChannel) throws ExecutionException, InterruptedException {
+	public ListenableFuture<Response> send(ReliableRequest request, Channel channel) throws ExecutionException, InterruptedException {
 		if (request instanceof SingleRequestSingleResponseRequest) {
 			return send((SingleRequestSingleResponseRequest) request);
 		} else if (request instanceof SingleRequestMultiResponseRequest) {
@@ -162,7 +162,7 @@ public class ReliableServiceHandler extends AbstractServiceHandler {
 		} else if (request instanceof MultiRequestMultiResponseRequest) {
 			return send((MultiRequestMultiResponseRequest) request);
 		} else {
-			return executorService.submit(new ResponseCallable((Request) request, applicationChannel, timeOut, timeUnit));
+			return executorService.submit(new ResponseCallable((Request) request, channel, timeOut, timeUnit));
 		}
 	}
 

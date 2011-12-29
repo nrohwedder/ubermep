@@ -3,14 +3,14 @@
 
 In diesem Kapitel wird der Entwurf der in Kapitel \ref{cha:implementierung} beschriebenen Implementierung erkl"art. In Abschnitt \ref{sec:mep} werden die Message Exchange Pattern definiert und anschlie"send n"aher beschrieben. 
 
-Diese Patterns liefern die Basis des im Abschnitt \ref{sec:architektur} dargestellten Architekturentwurfs der Applikation, sowie die des in Abschnitt \ref{sec:protokoll} spezifizierten Protokolls.
+Diese Patterns liefern die Basis f"ur den im Abschnitt \ref{sec:architektur} dargestellten Architekturentwurf der Bibliothek und f"ur das in Abschnitt \ref{sec:protokoll} spezifizierte Protokoll.
 
 \section{Message Exchange Pattern}
 \label{sec:mep}
 
 \nomenclature{MEP}{Message Exchange Pattern}
 
-Message Exchange Pattern (MEP) ist eine Bezeichnung f"ur ein Kommunikationsmodell das den Austausch von Nachrichten spezifizieren. Aufgrund dieser Patterns kann ein Protokoll, also eine Vereinbarung zwischen Knoten definiert werden, welche Typen von Nachrichten ausgetauscht werden.
+Message Exchange Pattern (MEP) ist eine Bezeichnung f"ur ein Kommunikationsmodell, welches den Austausch von Nachrichten spezifiziert. Aufgrund dieser Patterns kann ein Protokoll, also eine Vereinbarung zwischen Knoten definiert werden, welche Typen von Nachrichten ausgetauscht werden.
 
 Im Folgenden werden nun die Message Exchange Pattern, die in dieser Arbeit Verwendung finden, spezifiziert, wobei der Aufbau dabei wie folgt ist:
 \paragraph{\{Pattern\}}
@@ -38,7 +38,7 @@ Der Anfrage-/Antwort- Typ hat dabei die folgende Bedeutung:
 \paragraph{Unicast}
 Eine Unicast Nachricht wird an eine Adresse verschickt. Diese Nachricht beinhaltet einen Inhalt. Optional wird {\it eine} Best"atigung zur"uckgeschickt. Dabei enth"alt eine Best"atigung \emph{keinen} Inhalt.
 \paragraph{Multicast}
-Eine Multicast Nachricht wird an mehrere Adressen verschickt. Alle Nachrichten beinhalten den selben Inhalt. Optional wird {\it jeweils eine} Best"atigungen zur"uckgeschickt. Dabei enthalten die Best"atigungen \emph{keinen} Inhalt. Eine Multicast Nachricht wird erst zum letzt m"oglichen Verteiler vervielf"altigt, entspricht also \emph{nicht} n Unicast Nachrichten.
+Eine Multicast Nachricht wird an mehrere Adressen verschickt. Alle Nachrichten beinhalten den selben Inhalt. Optional wird {\it jeweils eine} Best"atigung zur"uckgeschickt. Dabei enthalten die Best"atigungen \emph{keinen} Inhalt. Eine Multicast Nachricht wird erst zum letzt m"oglichen Verteiler vervielf"altigt, entspricht also \emph{nicht} n Unicast Nachrichten.
 
 \begin{figure}[htbp]
 \fbox{
@@ -221,7 +221,7 @@ Die gew"ahlte Channel-Architektur ist aus den folgenden Komponenten zusammengese
 Die Zusammensetzung der einzelnen Komponenten ist in Abbildung \ref{fig:mep-channel-arch} veranschaulicht, dabei ist die Transportschicht durch das Uberlay-Projekt (Abschnitt \ref{sec:uberlay}) gegeben. Die Channel sind mittels einer Multiplexer / Demultiplexer -Logik, mit der Transportschicht verbunden. Jeder Channel besitzt eine eigene Pipeline, die wiederum Handler enth"alt, die f"ur die Verarbeitung der Nachrichten sorgen. 
 
 \subsection{Erl"auterung}
-Die gew"ahlte Architektur, welche oben beschrieben ist,orientiert sich an dem Aufbau der Netty-Architektur. Unicast bzw. Multicast Nachrichten liefern Confirmations zur"uck, die keinen Payload enthalten. Responses des Request-Response-Pattern, namentlich Single Request Single Response, Single Request Multi Response und Multi Request Multi Response liefern Responses zur"uck, welche mittels eigener ChannelFuture-Objekte, erzeugt werden. Der RPC Channel wiederum erm"oglicht die Benutzung von Protobuf (Abschnitt \ref{sec:google-protobuf}).
+Die gew"ahlte Architektur, welche oben beschrieben ist,orientiert sich an dem Aufbau der Netty-Architektur. Unicast bzw. Multicast Nachrichten liefern Confirmations zur"uck, die keinen Payload enthalten. Responses des Request-Response-Pattern, namentlich Single Request Single Response, Single Request Multi Response und Multi Request Multi Response liefern Responses zur"uck, welche "uber eigene ChannelFuture-Objekte zur"uckgeliefert werden. Der RPC Channel wiederum erm"oglicht die Benutzung von Protobuf (Abschnitt \ref{sec:google-protobuf}).
 
 %\subsection{Pipeline-Architektur}
 %\label{subsec:mep-arch-pipeline}
@@ -367,7 +367,7 @@ Die in Abbildung \ref{fig:mep_protokoll} beschriebenen Felder haben die folgende
 \item RPC\_RESPONSE
 \end{itemize}
 \item Das Flag {\bf Reliable} wird gesetzt falls eine Nachricht zu dem \emph{Reliable Messaging} Pattern geh"ort.
-\item {\bf Akt. Nachricht}: wird \emph{nur} f"ur MultiResponse-Nachrichten "ubertragen. Dieses Feld zeigt an welche Nummer die entsprechende Response besitzt. Beispiel: \emph{(Aktuelle Nachricht)} {\bf 2} von \emph{(Anzahl Nachrichten)} 4.
+\item {\bf Akt. Nachricht}: wird \emph{nur} f"ur MultiResponse-Nachrichten "ubertragen. Dieses Feld zeigt an welche Nummer die entsprechende Response besitzt. Beispiel: \emph{(Aktuelle Nachricht)} {\bf 2}, von \emph{(Anzahl Nachrichten)} 4.
 \item {\bf Anz. Nachrichten}: wird \emph{nur} f"ur MultiResponse-Nachrichten ben"otigt und beschreibt die zu erwartenden Responses. 
 \item {\bf Payload}: enth"alt den zu "ubertragenen Inhalt.
 \end{itemize}
@@ -400,7 +400,7 @@ Die in Abbildung \ref{fig:mep_protokoll} beschriebenen Felder haben die folgende
 %Das Feld \emph{Payload} enth"alt den zu "ubertragenen Inhalt.
 
 \subsection{Nachrichten}
-Im Folgenden wird nun die oben spezifizierte Struktur auf die Nachrichtentypen des Message Exchange Pattern angewendet. Dabei wurden in der Beschreibung die Felder \emph{ID} und \emph{Payload} nicht ber"ucksichtigt, da diese auf die unterschiedlichen Nachrichtentypen keinen Einfluss haben. Desweiteren werden die Elemente \emph{x} und \emph{-} eingef"uhrt. Sie besitzen die folgende Bedeutung:
+Im Folgenden wird nun die oben spezifizierte Struktur auf die Nachrichtentypen des Message Exchange Pattern angewendet. Dabei wurden in der Beschreibung die Felder \emph{ID} und \emph{Payload} nicht ber"ucksichtigt, da diese auf die, in diesem Entwurf dargestellten, unterschiedlichen Nachrichtentypen keinen Einfluss haben. Des weiteren werden die Elemente \emph{x} und \emph{-} eingef"uhrt. Sie besitzen die folgende Bedeutung:
 
 \begin{tabular}{rl}
 x & := gesetzt \\
