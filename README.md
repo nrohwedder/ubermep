@@ -5,25 +5,26 @@ This project was developed during my bachelor-thesis: "Design and implementation
 
 The implementation of ubermep supports:
 
-* creation, connection and disconnection of peer-to-peer overlay networks
+* creation of a peer-to-peer overlay network
+* connection and disconnection to a network
 * sending messages of following message exchange patterns (mep):
-* (unreliable / reliable) unicast
-* (unreliable / reliable) multicast
-* single request single response
-* single request multi response
-* multi request multi response
+  * (unreliable / reliable) unicast
+  * (unreliable / reliable) multicast
+  * single request single response
+  * single request multi response
+  * multi request multi response
 
 
 Installation
 ------------
 No installation is required. To build ubermep, you need Java 6 and [Apache Maven][maven].
 
-To build, run 'mvn install'.
+To build, run `mvn install`.
 
 
 Usage
 -----
-'java -jar ubermep-cmdline/target/ubermep-cmdline-0.1.one-jar.jar'
+`java -jar ubermep-cmdline/target/ubermep-cmdline-0.1.one-jar.jar`
 
 
 License
