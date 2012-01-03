@@ -1,6 +1,6 @@
 Ubermep
 ========
-This project was developed during my bachelor-thesis: "Design and implementation of a peer-to-peer overlay network".
+This project was developed during my bachelor-thesis: _Design and implementation of a peer-to-peer overlay network_.
 
 
 The implementation of ubermep supports:
