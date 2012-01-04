@@ -156,7 +156,7 @@ Die Erweiterbarkeit bzw. Austauschbarkeit ist dadurch gegeben, dass zus"atzlich 
 \subsection{Nachrichten-Generierung}
 
 Im folgenden (Listing \ref{lst:protobuf}) soll eine Beispiel-{\it Proto}-Nachricht zum Versenden von Buchbestellungs-Nachrichten den Aufbau von Google Protobuf-Nachrichten veranschaulichen.
-Hierbei handelt es sich um ein Protokoll, bestehend aus einem \emph{BookOrderRequest}- und \emph{BookOrderResponse}-Nachrichtentyp. Die Nachrichtentypen bestehen dabei aus erforderlichen (\emph{required}), optionalen (optional) und mehrfachen (repeated) Attributen, die wiederum einen Typ, einen Bezeichner und eine Reihenfolge besitzen. Die Typen bestehen dabei aus von protobuf mitgelieferten Datentypen, aus enums sowie aus den eigenen definierten Nachrichtentypen \emph{Customer} und \emph{Book}.
+Die Kommunikation erfolgt dabei mittels einem \emph{BookOrderRequest}- und \emph{BookOrderResponse}-Nachrichtentyp. Die Nachrichtentypen bestehen dabei aus erforderlichen (\emph{required}), optionalen (optional) und mehrfachen (repeated) Attributen, die wiederum einen Typ, einen Bezeichner und eine Reihenfolge besitzen. Die Typen bestehen dabei aus von protobuf mitgelieferten Datentypen, aus enums sowie aus den eigenen definierten Nachrichtentypen \emph{Customer} und \emph{Book}.
 
 \begin{lstlisting}[label=lst:protobuf, caption=Aufbau einer proto-Nachricht ,tabsize=2]
 message BookOrderRequest{
@@ -191,7 +191,7 @@ message Book{
 
 \subsection{Protobuf und RPC}
 Des weiteren bietet protobuf die M"oglichkeit RPC-Services (siehe dazu Abschnitt \ref{sec:rpc}) zu generieren, wie im folgenden Beispiel (Listing \ref{lst:protobuf-rpc}) erl"autert. 
-Daf"ur wird im ersten Schritt die Option \emph{java\_generic\_services} (f"ur Java-Appli\-ka\-tionen) gesetzt --- f"ur weitere Programmiersprachen siehe \cite{protobuf_options}. Anschlie"send folgt die Beschreibung des Service, der in diesem Beispiel einen RPC-Aufruf \emph{order} erzeugt, welcher einen BookOrderRequest "ubergeben bekommt und einen BookOrderResponse zur"uckliefert.
+Daf"ur wird im ersten Schritt die Option \emph{java\_generic\_services} (f"ur Java-Appli\-ka\-tionen) gesetzt, --- weitere Programmiersprachen werden auch unterst"utzt, siehe dazu \cite{protobuf_options}. Anschlie"send folgt die Beschreibung des Service, der in diesem Beispiel einen RPC-Aufruf \emph{order} erzeugt, welcher einen BookOrderRequest "ubergeben bekommt und einen BookOrderResponse zur"uckliefert.
 
 \begin{lstlisting}[label=lst:protobuf-rpc, caption=Erweiterung der {\it proto}-Nachricht f"ur RPC, firstnumber=27]
 option java_generic_services = true;

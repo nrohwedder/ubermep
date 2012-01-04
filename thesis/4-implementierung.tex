@@ -6,9 +6,7 @@ In diesem Kapitel wird die Implementierung, genannt \emph{Ubermep}, des in Kapit
 In Abschnitt \ref{sec:einleitung} wird zun"achst ein "Uberblick "uber die Struktur der Implementierung gegeben. Danach wird erl"autert wo und wie die im Grundlagenteil in Kapitel \ref{cha:grundlagen} 
 vorgestellten Technologien Anwendung finden. Anschlie"send wird das im Entwurfskapitel spezifizierte Protokoll in Abschnitt \ref{sec:impl_protokoll} sowie die entwickelte Bibliothek, also der Kern der Implementierung in Abschnitt \ref{sec:ubermep-core} genauer beleuchtet.
 
-In Abschnitt \ref{sec:beispiele} wird dann anhand von Beispielen gezeigt, wie ein Peer-to-Peer Overlay-Netzwerk mittels der Implementierung erzeugt werden kann. Weiter wird gezeigt wie man "uber das Netzwerk Nachrichten des Message Exchange Pattern versendet, sowie Remote Procedure Calls "uber das Netzwerk ausf"uhrt.
-
-Abschlie"send wird in Abschnitt \ref{sec:zukunft} eine Auswahl von m"oglichen zuk"unftigen Erweiterung der Implementierung vorgestellt.
+Abschlie"send wird in Abschnitt \ref{sec:beispiele} anhand von Beispielen gezeigt, wie ein Peer-to-Peer Overlay-Netzwerk mittels der Implementierung erzeugt werden kann. Weiter wird gezeigt wie man "uber das Netzwerk Nachrichten des Message Exchange Pattern versendet, sowie Remote Procedure Calls "uber das Netzwerk ausf"uhrt.
 
 \section{Einleitung und "Uberblick}
 \label{sec:einleitung}
@@ -34,7 +32,7 @@ Nur das Modul {\bf Ubermep-core} enth"alt die Bibliothek von ubermep und deshalb
 
 \section{Protokoll}
 \label{sec:impl_protokoll}
-Wie im Abschnitt \ref{sec:google-protobuf} bereits erl"autert, wird zum Generieren der Protokoll-Nachrichten Google-Proto\-buf verwendet. Im Listing \ref{lst:meppacket} ist die mittels der Proto\-buf-IDL erstellten Protokoll-Datei zu erkennen, die auf der Spezifikation des Protokoll-Entwurfs (\ref{sec:protokoll}) des Entwurfskapitel 3 basiert. Diese kann unter Benutzung des Protobuf-Compiler als serialisierte Protokoll-Nachricht "uber den Kommunikationskanal versendet werden.
+Wie im Abschnitt \ref{sec:google-protobuf} bereits erl"autert, wird zum Generieren der Protokoll-Nachrichten Google-Proto\-buf verwendet. Im Listing \ref{lst:meppacket} ist die mittels der Proto\-buf-IDL erstellten Protokoll-Datei zu erkennen, die auf der Spezifikation des Protokoll-Entwurfs (siehe Abschnitt \ref{sec:protokoll}) basiert. Diese kann unter Benutzung des Protobuf-Compiler als serialisierte Protokoll-Nachricht "uber den Kommunikationskanal versendet werden.
 
 \subsubsection{MEPPacket}
 Das serialisierbare Protokoll dieser Applikation, das {\it MEPPacket}, ist wie folgt aufgebaut:
@@ -152,7 +150,7 @@ Im Folgenden die entscheidenden Schnittstellen des Ubermep-core Moduls, welche d
 
 Aus der Beschreibung zum Erzeugen, Verbinden bzw. Trennen eines Peers ergibt sich die folgende Schnittstelle:
 \begin{itemize}
-\item {\it getLocalUPAddress()} gibt die lokale UPAdresse zur"uck, welche die eindeutige Adressierung f"ur Nachrichten in einem Overlay-Netzwerk er\-m"o\-glicht. Sie ist vom Typ {\bf UPAddress}, kommt aus dem Uberlay-Projekt (\ref {sec:uberlay}) und ist eine Unterklasse vom Typ {\bf SocketAddress} aus dem Pack\-age {\it java.net}. Die typische Addressierung in einem Peer-to-Peer Overlay-Netzwerk erfolgt dabei z.B. "uber eine {\bf URN} (Uniform Resource Name), welche wie folgt aufgebaut ist: {\it urn:namensraum:id}, also z.B. {\it urn:itm:1} f"ur den ersten Knoten im itm-Namensraum. 
+\item {\it getLocalUPAddress()} gibt die lokale UPAdresse zur"uck, welche die eindeutige Adressierung f"ur Nachrichten in einem Overlay-Netzwerk er\-m"o\-glicht. Sie ist vom Typ {\bf UPAddress}, kommt aus dem Uberlay-Projekt (siehe \ref {sec:uberlay}) und ist eine Unterklasse vom Typ {\bf SocketAddress} aus dem Pack\-age {\it java.net}. Die typische Addressierung in einem Peer-to-Peer Overlay-Netzwerk erfolgt dabei z.B. "uber eine {\bf URN} (Uniform Resource Name), welche wie folgt aufgebaut ist: {\it urn:namensraum:id}, also z.B. {\it urn:itm:1} f"ur den ersten Knoten im itm-Namensraum. 
 \item {\it getLocalSocketAddress()} gibt die lokale Socket-Adresse zur"uck. Sie ist vom Typ {\bf InetSocketAddress} aus dem Package java.net, enth"alt einen {\it hostname}, typischerweise eine IPv4 oder eine IPv6 Adresse und einen Port. An diese lokale Socket-Adresse wird der Netty-Channel zum Nachrichtenaustausch gebunden.
 \item {\it getRemoteSocketAddress()} gibt die remote Socket-Adresse vom Typ {\bf Inet\-SocketAddress} zur"uck, mit welcher der Peer beim Start verbunden wird. 
 \item {\it connect(InetSocketAddress remoteAddress)} verbindet den Peer mit einem weiteren Peer welcher zu der "ubergebenen {\it remoteAddress} geh"ort.
@@ -181,9 +179,9 @@ Der UbermepService hat die Aufgabe eigene hinzugef"ugte Nachrichtentypen zu unte
 \paragraph{Unterst"utzung eigener Nachrichtentypen}
 F"ur die Unterst"utzung von eigens hinzugef"ugten Nachrichtentypen sind die folgenden Methoden von Bedeutung:
 \begin{itemize}
-\item {\it registerChannelHandler(SimpleChannelHandler handler)} f"ugt einen implementierten SimpleChannelHandler (aus dem Netty-Framework \ref{sec:netty}) an einem Peer hinzu. SimpleChannelHandler k"onnen sowohl empfangende, als auch gesendete Nachrichten verarbeiten.
-\item {\it registerUpstreamHandler(ChannelUpstreamHandler handler)} f"ugt einen implementierten ChannelUpstreamHandler (aus dem Netty-Framework \ref{sec:netty}) an einem Peer hinzu. ChannelUpstreamHandler sind einzig f"ur das Verarbeiten von Empfangenden Nachrichten zust"andig.
-\item {\it registerDownstreamHandler(ChannelDownstreamHandler handler)} f"ugt ei\-nen implementierten ChannelDownstreamHandler (aus dem Netty-Frame\-work \ref{sec:netty}) an einem Peer hinzu. ChannelDownstreamHandler sind einzig f"ur das Verarbeiten von gesendeten Nachrichten zust"andig.
+\item {\it registerChannelHandler(SimpleChannelHandler handler)} f"ugt einen implementierten SimpleChannelHandler (aus dem Netty-Framework, siehe \ref{sec:netty}) an einem Peer hinzu. SimpleChannelHandler k"onnen sowohl empfangende, als auch gesendete Nachrichten verarbeiten.
+\item {\it registerUpstreamHandler(ChannelUpstreamHandler handler)} f"ugt einen implementierten ChannelUpstreamHandler (aus dem Netty-Framework, siehe \ref{sec:netty}) an einem Peer hinzu. ChannelUpstreamHandler sind einzig f"ur das Verarbeiten von Empfangenden Nachrichten zust"andig.
+\item {\it registerDownstreamHandler(ChannelDownstreamHandler handler)} f"ugt ei\-nen implementierten ChannelDownstreamHandler (aus dem Netty-Frame\-work, siehe \ref{sec:netty}) an einem Peer hinzu. ChannelDownstreamHandler sind einzig f"ur das Verarbeiten von gesendeten Nachrichten zust"andig.
 \end{itemize}
 F"ur das Nutzen von eigenen Nachrichtentypen m"ussen dann eigene entsprechende Handler implementiert und an einem Peer mittels der entsprechenden {\it register}-Methode registriert werden. In den eigens implementierten ChannelHandlern m"ussen die jeweiligen zust"andigen Methoden "uberschrieben bzw. implementiert werden. Diese ChannelHandler werden der ChannelPipeline der entsprechenden Peers gem"a"s der Architektur des Netty-Frameworks hinzugef"ugt.
 
@@ -191,8 +189,8 @@ F"ur die Implementierung gibt es dabei drei verschiedene Varianten, wobei aber j
 {\it handleUpstream(ChannelHandlerContext ctx, ChannelEvent e)}, sowie f"urs Verarbeiten von versendeten Nachrichten die Methode {\it handleDownstream(Channel\-HandlerContext ctx, ChannelEvent e)} "uberschrieben werden muss:
 \begin{itemize}
 \item {\bf Variante 1}: Umbau einer Empfangenden / Gesendeten Nachricht in einen unterst"utzten Nachrichtentyp des Message Exchange Pattern wie z.B. in eine SingleRequestSingleResponse-Nachricht.
-\item {\bf Variante 2}: Hinzuf"ugen von eigenen oder mitgelieferten Netty- Decodern bzw. Encodern (\ref{sec:netty})
-\item {\bf Variante 3}: Hinzuf"ugen von eigenen Protokoll-Nachrichten mittels des Google-Protobuf Projekts (\ref{sec:google-protobuf}). Zus"atzlich muss dann ein ProtobufDecoder f"ur die entsprechende Protokoll-Nachricht der Pipeline hinzugef"ugt werden. 
+\item {\bf Variante 2}: Hinzuf"ugen von eigenen oder mitgelieferten Netty- Decodern bzw. Encodern (siehe \ref{sec:netty})
+\item {\bf Variante 3}: Hinzuf"ugen von eigenen Protokoll-Nachrichten mittels des Google-Protobuf Projekts (siehe \ref{sec:google-protobuf}). Zus"atzlich muss dann ein ProtobufDecoder f"ur die entsprechende Protokoll-Nachricht der Pipeline hinzugef"ugt werden. 
 \end{itemize}
 
 Anschliessend k"onnen dann diese Nachrichten mittels der folgenden Methoden versendet werden: 
@@ -205,7 +203,7 @@ Anschliessend k"onnen dann diese Nachrichten mittels der folgenden Methoden vers
 
 \myfig[70 mm]{Interfaces_UbermepUnreliableService}{Aufbau des UbermepUnreliableService-Interface}
 
-Die Aufgabe des UbemepUnreliableService liegt in der Versendung von Unreliable Nachrichten (siehe Kapitel \ref{sec:mep} ) und hat dementsprechend nur die eine Methode:
+Die Aufgabe des UbemepUnreliableService liegt in der Versendung von Unreliable Nachrichten (siehe Kapitel \ref{sec:mep}) und hat dementsprechend nur die eine Methode:
 \begin{itemize}
 \item {\it send(UnreliableRequest request)} versendet einen UnreliableRequest.
 \end{itemize}
@@ -266,7 +264,7 @@ Im Folgenden nun die verschiedenen Listener-Schnittstellen:
 
 \subsubsection{MultiResponseRequestListener}
 
-\myfig[150 mm]{Interfaces_MultiResponseRequestListener}{Aufbau des MultiResponseRequestListener-Interface}
+\myfig[140 mm]{Interfaces_MultiResponseRequestListener}{Aufbau des MultiResponseRequestListener-Interface}
 
 \begin{itemize}
 \item {\it handleMultiResponseRequest(MultiResponseHandle responseHandle, String senderUrn, byte[] requestPayload)} verarbeitet den Inhalt von {\it einem} Multi\-Response-Request. Es wird {\it true} zur"uckgeliefert, wenn der Inhalt erfolgreich verarbeitet wurde, sonst {\it false}. Falls bei der Verarbeitung eine {\it Exception} auftritt, wird ein {\it MEPMultiResponseExceptionEvent} geworfen.
