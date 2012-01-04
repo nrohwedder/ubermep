@@ -4,13 +4,13 @@ This project was developed during my bachelor-thesis: "Design and implementation
 
 
 The implementation of ubermep supports:
-    * creation, connection and disconnection of peer-to-peer overlay networks
-    * sending messages of following message exchange patterns (mep):
-        * (unreliable / reliable) unicast
-        * (unreliable / reliable) multicast
-        * single request single response
-        * single request multi response
-        * multi request multi response
+* creation, connection and disconnection of peer-to-peer overlay networks
+* sending messages of following message exchange patterns (mep):
+* (unreliable / reliable) unicast
+* (unreliable / reliable) multicast
+* single request single response
+* single request multi response
+* multi request multi response
 
 
 Installation
