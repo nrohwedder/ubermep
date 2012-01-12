@@ -21,8 +21,14 @@ No installation is required. To build ubermep, you need Java 6 and [Apache Maven
 
 To build, run `mvn install`.
 
+Usage
+-----
+[Examples]
+
+
 License
 -------
 This project is licenced under a BSD license. For details, see src/etc/license.txt
 
 [maven]:http://maven.apache.org/
+[Examples]:wiki/Examples
