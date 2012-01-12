@@ -23,7 +23,7 @@ To build, run `mvn install`.
 
 Usage
 -----
-[Examples]
+Please see: [Examples]
 
 
 License
