@@ -31,4 +31,4 @@ License
 This project is licenced under a BSD license. For details, see src/etc/license.txt
 
 [maven]:http://maven.apache.org/
-[Examples]:wiki/Examples
+[Examples]:ubermep/wiki/Examples
