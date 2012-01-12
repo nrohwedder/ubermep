@@ -24,7 +24,7 @@ To build, run `mvn install`.
 
 Usage
 -----
-`java -jar ubermep-cmdline/target/ubermep-cmdline-0.1.one-jar.jar`
+[Examples]
 
 
 License
@@ -32,3 +32,4 @@ License
 This project is licenced under a BSD license. For details, see src/etc/license.txt
 
 [maven]:http://maven.apache.org/
+[Examples]:wiki/Examples
