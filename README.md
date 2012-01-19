@@ -32,4 +32,4 @@ This project is licenced under a BSD license. For details, see [license]
 
 [maven]:http://maven.apache.org/
 [Examples]:ubermep/wiki/Examples
-[license]:github.com/nrohwedder/ubermep/blob/master/src/etc/license.txt
+[license]:https://github.com/nrohwedder/ubermep/blob/master/src/etc/license.txt
