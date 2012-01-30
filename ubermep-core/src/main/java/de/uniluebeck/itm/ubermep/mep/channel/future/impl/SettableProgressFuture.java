@@ -61,7 +61,7 @@ public final class SettableProgressFuture<V> extends AbstractFuture<V> {
 		public void progress(String senderUrn, byte[] payload, int current, int total) {
 			synchronized (runnables) {
 				for (ProgressListenerRunnable runnable : runnables) {
-					runnable.progress(senderUrn, payload, current, total);
+					runnable.singleResponseReceived(senderUrn, payload, current, total);
 				}
 			}
 		}

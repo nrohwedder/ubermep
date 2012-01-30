@@ -20,7 +20,7 @@ public class ResponsePercentProgressRunnable extends ResponseProgressRunnable{
 	}
 
 	@Override
-	public void progress(String senderUrn, byte[] payload, int current, int total) {
+	public void singleResponseReceived(String senderUrn, byte[] payload, int current, int total) {
 		log.info("Received single MultiResponse from: {}: --- Progress: {} % ---", senderUrn, current * 100 / total);
 	}
 }

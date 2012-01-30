@@ -130,7 +130,7 @@ public class RequestResponseMain {
 
 		ResponseProgressRunnable progressRunnable = new ResponseProgressRunnable(responseFuture) {
 			@Override
-			public void progress(String senderUrn, byte[] payload, int current, int total) {
+			public void singleResponseReceived(String senderUrn, byte[] payload, int current, int total) {
 				//do something with received single-response
 				log.info("received: " + current + " of " + total);
 			}

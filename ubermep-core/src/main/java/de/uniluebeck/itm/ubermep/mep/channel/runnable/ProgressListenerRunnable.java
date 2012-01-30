@@ -8,5 +8,5 @@ package de.uniluebeck.itm.ubermep.mep.channel.runnable;
  * To change this template use File | Settings | File Templates.
  */
 public interface ProgressListenerRunnable extends Runnable {
-	public void progress(String senderUrn, byte[] payload, int current, int total);
+	public void singleResponseReceived(String senderUrn, byte[] payload, int current, int total);
 }
