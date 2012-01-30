@@ -28,7 +28,8 @@ Please see: [Examples]
 
 License
 -------
-This project is licenced under a BSD license. For details, see src/etc/license.txt
+This project is licenced under a BSD license. For details, see [license]
 
 [maven]:http://maven.apache.org/
 [Examples]:ubermep/wiki/Examples
+[license]:https://github.com/nrohwedder/ubermep/tree/master/src/etc/license.txt
