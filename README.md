@@ -14,8 +14,8 @@ The implementation of ubermep supports:
   * multi request multi response
 
 The complete bachelor-thesis is also purchasable in a book trade of your choice, sadly only in german.
-ISBN-10: 3639458982
-ISBN-13: 978-3639458985
+* ISBN-10: 3639458982
+* ISBN-13: 978-3639458985
 
 Installation
 ------------
