@@ -2,7 +2,6 @@ Ubermep
 ========
 This project was developed during my bachelor-thesis: _Design and implementation of a peer-to-peer overlay network_.
 
-
 The implementation of ubermep supports:
 
 * creation of a peer-to-peer overlay network
@@ -14,6 +13,9 @@ The implementation of ubermep supports:
   * single request multi response
   * multi request multi response
 
+The complete bachelor-thesis is also purchasable in a book trade of your choice, sadly only in german.
+ISBN-10: 3639458982
+ISBN-13: 978-3639458985
 
 Installation
 ------------
